@@ -14,24 +14,27 @@ class CourseModel:
                  registered_stu_no=0, 
                  max_ta=0, 
                  num_of_ta=0, 
-                 num_of_stu_enroll=0):
+                 num_of_stu_enroll=0,
+                 requirement=[]):
 
-        self._name = name
-        self._course_id = course_id
-        self._description = description
-        self._image = image
-
-        self._year = year
+        self._course_id = course_id # รหัสวิชา
+        self._name = name # ชื่อวิชา
+        self._year = year # ปีที่เรียนวิชานี้
         self._announce_list_status = announce_list_status
         self._waiting_list_status = waiting_list_status
-        self._adate = adate
-        self._wdate = wdate
-        self._qualification_type = qualification_type
-        self._contact = contact
-        self._registered_stu_no = registered_stu_no
-        self._max_ta = max_ta
-        self._num_of_ta = num_of_ta
-        self._num_of_stu_enroll = num_of_stu_enroll
+        self._description = description # คำอธิบายวิชา
+        self._image = image # รูปปกวิชา
+        self._adate = adate # announce_date
+        self._wdate = wdate # waiver_date
+        self._qualification_type = qualification_type # วิธีการคัดเลือก (อจ/ระบบ)
+        self._contact = contact # เบอร์โทรศัพท์
+        self._registered_stu_no = registered_stu_no # นศทั้งหมดที่สมัครเป็น TA
+        self._max_ta = max_ta # TA ที่มากที่สุดในวิชา
+        self._num_of_ta = num_of_ta # จำนวน TA
+        self._num_of_stu_enroll = num_of_stu_enroll # นศที่ลงทะเบียนเรียนวิชา
+
+        # requirement?
+        self.requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
 
 #^ getter
 
@@ -79,6 +82,10 @@ class CourseModel:
 
     def getNumOfStuEnroll(self):
         return self._num_of_stu_enroll
+    
+    # requirement?
+    def getRequirement(self):
+        return self.requirement
 
 #^ setter
 
@@ -126,3 +133,7 @@ class CourseModel:
 
     def setNumOfStuEnroll(self, num_of_stu_enroll):
         self._num_of_stu_enroll = num_of_stu_enroll
+
+    # requirement?
+    def getRequirement(self):
+        return self.requirement
