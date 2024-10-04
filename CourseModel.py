@@ -31,7 +31,7 @@ class CourseModel:
 
         # วันปิดรับสมัคร ?
         self._cdate = cdate # closed_date วันปืดรับสมัคร
-        
+
         self._qualification_type = qualification_type # วิธีการคัดเลือก (อจ/ระบบ)
         self._contact = contact # เบอร์โทรศัพท์
         self._registered_stu_no = registered_stu_no # นศทั้งหมดที่สมัครเป็น TA
@@ -40,8 +40,8 @@ class CourseModel:
         self._num_of_stu_enroll = num_of_stu_enroll # นศที่ลงทะเบียนเรียนวิชา
 
         # requirement + required to fill?
-        self.requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
-        self.req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
+        self._requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
+        self._req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
 
 #^ getter
 
@@ -72,6 +72,10 @@ class CourseModel:
     def getWdate(self):
         return self._wdate
 
+    # cdate
+    def getCdate(self):
+        return self._cdate
+
     def getQualification_type(self):
         return self._qualification_type
 
@@ -92,10 +96,10 @@ class CourseModel:
     
     # requirement + required to fill?
     def getRequirement(self):
-        return self.requirement
+        return self._requirement
 
     def getReqToFill(self):
-        return self.req_to_fill
+        return self._req_to_fill
 
 #^ setter
 
@@ -126,6 +130,10 @@ class CourseModel:
     def setWdate(self, wdate):
         self._wdate = wdate
 
+    # cdate
+    def setCdate(self, cdate):
+        self._cdate = cdate
+
     def setQualification_type(self, qualification_type):
         self._qualification_type = qualification_type
 
@@ -146,8 +154,7 @@ class CourseModel:
 
     # requirement + required to fill?
     def setRequirement(self, requirement):
-        self.requirement = requirement
+        self._requirement = requirement
     
     def getReqToFill(self, req_to_fill):
-        self.req_to_fill = req_to_fill
-
+        self._req_to_fill = req_to_fill
