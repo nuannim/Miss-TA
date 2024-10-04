@@ -156,5 +156,5 @@ class CourseModel:
     def setRequirement(self, requirement):
         self._requirement = requirement
     
-    def getReqToFill(self, req_to_fill):
+    def setReqToFill(self, req_to_fill):
         self._req_to_fill = req_to_fill
