@@ -16,6 +16,8 @@ class CourseModel:
         self._num_of_ta = num_of_ta
         self._num_of_stu_enroll = num_of_stu_enroll
 
+#^ getter
+
     def getCourseID(self):
         return self._course_id
 
@@ -63,6 +65,8 @@ class CourseModel:
 
     def setCourseID(self, course_id):
         self._course_id = course_id
+
+#^ setter
 
     def setName(self, name):
         self._name = name
