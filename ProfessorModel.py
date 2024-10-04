@@ -1,4 +1,4 @@
-class Professor:
+class ProfessorModel:
     def __init__(self, first_name="", last_name="", num_of_course=0, course=None, teacher_id=""):
         self._first_name = first_name
         self._last_name = last_name
