@@ -16,7 +16,8 @@ class CourseModel:
                  max_ta=0, 
                  num_of_ta=0, 
                  num_of_stu_enroll=0,
-                 requirement=[]):
+                 requirement=[],
+                 req_to_fill=0):
 
         self._course_id = course_id # รหัสวิชา
         self._name = name # ชื่อวิชา
@@ -38,8 +39,9 @@ class CourseModel:
         self._num_of_ta = num_of_ta # จำนวน TA
         self._num_of_stu_enroll = num_of_stu_enroll # นศที่ลงทะเบียนเรียนวิชา
 
-        # requirement?
+        # requirement + required to fill?
         self.requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
+        self.req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
 
 #^ getter
 
@@ -88,9 +90,12 @@ class CourseModel:
     def getNumOfStuEnroll(self):
         return self._num_of_stu_enroll
     
-    # requirement?
+    # requirement + required to fill?
     def getRequirement(self):
         return self.requirement
+
+    def getReqToFill(self):
+        return self.req_to_fill
 
 #^ setter
 
@@ -139,6 +144,10 @@ class CourseModel:
     def setNumOfStuEnroll(self, num_of_stu_enroll):
         self._num_of_stu_enroll = num_of_stu_enroll
 
-    # requirement?
-    def getRequirement(self):
-        return self.requirement
+    # requirement + required to fill?
+    def setRequirement(self, requirement):
+        self.requirement = requirement
+    
+    def getReqToFill(self, req_to_fill):
+        self.req_to_fill = req_to_fill
+
