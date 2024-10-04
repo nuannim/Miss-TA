@@ -6,14 +6,15 @@ from CourseModel import *
 from ProfOperationController import *
 
 def main():
-    pCourse = ProfCourseView(cName="ISAD", cID=666666, desc="test")
-    pCourseAddEdit = ProfCourseAddnEditView()
+    # pCourse = ProfCourseView(cName="ISAD", cID=666666, desc="test")
+    # pCourseAddEdit = ProfCourseAddnEditView()
 
-    allCourse = CourseModel()
+    # allCourse = CourseModel()
 
-    controller = ProfOperationController(pCourse, pCourseAddEdit, allCourse)
-    controller.sendToDatabase(allCourse, pCourse)
+    # controller = ProfOperationController(pCourse, pCourseAddEdit, allCourse)
+    # controller.sendToDatabase(allCourse, pCourse)
 
+    pass
     
 
 

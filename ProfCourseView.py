@@ -1,40 +1,46 @@
+
+###! โอ้ยน้องคะ view เอาไว้ใส่การ display เท่านั้นค่ะ ใส่ attribute ไม่ได้ เดี๋นยมาแก้อย่างหนัด
 class ProfCourseView:
-    def __init__(self, 
-                cName = None, 
-                cID = None, 
-                desc = None, 
-                image = None, 
-                req = None, 
-                req_to_fill = None, 
-                adate = None, wdate = None, cdate = None, 
-                qtype = None, 
-                contact = None):
 
-        self.cName = cName
-        self.cID = cID
-        self.desc = desc
-        self.image = image
-        self.req = req
-        self.req_to_fill = req_to_fill
-        self.adate = adate
-        self.wdate = wdate
-        self.cdate = cdate
-        self.qtype = qtype
-        self.contact = contact
+#! จากที่ไปอ่านเรื่อง MVC pattern มา พวกนี้ต้องอยู่ใน controller เท่านั้นจ้ะ
+#! เวลารับค่า controller จะเป็นตัวรับค่า คลาส view ใช้สำหรับแสดงหน้าเท่านั้นเลย
+    
+    # def __init__(self, 
+    #             cName = None, 
+    #             cID = None, 
+    #             desc = None, 
+    #             image = None, 
+    #             req = None, 
+    #             req_to_fill = None, 
+    #             adate = None, wdate = None, cdate = None, 
+    #             qtype = None, 
+    #             contact = None):
+
+    #     self.cName = cName
+    #     self.cID = cID
+    #     self.desc = desc
+    #     self.image = image
+    #     self.req = req
+    #     self.req_to_fill = req_to_fill
+    #     self.adate = adate
+    #     self.wdate = wdate
+    #     self.cdate = cdate
+    #     self.qtype = qtype
+    #     self.contact = contact
+    #     pass
+
+    def displayMainCourse(self, cName, desc, ...):
         pass
 
-    def displayMainCourse():
-        pass
+    # def addCourse():
+    #     pass
 
-    def addCourse():
-        pass
+    # def editCourse():
+    #     pass
 
-    def editCourse():
-        pass
 
-    def getInfoFromDisplay():
-
-        pass
+    # def getInfoFromDisplay():
+    #     pass
 
     # def setInfoToDisplay():
     #     pass
@@ -55,36 +61,42 @@ class ProfCourseView:
         
     #     pass
 
-    def getcName(self):
-        return self.cName
 
-    def getcID(self):
-        return self.cID
+    # def getcName(self):
+    #     return self.cName
+
+    # def getcID(self):
+    #     return self.cID
     
-    def getdesc(self):
-        return self.desc
+    # def getdesc(self):
+    #     return self.desc
     
-    def getimage(self):
-        return self.image
+    # def getimage(self):
+    #     return self.image
     
-    def getreq(self):
-        return self.req
+    # def getreq(self):
+    #     return self.req
     
-    def getreq_to_fill(self):
-        return self.req_to_fill
+    # def getreq_to_fill(self):
+    #     return self.req_to_fill
     
-    def getadate(self):
-        return self.adate
+    # def getadate(self):
+    #     return self.adate
     
-    def getwdate(self):
-        return self.wdate
+    # def getwdate(self):
+    #     return self.wdate
     
-    def getcdate(self):
-        return self.cdate
+    # def getcdate(self):
+    #     return self.cdate
     
-    def getqtype(self):
-        return self.qtype
+    # def getqtype(self):
+    #     return self.qtype
  
-    def getcontact(self):
-        return self.contact
+    # def getcontact(self):
+    #     return self.contact
+
+############################################################### !
+
+    def __init__(self) -> None:
+        pass
 
