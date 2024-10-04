@@ -1,0 +1,17 @@
+div {
+    width: 1600px;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 35px;
+    margin: auto;
+    margin-top: 80px;
+    text-align: left;
+}
+
+body {
+    background-color: #C0DFFF;
+}
+
+.topic{
+    text-decoration: line-through;
+}
