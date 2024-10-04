@@ -22,7 +22,19 @@ class ProfOperationController:
 
     def delete(self):
 
-    def setFromCourseAddEdit(self, cName, cID, desc, image, req, reqToFill, ):
+    def setFromCourseAddEdit(self, 
+                             cName, 
+                             cID, 
+                             desc, 
+                             image, 
+                             req, 
+                             reqToFill, 
+                             adate, 
+                             wdate, 
+                             cdate,
+                             qtype,
+                             contact):
+        
 
 
 
