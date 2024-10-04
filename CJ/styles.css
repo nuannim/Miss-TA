@@ -1,10 +1,10 @@
-div {
-    width: 1600px;
-    height: 800px;
+.box {
+    width: 1700px;
+    height: 850px;
     background-color: rgb(255, 255, 255);
     border-radius: 35px;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 50px;
     text-align: left;
 }
 
@@ -12,6 +12,82 @@ body {
     background-color: #C0DFFF;
 }
 
-.topic{
-    text-decoration: line-through;
+h1{
+    color: #74B9FF;
+    padding-left: 60px;
+    padding-top: 30px;
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
 }
+
+.subject-information{
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    border: solid 3px #D9D9D9;
+    flex-direction: column;
+    flex-grow: 1; /* ให้ subject-information ขยายพื้นที่เท่าที่เหลืออยู่ */
+    margin-left: 10px; /* เพิ่มระยะห่างระหว่างภาพกับข้อมูล */
+    margin-right: 150px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.subject-name{
+    font-size: 24px;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    border: solid 3px #D9D9D9;
+    padding: 3px;
+    flex-grow: 1;
+    flex-shrink: 0; /* ป้องกันไม่ให้กรอบขยายตัว */
+}
+
+.subject-description{
+    font-size: 16px;
+    color: black;
+    font-family: 'Prompt', sans-serif;   
+    border: solid 3px #D9D9D9;
+    padding: 3px;
+    flex-grow: 1;
+    flex-shrink: 0; /* ป้องกันไม่ให้กรอบขยายตัว */
+}
+
+.subjectBox{
+    width: 1200px;
+    height: 190px;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 100px;
+    border: solid 3px #D9D9D9;
+    border-radius: 5px;
+    display: flex; /* เพิ่ม flex เพื่อให้กล่องย่อยจัดเรียงในแนวนอน */
+    align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางตามแนวตั้ง */
+}
+
+.subjectImage {
+    padding: 10px;
+    flex-shrink: 0; /* ทำให้ subjectImage ไม่ย่อขนาดเมื่อมีพื้นที่น้อย */
+}
+
+.view-button{
+    width: 70;
+    height: 40;
+    background-color: #FFD3A1;
+    text-align: center;
+    padding: 3px 8px;
+    font-size: 16;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #d9a973; /* เปลี่ยนสีปุ่มเมื่อ hover */
+}
+
+
