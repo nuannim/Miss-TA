@@ -16,13 +16,14 @@ class CourseModel:
                  num_of_ta=0, 
                  num_of_stu_enroll=0):
 
-        self._course_id = course_id
         self._name = name
+        self._course_id = course_id
+        self._description = description
+        self._image = image
+
         self._year = year
         self._announce_list_status = announce_list_status
         self._waiting_list_status = waiting_list_status
-        self._description = description
-        self._image = image
         self._adate = adate
         self._wdate = wdate
         self._qualification_type = qualification_type
