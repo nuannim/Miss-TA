@@ -1,5 +1,21 @@
 class CourseModel:
-    def __init__(self, course_id="", name="", year=0, announce_list_status=False, waiting_list_status=False, description="",image="", adate=None, wdate=None, qualification_type="", contact="", registered_stu_no=0, max_ta=0, num_of_ta=0, num_of_stu_enroll=0):
+    def __init__(self, 
+                 course_id="", 
+                 name="", 
+                 year=0, 
+                 announce_list_status=False, 
+                 waiting_list_status=False, 
+                 description="",
+                 image="", 
+                 adate=None, 
+                 wdate=None, 
+                 qualification_type="", 
+                 contact="", 
+                 registered_stu_no=0, 
+                 max_ta=0, 
+                 num_of_ta=0, 
+                 num_of_stu_enroll=0):
+
         self._course_id = course_id
         self._name = name
         self._year = year

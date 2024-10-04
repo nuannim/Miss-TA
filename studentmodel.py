@@ -1,5 +1,13 @@
 class StudentModel:
-    def __init__(self, student_id="", first_name="", last_name="", year=0, announce_list_status=False, waiting_list_status=False, grade=None, wage=0.0):
+    def __init__(self, 
+                 student_id="", 
+                 first_name="", 
+                 last_name="", 
+                 year=0, 
+                 announce_list_status=False, 
+                 waiting_list_status=False, 
+                 grade=None, 
+                 wage=0.0):
         self._student_id = student_id
         self._first_name = first_name
         self._last_name = last_name
