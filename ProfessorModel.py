@@ -6,6 +6,25 @@ class Professor:
         self._course = course if course is not None else []
         self._teacher_id = teacher_id
 
+#^ getter
+
+    def getFirstName(self):
+        return self._first_name
+
+    def getLastName(self):
+        return self._last_name
+
+    def getNumOfCourse(self):
+        return self._num_of_course
+
+    def getCourse(self):
+        return self._course
+
+    def getTeacherId(self):
+        return self._teacher_id
+
+#^ setter
+
     def setFirstName(self, first_name):
         self._first_name = first_name
 
@@ -23,18 +42,3 @@ class Professor:
 
     def setTeacherId(self, teacher_id):
         self._teacher_id = teacher_id
-
-    def getFirstName(self):
-        return self._first_name
-
-    def getLastName(self):
-        return self._last_name
-
-    def getNumOfCourse(self):
-        return self._num_of_course
-
-    def getCourse(self):
-        return self._course
-
-    def getTeacherId(self):
-        return self._teacher_id

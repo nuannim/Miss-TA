@@ -9,6 +9,8 @@ class StudentModel:
         self._grade = grade
         self._wage = wage
 
+#^ getter
+
     def getStudentID(self):
         return self._student_id
 
@@ -32,6 +34,8 @@ class StudentModel:
 
     def getWage(self):
         return self._wage
+
+#^ setter
 
     def setStudentID(self, student_id):
         self._student_id = student_id
