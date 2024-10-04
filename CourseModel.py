@@ -9,6 +9,7 @@ class CourseModel:
                  image="", 
                  adate=None, 
                  wdate=None, 
+                 cdate=None,
                  qualification_type="", 
                  contact="", 
                  registered_stu_no=0, 
@@ -24,8 +25,12 @@ class CourseModel:
         self._waiting_list_status = waiting_list_status
         self._description = description # คำอธิบายวิชา
         self._image = image # รูปปกวิชา
-        self._adate = adate # announce_date
-        self._wdate = wdate # waiver_date
+        self._adate = adate # announce_date วันประกาศผล
+        self._wdate = wdate # waiver_date วันสละสิทธิ์
+
+        # วันปิดรับสมัคร ?
+        self._cdate = cdate # closed_date วันปืดรับสมัคร
+        
         self._qualification_type = qualification_type # วิธีการคัดเลือก (อจ/ระบบ)
         self._contact = contact # เบอร์โทรศัพท์
         self._registered_stu_no = registered_stu_no # นศทั้งหมดที่สมัครเป็น TA
