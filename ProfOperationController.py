@@ -44,7 +44,7 @@ class ProfOperationController:
 ### ^
 
 #^ new
-    def sendToDatabase(self, course : CourseModel, 
+    def sendToModel(self, course : CourseModel, 
                        cName, cID, desc, image, req, reqToFill, adate, wdate, cdate, qtype, contact):
         course.setName(cName)
         course.setCourseID(cID)
