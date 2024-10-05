@@ -43,7 +43,7 @@ class CourseModel:
         self._requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
         self._req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
 
-#^ getter
+#^ attribute : getter
 
     def getCourseID(self):
         return self._course_id
@@ -101,7 +101,7 @@ class CourseModel:
     def getReqToFill(self):
         return self._req_to_fill
 
-#^ setter
+#^ attribute : setter
 
     def setCourseID(self, course_id):
         self._course_id = course_id
@@ -158,3 +158,15 @@ class CourseModel:
     
     def setReqToFill(self, req_to_fill):
         self._req_to_fill = req_to_fill
+
+#^ database : getDataFromDatabase
+    def getDataFromDatabase(self):
+        # เป็น method สำหรับดึงจาก database โดยตรง
+        # เดี๋ยวมาเขียน
+        pass
+
+#^ database : setDataToDatabase
+    def setDataToDatabase(self):
+        # เป็น method สำหรับส่งข้อมูลไป database โดยตรง
+        # เดี๋ยวมาเขียน
+        pass
