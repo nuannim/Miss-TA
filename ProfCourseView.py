@@ -29,7 +29,10 @@ class ProfCourseView:
     #     self.contact = contact
     #     pass
 
-    def displayMainCourse(self, cName, desc, ...):
+    def displayMainCourse(self, cName, cID, desc, image, req, reqToFill, adate, wdate, cdate, qtype, contact):
+        #* call fastapi to display these parameter
+        print("::::: ProfCourseView :: debug :::::")
+        print("cname : " + cName)
         pass
 
     # def addCourse():

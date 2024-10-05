@@ -10,18 +10,6 @@ class ProfOperationController:
         self.pCourseAddEdit = pCourseAddEdit
         self.course = course
 
-        # self.cName = None
-        # self.cID = None
-        # self.desc = None
-        # self.image = None
-        # self.req = None
-        # self.req_to_fill = None
-        # self.adate = None
-        # self.wdate = None
-        # self.cdate = None
-        # self.qtype = None
-        # self.contact = None
-
     def getInfoFromDisplay():
         pass
 
@@ -52,7 +40,7 @@ class ProfOperationController:
     #                         course : CourseModel = None, 
     #                         pCourse : ProfCourseView = None): # get course from db
         
-        pass
+        # pass
 ### ^
 
 #^ new
@@ -70,10 +58,38 @@ class ProfOperationController:
         course.setQualification_type(qtype)
         course.setContact(contact)
 
-    def getInfoFromDatabase(self, course : CourseModel = None, 
-                            cView : ProfCourseView = None): # get course from db
-        return cView.displayMainCourse(course.getName(), ...)
+        print("::::: ProfOperationController :: debug :::::\nsent to database successfully")
 
+#* get info from db to ProfCourseView.py
+    def getInfoFromModel(self, course : CourseModel = None, #! getInfoFromDatabase() has changed to getInfoFromModel()
+                            cView : ProfCourseView = None):
+        cView.displayMainCourse(
+                                course.getName(),
+                                course.getCourseID(),
+                                course.getDescription(),
+                                course.getImage(),
+                                course.getRequirement(),
+                                course.getReqToFill(),
+                                course.getAdate(),
+                                course.getWdate(),
+                                course.getCdate(),
+                                course.getQualification_type(),
+                                course.getContact()
+                                )
+        
+        #return cView.displayMainCourse(
+                                # course.getName(),
+                                # course.getCourseID(),
+                                # course.getDescription(),
+                                # course.setImage(),
+                                # course.setRequirement(),
+                                # course.getReqToFill(),
+                                # course.getAdate(),
+                                # course.getWdate(),
+                                # course.getCdate(),
+                                # course.getQualification_type(),
+                                # course.getContact()
+                                # )
 
 ### ^
 
