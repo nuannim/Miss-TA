@@ -21,6 +21,40 @@ h1{
     font-size: 40px;
 }
 
+.allsubject{
+    width: 1590px;
+    height: 680px;
+    margin-top: 40px;
+    margin-left: 100px;
+    border: solid 3px gray;
+
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.allsubject::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: rgb(239, 239, 239);
+}
+.allsubject::-webkit-scrollbar-thumb
+{
+    background: rgb(209, 209, 209);
+}
+
+
+.subjectBox{
+    width: 1200px;
+    height: 190px;
+    background-color: white;
+
+    border: solid 3px #D9D9D9;
+    border-radius: 5px;
+    display: flex; /* เพิ่ม flex เพื่อให้กล่องย่อยจัดเรียงในแนวนอน */
+    align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางตามแนวตั้ง */
+    position: relative; /* เพื่อให้ปุ่มกลมอยู่ในตำแหน่งสัมพันธ์กับกรอบนี้ */
+}
+
+
 .subject-information{
     width: 200px;
     height: 150px;
@@ -29,19 +63,21 @@ h1{
     flex-direction: column;
     flex-grow: 1; /* ให้ subject-information ขยายพื้นที่เท่าที่เหลืออยู่ */
     margin-left: 10px; /* เพิ่มระยะห่างระหว่างภาพกับข้อมูล */
-    margin-right: 150px;
+    margin-right: 100px;
     display: flex;
     align-items: flex-start;
 }
 
 .subject-name{
-    font-size: 24px;
+    font-size: 22px;
     color: black;
     font-family: 'Prompt', sans-serif;
     border: solid 3px #D9D9D9;
-    padding: 3px;
-    flex-grow: 1;
+    width: 100%; 
+    margin-top: -10px;
+    padding: 2px;
     flex-shrink: 0; /* ป้องกันไม่ให้กรอบขยายตัว */
+    box-sizing: border-box;
 }
 
 .subject-description{
@@ -49,22 +85,26 @@ h1{
     color: black;
     font-family: 'Prompt', sans-serif;   
     border: solid 3px #D9D9D9;
+    width: 100%;
+    height: 85px;
     padding: 3px;
-    flex-grow: 1;
     flex-shrink: 0; /* ป้องกันไม่ให้กรอบขยายตัว */
+    box-sizing: border-box;
+    
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
-.subjectBox{
-    width: 1200px;
-    height: 190px;
-    background-color: white;
-    margin-top: 50px;
-    margin-left: 100px;
-    border: solid 3px #D9D9D9;
-    border-radius: 5px;
-    display: flex; /* เพิ่ม flex เพื่อให้กล่องย่อยจัดเรียงในแนวนอน */
-    align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางตามแนวตั้ง */
+.subject-description::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: rgb(239, 239, 239);
 }
+.subject-description::-webkit-scrollbar-thumb
+{
+    background: rgb(209, 209, 209);
+}
+
 
 .subjectImage {
     padding: 10px;
@@ -72,22 +112,44 @@ h1{
 }
 
 .view-button{
-    width: 70;
-    height: 40;
+    width: 80;
+    height: 50;
     background-color: #FFD3A1;
     text-align: center;
     padding: 3px 8px;
-    font-size: 16;
+    font-size: 18;
     color: black;
     font-family: 'Prompt', sans-serif;
     font-weight: 600;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: auto;
 }
 
 .view-button:hover {
     background-color: #d9a973; /* เปลี่ยนสีปุ่มเมื่อ hover */
 }
 
+.edit-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
+    background-color: #C0DFFF;
+    border: solid 5px #FFD3A1;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    background-image: url(edit_icon.png);
+    background-size: 33px 33px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+.edit-button:hover {
+    background-color: #acccec; /* เปลี่ยนสีปุ่มเมื่อ hover */
+    border: solid 5px #d9a973;
+}
