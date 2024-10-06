@@ -2,16 +2,16 @@
     display: flex;
     justify-content: space-between; /* แยกหัวข้อและปุ่มไปคนละข้าง */
     align-items: center; /* จัดให้ตรงกลางตามแนวแกน y */
-    padding: 0 20px; /* เพิ่ม padding ข้าง ๆ */
+    padding: 0 5%; /* เพิ่ม padding ข้าง ๆ */
 }
 
 .box {
-    width: 1600px;
-    height: 850px;
+    width: 85%;
+    height: 88vh;
     background-color: rgb(255, 255, 255);
     border-radius: 35px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 3%;
     text-align: left;
 }
 
@@ -21,18 +21,20 @@ body {
 
 .topic{
     color: #74B9FF;
-    padding-left: 60px;
-    padding-top: 30px;
+    padding-left: 1%;
+    padding-top: 1%;
     font-family: "Prompt", sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 4.5vh;
+    margin-right: auto;
+
 }
 
 .allsubject{
-    width: 1500px;
-    height: 680px;
-    margin-top: 30px;
-    margin-left: 100px;
+    width: 95%;
+    height: 80%;
+    margin-top: 1%;
+    margin-left: 5%;
     box-sizing: border-box;
 
     overflow: hidden;
@@ -40,13 +42,13 @@ body {
 }
 .allsubject::-webkit-scrollbar
 {
-    width: 18px;
+    width: 2.5vh;
     background-color: #F5F5F5;
 }
 .allsubject::-webkit-scrollbar-thumb
 {
     background: #D9D9D9;
-    border: solid 3px #F5F5F5;
+    border: solid 0.35vh #F5F5F5;
 }
 .allsubject::-webkit-scrollbar-thumb:hover {
     background: #c3c3c3;
@@ -54,8 +56,8 @@ body {
 
 
 .subjectBox{
-    width: 1200px;
-    height: 190px;
+    width: 80%;
+    height: 30%;
     background-color: white;
 
     border: solid 2px #D9D9D9;
@@ -64,126 +66,131 @@ body {
     align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางตามแนวตั้ง */
     position: relative; /* เพื่อให้ปุ่มกลมอยู่ในตำแหน่งสัมพันธ์กับกรอบนี้ */
 
-    margin-bottom: 25px;
+    margin-bottom: 2%;
 }
 
 
 .subject-information{
-    width: 200px;
-    height: 150px;
+    height: 160px;
     padding: 10px;
     flex-direction: column;
     flex-grow: 1; /* ให้ subject-information ขยายพื้นที่เท่าที่เหลืออยู่ */
-    margin-left: 10px; /* เพิ่มระยะห่างระหว่างภาพกับข้อมูล */
-    margin-right: 100px;
+    margin-left: 1.5%; /* เพิ่มระยะห่างระหว่างภาพกับข้อมูล */
+    margin-right: 8%;
     display: flex;
     align-items: flex-start;
+    margin-top: 0.5vh;
 }
 
 .subject-name{
-    font-size: 22px;
+    font-size: 2.5vh;
+    height: 4vh;
     color: black;
     font-family: 'Prompt', sans-serif;
     width: 100%; 
-    margin-top: -10px;
-    padding: 2px;
-    flex-shrink: 0; /* ป้องกันไม่ให้กรอบขยายตัว */
+    margin-top: -1%;
     box-sizing: border-box;
+
 }
 
 .subject-description{
-    font-size: 15px;
+    font-size: 1.6vh;
     color: black;
     font-family: 'Prompt', sans-serif;   
     width: 100%;
-    height: 90px;
-    padding: 3px;
-    padding-right: 10px;
-    flex-shrink: 0; /* ป้องกันไม่ให้กรอบขยายตัว */
+    height: 60%;
+    padding-right: 1vh;
+    padding-top: 0.3vh;
     box-sizing: border-box;
-    
+
     overflow: hidden;
     overflow-y: scroll;
 }
 .subject-description::-webkit-scrollbar
 {
-    width: 14px;
+    width: 1.5vh;
     background-color: #F5F5F5;
 }
 .subject-description::-webkit-scrollbar-thumb
 {
     background: #D9D9D9;
-    border: solid 2px #F5F5F5;
+    border: solid 0.3vh #F5F5F5;
 }
 .subject-description::-webkit-scrollbar-thumb:hover {
     background: #c3c3c3;
 }
 
+.subjectImage img {
+    width: 100%; /* รูปภาพจะปรับขนาดเต็มความกว้างของ container */
+    height: 100%; /* ปรับขนาดอัตโนมัติตามความกว้าง */
+}
 
 .subjectImage {
-    padding-left: 10px;
-    padding-top: 4px;
+    width: 18vh; /* ปรับขนาดความกว้างตามหน้าจอ */
+    height: auto; /* ปรับความสูงตามสัดส่วนของภาพ */
+    padding-left: 1vh;
     flex-shrink: 0; /* ทำให้ subjectImage ไม่ย่อขนาดเมื่อมีพื้นที่น้อย */
+    box-sizing: border-box;
 }
 
 .view-button{
-    width: 80;
-    height: 50;
+    width: 6vh;
+    height: 3vh;
     background-color: #FFD3A1;
     text-align: center;
-    padding: 3px 8px;
-    font-size: 18;
+    font-size: 1.5vh;
     color: black;
     font-family: 'Prompt', sans-serif;
     font-weight: 600;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: auto;
+    margin-top: 1%;
+
 }
 .view-button:hover {
     background-color: #d9a973;
 }
 
 .edit-button{
-    width: 60px;
-    height: 60px;
+    width: 6vh;
+    height: 6vh;
     border-radius: 50%;
     background-color: #C0DFFF;
-    border: solid 5px #FFD3A1;
+    border: solid 3px #FFD3A1;
     position: absolute;
-    right: 15px;
-    top: 10px;
+    right: 1.5vh;
+    top: 1.5vh;
     cursor: pointer;
     align-items: center;
     background-image: url(edit_icon.png);
-    background-size: 33px 33px;
+    background-size: 3vh 3vh;
     background-position: center;
     background-repeat: no-repeat;
 }
 .edit-button:hover {
     background-color: #acccec;
-    border: solid 5px #d9a973;
+    border: solid 3px #d9a973;
 }
 
 /*add button*/
 .add-button{
-    width: 70px;
-    height: 70px;
+    width: 8vh;
+    height: 8vh;
     border-radius: 50%;
     background-color: #C0DFFF;
-    border: solid 5px #FFD3A1;
-    margin-top: 40px;
-    margin-right: 70px;
+    border: solid 0.5vh #FFD3A1;
+    margin-top: 3vh;
+    margin-right: 5vh;
     cursor: pointer;
     background-image: url(add_icon.png);
-    background-size: 40px 40px;
+    background-size:  4vh 4vh;
     background-position: center;
     background-repeat: no-repeat;
 }
 .add-button:hover {
     background-color: #acccec;
-    border: solid 5px #d9a973;
+    border: solid 0.5vh #d9a973;
 }
 
 /*navigation bar*/
@@ -194,30 +201,25 @@ body {
     flex-direction: column;
 }
 
-.wrapper .title{
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
 .menu{
     position: fixed;
-    top: 250px;
-    left: 30px;
-    width: 50px;
-    height: 400px;
+    top: 25vh;
+    left: 2vh;
+    width: 5vh;
+    height: 40vh;
     background-color: #FFD3A1;
     border-radius: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     list-style: none;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
 }
 
 
 .list-item a{
-    width: 60px;
-    height: 60px;
-    top: 20px;
-    left: -25px;
+    width: 6.5vh;
+    height: 6.5vh;
+    top: 2vh;
+    left: -2.7vh;
     text-align: center;
     line-height: 40px;
     display: block;
@@ -226,38 +228,37 @@ body {
     border-radius: 50%;
     position: relative;
     background-image: url(home_icon.png);
-    background-size: 30px 30px;
+    background-size: 3.5vh 3.5vh;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
     box-sizing: border-box;
 }
 .list-item a:hover{
-    border: solid 6px #C0DFFF;
+    border: solid 0.65vh #C0DFFF;
     padding: 0;
 }
 
 .list-item a span{
     width: 0;
-    top: 7px;
-    left: 60px;
+    top: 0.75vh;
+    left: 6.3vh;
     padding: 0;
     position: absolute;
     overflow: hidden;
     font-family: 'Prompt', sans-serif;
-    font-size: 20px;
+    font-size: 2vh;
     font-weight: 500;
     white-space: nowrap;
-    line-height: 40px;
     transition: 0.20s;
-    border-radius: 25px;
+    border-radius: 2vh;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
     
 }
 
 .list-item a:hover span{
     width: auto;
-    padding: 0 20px;
+    padding: 0 2vh;
     overflow: visible;
 }
 
@@ -265,12 +266,13 @@ body {
     background: white;
 }
 
-.home {
-    width: 5px;
-    height: 5px;
+/*.home {
+    width: 3vh;
+    height: 3vh;
     display: block;
-    background-image: url('home_icon.png');
-    background-size: cover;
+    background-image: url(home_icon.png);
+    background-size: 3.5vh 3.5vh;
     background-position: center;
     background-repeat: no-repeat;
-}
+}*/
+
