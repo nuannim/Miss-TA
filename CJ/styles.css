@@ -1,5 +1,5 @@
 .box {
-    width: 1700px;
+    width: 1600px;
     height: 850px;
     background-color: rgb(255, 255, 255);
     border-radius: 35px;
@@ -22,23 +22,28 @@ h1{
 }
 
 .allsubject{
-    width: 1590px;
+    width: 1500px;
     height: 680px;
     margin-top: 40px;
     margin-left: 100px;
     border: solid 3px gray;
+    box-sizing: border-box;
 
     overflow: hidden;
     overflow-y: scroll;
 }
 .allsubject::-webkit-scrollbar
 {
-    width: 12px;
-    background-color: rgb(239, 239, 239);
+    width: 18px;
+    background-color: #F5F5F5;
 }
 .allsubject::-webkit-scrollbar-thumb
 {
-    background: rgb(209, 209, 209);
+    background: #D9D9D9;
+    border: solid 2px #F5F5F5;
+}
+.allsubject::-webkit-scrollbar-thumb:hover {
+    background: #c3c3c3;
 }
 
 
@@ -94,15 +99,18 @@ h1{
     overflow: hidden;
     overflow-y: scroll;
 }
-
 .subject-description::-webkit-scrollbar
 {
-    width: 12px;
-    background-color: rgb(239, 239, 239);
+    width: 14px;
+    background-color: #F5F5F5;
 }
 .subject-description::-webkit-scrollbar-thumb
 {
-    background: rgb(209, 209, 209);
+    background: #D9D9D9;
+    border: solid 2px #F5F5F5;
+}
+.subject-description::-webkit-scrollbar-thumb:hover {
+    background: #c3c3c3;
 }
 
 
@@ -152,4 +160,92 @@ h1{
 .edit-button:hover {
     background-color: #acccec; /* เปลี่ยนสีปุ่มเมื่อ hover */
     border: solid 5px #d9a973;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper .title{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.menu{
+    position: fixed;
+    top: 250px;
+    left: 30px;
+    width: 50px; /* กำหนดความกว้างของเมนู */
+    height: 400px; /* ให้เมนูสูงเต็มหน้าจอ */
+    background-color: #FFD3A1; /* พื้นหลังของเมนู */
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+
+.list-item a{
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: -25px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    color: black;
+    position: relative;
+    border-radius: 50%;
+    position: relative;
+    background-image: url(home_icon.png);
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box; /* เพิ่มส่วนนี้ */
+}
+
+.list-item a:hover{
+    border: solid 6px #C0DFFF;
+    padding: 0; /* ใช้ padding ให้คงขนาดเดิม */
+}
+
+.list-item a span{
+    width: 0;
+    top: 7px;
+    left: 60px;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Prompt', sans-serif;
+    font-size: 18px;
+    white-space: nowrap;
+    line-height: 40px;
+    transition: 0.20s;
+    border-radius: 25px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+    
+}
+
+.list-item a:hover span{
+    width: auto;
+    padding: 0 20px;
+    overflow: visible;
+}
+
+.list-item *{
+    background: white;
+}
+
+.home {
+    width: 5px;
+    height: 5px;
+    display: block;
+    background-image: url('home_icon.png'); /* พาธที่ถูกต้องไปยังไฟล์ที่คุณอัปโหลด */
+    background-size: cover; /* ปรับให้รูปเต็มพื้นที่ */
+    background-position: center;
+    background-repeat: no-repeat; /* ป้องกันการทำซ้ำของรูป */
 }
