@@ -1,10 +1,8 @@
-body {
-    background-color: #C0DFFF;
-}
 
 .popup_box {
     width: 700px;
     height: 300px;
+    display: none;
 }
 
 .popup {
@@ -27,6 +25,7 @@ body {
     border: solid 3px #FFD3A1;
     font-family: 'Prompt', sans-serif;
     font-size: 35px;
+    box-sizing: content-box;
 }
 
 .close_popup_button{

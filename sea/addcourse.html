@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add-Course</title>
     <link rel="stylesheet" href="addcourse.css">
+    <link rel="stylesheet" href="../CHAT/popup.css">
 </head>
 <body>
     <!-- <div class="tab-bar"> </div> -->
@@ -28,13 +29,15 @@
                 <input type="file">
             </div>
             <div class="column"> <!-- Fixed typo here -->
-                <div class="input-box">
-                    <label for="text">Requirements :</label>
-                    <input type="text" placeholder="requirements" required>
-                    <button>add</button>
-                    <div class="check">
-                        <label>จำเป็นต้องตอบคำถามนี้</label>
-                        <input type="checkbox">
+                <div class="requirements-column" id="requirements-column">
+                    <div class="input-box">
+                        <label for="text">Requirements :</label>
+                        <input type="text" placeholder="requirements" required>
+                        <button class="add-requirement-button" type="button" onclick="addRequirements()">add</button>
+                        <div class="check">
+                            <label>จำเป็นต้องตอบคำถามนี้</label>
+                            <input type="checkbox">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,7 +129,7 @@
                 <input type="number" placeholder="กรอกจำนวนทั้งหมด" required>
                 <div class="numofta">
                     <label for="text">คำนวณจำนวน TA ที่เป็นไปได้</label>
-                    <button>cal</button>
+                    <button type="button">cal</button>
                 </div>
             </div>
             <div class="input-box3">
@@ -152,12 +155,12 @@
             </div>
 
             <div class="but">
-                <button>Submit</button>
+                <button onclick="openAddCoursePopup()">Submit</button>
             </div>
             <div class="wrapper">
               <ul class="menu">
                 <li class="list-item">
-                <a class="้home">
+                <a href="../CJ/admin_subject.html" class="้home">
                   <span>Home</span>
                 </a>
                 </li>
@@ -166,6 +169,14 @@
             </div>
             </div>
         </form>
+        <div class="popup_box">
+            <div class="popup">
+              <p>ทำการเพิ่มรายวิชาสำเร็จ</p>
+            </div>
+            <div class="close_popup_button">
+            </div>
+          </div>
     </section>
+    <script src="addcourse.js"></script>
 </body>
 </html>
