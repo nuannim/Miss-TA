@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+
+body {
+    background-color: #C0DFFF;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 1300px;
+    width: 100%;
+    padding: 25px;
+    margin-left: 110px;
+    margin-top: -20px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* เปิดการ scroll อัตโนมัติ */
+    max-height: 85vh;
+}
+
+
+.container header {
+    font-size: 1.5rem;
+    color: #FB9520;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.subject-details {
+    margin-top: 20px; /* เพิ่มระยะห่างจากส่วนหัว */
+}
+
+.subject-details p:first-of-type {
+    color: red; /* กำหนดสีข้อความให้เป็นสีแดง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    font-weight: bold; /* ทำให้ตัวหนาเพื่อเน้น */
+}
+
+
+/* .subject-details {
+    border: 2px solid black; /* กำหนดเส้นขอบสีดำ */
+    /* padding: 15px;           /* กำหนดระยะห่างภายในกรอบ */
+    /* border-radius: 8px;      /* ทำให้ขอบมุมโค้งมน */
+    /* background-color: #ffffff; /* กำหนดสีพื้นหลัง */
+    /* width: 80%;              กำหนดความกว้างของกรอบ */
+    /* margin: 20px auto;      กำหนดการจัดกึ่งกลาง */ */ */
+/* }   */
+.form {
+    margin-top: 30px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    color: #333;
+    margin-right: 20px;
+}
+
+.input-box input {
+    height: 50px;
+    width: 30%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.but button {
+    height: 45px;
+    width: 10%;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-top: 30px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #ffb866;
+    transition: all 0.2s ease;
+}
+
+.but button:hover {
+    background-color: #FFD3A1;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+    width: 80px;
+    height: 400px;
+    background-color: #FFD3A1;
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.list-item a {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 9.5px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    color: black;
+    position: relative;
+    border-radius: 50%;
+    background-image: url(home_icon.png);
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.list-item a:hover {
+    border: solid 6px #C0DFFF;
+    padding: 0;
+}
+
+.list-item a span {
+    width: 0;
+    top: 7px;
+    left: 60px;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 40px;
+    transition: 0.20s;
+    border-radius: 25px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.list-item a:hover span {
+    width: auto;
+    padding: 0 20px;
+    overflow: visible;
+}
+
+.list-item * {
+    background: white;
+}
+
+.submit {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    color: black;
+    background-color: #ffb866; /* เปลี่ยนสีพื้นหลังของปุ่ม */
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+
+.popup_box {
+    display: none; /* สามารถใช้ JS แสดง popup นี้ */
+}
+
