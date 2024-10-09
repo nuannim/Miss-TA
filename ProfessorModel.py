@@ -1,10 +1,10 @@
 class ProfessorModel:
-    def __init__(self, first_name="", last_name="", num_of_course=0, course=None, teacher_id=""):
+    def __init__(self, first_name="", last_name="", num_of_course=0, course=None, prof_id=""):
         self._first_name = first_name
         self._last_name = last_name
         self._num_of_course = num_of_course
         self._course = course if course is not None else []
-        self._teacher_id = teacher_id
+        self._prof_id = prof_id
 
 #^ getter
 
@@ -20,8 +20,8 @@ class ProfessorModel:
     def getCourse(self):
         return self._course
 
-    def getTeacherId(self):
-        return self._teacher_id
+    def getProfId(self):
+        return self._prof_id
 
 #^ setter
 
@@ -40,5 +40,5 @@ class ProfessorModel:
         else:
             self._course = [course]
 
-    def setTeacherId(self, teacher_id):
-        self._teacher_id = teacher_id
+    def setProfId(self, prof_id):
+        self._prof_id = prof_id
