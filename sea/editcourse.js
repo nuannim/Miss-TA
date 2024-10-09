@@ -53,3 +53,26 @@ document.querySelector('.close_popup_button').addEventListener('click', function
 document.querySelector('.confirm_button').addEventListener('click', function() {
     document.querySelector('.popup_box').style.display = 'none';
 });
+
+document.querySelector('.edit_close_popup_button').addEventListener('click', function() {
+    document.querySelector('.edit_popup_box').style.display = 'none';
+});
+
+function openEditCoursePopup(){
+    document.querySelector('.but button').addEventListener('click', function() {
+    
+        const form = document.querySelector('.form');
+        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+        let allFilled = true;
+    
+        inputs.forEach(input => {
+            if (!input.value) {
+                allFilled = false; 
+            }
+        });
+    
+        if (allFilled) {
+            document.querySelector(".edit_popup_box").style.display = "flex";
+        }
+    });
+}

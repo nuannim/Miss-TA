@@ -156,6 +156,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 2%;
+    padding-top: 1%;  /* ชัชแก้นะะ คือตัวอักษรมันเยี้ยงไปบนๆนิดนึงเพราะเราแก้tagจาก button เป็น a อ่ะ*/
 
 }
 .view-button:hover {

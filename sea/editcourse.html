@@ -6,6 +6,7 @@
     <title>Edit-Course</title>
     <link rel="stylesheet" href="editcourse.css">
     <link rel="stylesheet" href="../CHAT/delete_popup.css">
+    <link rel="stylesheet" href="../CHAT/edit_popup.css">
 </head>
 <body>
     <!-- <div class="tab-bar"> </div> -->
@@ -159,7 +160,7 @@
             </div>
 
             <div class="but">
-                <button>Submit</button>
+                <button onclick="openEditCoursePopup()">Submit</button>
             </div>
             <div class="wrapper">
               <ul class="menu">
@@ -182,6 +183,13 @@
             </div>
         </div>
         <div class="overlay" id="overlay"></div>
+        <div class="edit_popup_box">
+            <div class="edit_popup">
+              <p>ทำการแก้ไขรายวิชาสำเร็จ</p>
+            </div>
+            <div class="edit_close_popup_button">
+            </div>
+          </div>
     </section>
     <script src="editcourse.js"></script>
 </body>
