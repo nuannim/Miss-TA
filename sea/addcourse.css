@@ -12,48 +12,83 @@ body{
     /* margin-top: 0px; */
     justify-content: center;
     padding: 20px;
-    
-    
+
+    /*cjayแก้*/
+    width: 100%;
 
 }
 
+.topic{
+    color: #ffb866;
+    padding-left: 4%;
+    padding-top: 1%;
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-size: 4.5vh;
+    margin-right: auto;
+    text-decoration: underline;
+
+}
+
+/*.text{
+    color: #333;
+    font-family: "Prompt", sans-serif;
+    font-size: 1.7vh;
+    padding-left: 0%;
+}*/
+
 .container{
     position: relative;
-    max-width: 1300px;
+    /*max-width: 1400px;*/
     width: 100%;
     padding: 25px;
     margin-left: 110px;
     margin-top: -20px;
-    border-radius: 16px;
+    border-radius: 35px;
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  
     overflow: scroll;
     overflow-y: auto; /* เปิดการ scroll แนวตั้ง */
     overflow-x: auto; /* ซ่อนการ scroll แนวนอน */
-    max-height: 85vh;
-    }
+    /*max-height: 85vh; //เปลี่ยนจากจำกัดกรอบเป็นปล่อยให้กรอบยาวไปถึงข้างล่างแทน*/ 
+
+    /*cjay แก้*/
+    margin-top: 2%;
+    justify-content: center;
+    max-width: 80%;
+}
 
 
 .container header{
-    font-size: 1.5rem;
     color: #FB9520;
     font-weight: 500;
     text-align: center;
     text-decoration: underline;
-    
 }
 
 
 .container .form{
-    margin-top: 30px;
+    margin-top: 3%;
+    /*padding: auto;
+
+    /*cjay แก้*/
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
 }
+
 
 .form .input-box{
     display: flex; /* Aligns children in a row */
     align-items: center;
     width: 100%;
-    margin-top: 20px;
-    margin-left: 60px;
+    /*margin-top: 20px;
+    margin-left: 60px;*/
+
+    /*cjay แก้*/
+    padding-left: 2%;
+    /*padding-bottom: 2%;*/
 }
 
 .input-box label{
@@ -325,9 +360,13 @@ body{
     cursor: pointer;
     transition: all0.2s ease;
     background-color: #ffb866;
+
+    /*cjayเพิ่ม เพิ่มระยะห่างของปุ่มกับพทด้านบน*/
+    margin-top: 5%;
 }
 .but button:hover{
     background-color: #FFD3A1;
+    border: 0.5vh solid #C0DFFF;
 }
 
 .wrapper{
