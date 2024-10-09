@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Course</title>
+    <link rel="stylesheet" href="addcourse.css">
+    <link rel="stylesheet" href="../CHAT/popup.css">
+</head>
+<body>
+    <section class="container">
+        <header>Physical Computing</header>
+        
+        <div class="subject-details">
+            <p>*คำอธิบายรายวิชา*</p>
+            <p>รายละเอียดวิชา แบบฟอร์มลงทะเบียนและแสดงความคิดเห็นสำหรับวิชา Physical Computing</p>
+        </div>
+
+        <form action="#" class="form">
+            <div class="input-box">
+                <label for="reason">เหตุผลที่อยากเป็น TA วิชานี้ :</label>
+                <input type="text" id="reason" placeholder="กรอกเหตุผล" required>
+            </div>
+            <div class="input-box">
+                <label for="food">เลี้ยงข้าวอาจารย์ได้มั้ย :</label>
+                <input type="text" id="food" placeholder="กรอกเลี้ยงข้าวอาจารย์ได้ปุ" required>
+            </div>
+            
+            <div class="but">
+                <button type="submit" onclick="submitForm()">Submit</button>
+            </div>
+        </form>
+
+        <div class="wrapper">
+            <ul class="menu">
+                <li class="list-item">
+                    <a href="../CJ/admin_subject.html" class="home">
+                        <span>Home</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="popup_box">
+            <div class="popup">
+                <p>ทำการเพิ่มรายวิชาสำเร็จ</p>
+            </div>
+            <div class="close_popup_button"></div>
+        </div>
+    </section>
+
+    <script src="addcourse.js"></script>
+    <script>
+        function submitForm() {
+            alert("ทำการสมัคร TA สำเร็จ");
+        }
+    </script>
+</body>
+</html>
+
