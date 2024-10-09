@@ -28,7 +28,6 @@ body {
     max-height: 85vh;
 }
 
-
 .container header {
     font-size: 1.5rem;
     color: #FB9520;
@@ -47,15 +46,12 @@ body {
     font-weight: bold; /* ทำให้ตัวหนาเพื่อเน้น */
 }
 
+.teachar-details p:first-of-type {
+    color: rgb(0, 0, 0); /* กำหนดสีข้อความให้เป็นสีแดง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    font-weight: bold; /* ทำให้ตัวหนาเพื่อเน้น */
+}
 
-/* .subject-details {
-    border: 2px solid black; /* กำหนดเส้นขอบสีดำ */
-    /* padding: 15px;           /* กำหนดระยะห่างภายในกรอบ */
-    /* border-radius: 8px;      /* ทำให้ขอบมุมโค้งมน */
-    /* background-color: #ffffff; /* กำหนดสีพื้นหลัง */
-    /* width: 80%;              กำหนดความกว้างของกรอบ */
-    /* margin: 20px auto;      กำหนดการจัดกึ่งกลาง */ */ */
-/* }   */
 .form {
     margin-top: 30px;
 }
@@ -87,6 +83,34 @@ body {
 .input-box input:focus {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
+
+.select-box3 {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; /* ลดระยะห่างระหว่างกลุ่มนี้กับกลุ่มอื่น */
+}
+
+.select-box3 label {
+    color: #333;
+    margin-right: 5px; /* ระยะห่างระหว่างป้ายกับ dropdown ให้ชิดกันที่สุด */
+}
+
+.select-box3 select {
+    height: 40px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 10px;
+    color: white; /* สีข้อความเป็นสีขาว */
+    background-color: #ffb866; /* สีพื้นหลังของ dropdown */
+    cursor: pointer;
+    margin: 0; /* ไม่มี margin ระหว่าง select และ label */
+}
+
+.select-box3 select:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* เพิ่มเงาเมื่อเลือก */
+}
+
 
 .but {
     display: flex;
@@ -178,25 +202,10 @@ body {
     overflow: visible;
 }
 
-.list-item * {
+.list-item *{
     background: white;
 }
-
-.submit {
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    line-height: 40px;
-    display: block;
-    color: black;
-    background-color: #ffb866; /* เปลี่ยนสีพื้นหลังของปุ่ม */
-    cursor: pointer;
-    box-sizing: border-box;
-    margin-top: 15px;
-}
-
 
 .popup_box {
     display: none; /* สามารถใช้ JS แสดง popup นี้ */
 }
-
