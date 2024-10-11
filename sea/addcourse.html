@@ -44,7 +44,6 @@
                         <input type="checkbox">
                     </div>
                 </div>
-            </div>
             <div class="column">
                 <div class="input-box">
                     <label >วันปิดรับสมัคร :</label>
@@ -59,14 +58,14 @@
                 <label>วันยืนยันสิทธิ์ :</label>
                 <input type="datetime-local" placeholder="วันยืนยันสิทธิ์" required>
             </div>
-            <div class="choose-box"></div>
+            <div class="choose-box">
                 <div class="option">
                     <label>กระบวนการคัดเลือก :</label>
                     <div class="choose">
                         <input type="radio" id="check1" name="choose" ch>
                         <label for="check1">อาจารย์เป็นผู้คัดเลือก</label>
                     </div>
-                    <div class="choose"></div>
+                    <div class="choose">
                         <input type="radio" id="check2" name="choose">
                         <label for="check2">ระบบเป็นผู้คัดเลือก</label>
                     </div>
@@ -82,14 +81,15 @@
                 <div class="select-box">
                     <div class="input-box">
                         <label for="text">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
+                        <select>
+                            <option>ผู้ช่วยงานวิชาปฏิบัติ</option>
+                            <option>ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
+                            <option>ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
+                            <option>ผู้ช่วยงคุมสอบ</option>
+                            <option>อื่นๆ</option>
+                        </select>
                     </div>
-                    <select>
-                        <option>ผู้ช่วยงานวิชาปฏิบัติ</option>
-                        <option>ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
-                        <option>ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
-                        <option>ผู้ช่วยงคุมสอบ</option>
-                        <option>อื่นๆ</option>
-                    </select>
+                    
             </div>
             <div class="input-box">
                 <div class="daymon">
@@ -100,14 +100,14 @@
                 </div>
             </div>
 
-            <div class="choose-box"></div>
+            <div class="choose-box">
                 <div class="option">
                     <label>รูปแบบการประกาศ :</label>
                     <div class="choose">
                         <input type="radio" id="check1" name="choose" ch>
                         <label for="check1">ขึ้นทุกคน</label>
                     </div>
-                    <div class="choose"></div>
+                    <div class="choose">
                         <input type="radio" id="check2" name="choose">
                         <label for="check2">ขึ้นเฉพาะ TA วิชานี้</label>
                     </div>
@@ -118,15 +118,16 @@
                 <div class="select-box2">
                     <div class="input-box">
                         <label for="text">ชั้นปีที่สมัครได้ :</label>
+                        <select>
+                            <option>ปี 1</option>
+                            <option>ปี 2</option>
+                            <option>ปี 3</option>
+                            <option>ปี 4</option>
+                            <option>ป.โท</option>
+                            <option>ป.เอก</option>
+                        </select>
                     </div>
-                    <select>
-                        <option>ปี 1</option>
-                        <option>ปี 2</option>
-                        <option>ปี 3</option>
-                        <option>ปี 4</option>
-                        <option>ป.โท</option>
-                        <option>ป.เอก</option>
-                    </select>
+                    
             </div>
             <div class="input-box3">
                 <label for="text">จำนวนนักศึกษาที่ลงทะเบียนเรียนทั้งหมด :</label>

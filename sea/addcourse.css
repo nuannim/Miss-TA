@@ -180,7 +180,7 @@ body{
 
 
 .choose-box {
-    margin-left: 60px; 
+    margin-left: 5%; 
     margin-top: 30px;
     
     
@@ -189,8 +189,8 @@ body{
 .option {
     display: flex;
     align-items: center;
-    column-gap: 10px;
-    margin-left: 50px;  
+    column-gap: 2%;
+    /* margin-left: -10px;   */
     margin-bottom: 30px;
     
     
@@ -208,21 +208,21 @@ body{
 
 .select-box{
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     margin-top: 15px;
     
 }
 
 .select-box select{
     height: 40px;
-    width: 100%;
+    /* width: 50%; */
     outline: none;
     border: none;
     padding: 0 10px;
     color: #ffffff;
     font-size: 1rem;
     /* margin-top: 15px; */
-    margin-right: 500px;
+    /* margin-right: 500px; */
     border-radius: 8px;
     background-color: #ffb866;
     cursor: pointer;
@@ -263,14 +263,14 @@ body{
 
 .select-box2 select{
     height: 40px;
-    width: 40%;
+    /* width: 40%; */
     outline: none;
     border: none;
     padding: 0 10px;
     color: #ffffff;
     font-size: 1rem;
     /* margin-top: 15px; */
-    margin-right: 710px;
+    /* margin-right: 710px; */
     border-radius: 8px;
     background-color: #ffb866;
     cursor: pointer;
