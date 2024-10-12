@@ -67,7 +67,7 @@ class ProfessorModel:
 #^ db getter
 
     def getDataFromDB(self, which_id):
-        '''get data from database then set it into ProfessorModel.py attribute'''
+        '''get(import) all data from database then set it into ProfessorModel.py attribute'''
         self.db.connect()
 
         #* query firstname / lastname

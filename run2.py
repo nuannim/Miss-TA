@@ -8,17 +8,26 @@ from ProfOperationController import *
 
 def main():
 
+    oop = CourseModel()
     professorList = ProfessorModel()
     professorList.getDataFromDB(which_id=1)
 
-    print('run2 :', str(professorList.getFirstName()), 
+    print('======= START run2 =======')
+    print('--- professorList obj ---')
+
+    print(str(professorList.getFirstName()), 
           str(professorList.getLastName()),
           'num course :', str(professorList.getNumOfCourse()),
           'course id :', str(professorList.getProfCourse()), 
           'profid :', str(professorList.getProfId()))
 
-    print('run2 : ' + str(professorList.getProfCourse()))
-    pass
+    print(str(professorList.getProfCourse()))
+
+    print('--- oop obj ---')
+
+    oop.getDataFromDB(102)
+    # print(oop.getName())
+    print('======= END run2 =======')
 
 main()
 

@@ -1,3 +1,5 @@
+from Database import *
+
 class CourseModel:
     def __init__(self, 
                  course_id="", 
@@ -40,8 +42,12 @@ class CourseModel:
         self._num_of_stu_enroll = num_of_stu_enroll # นศที่ลงทะเบียนเรียนวิชา
 
         # requirement + required to fill?
+        #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
         self._requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
         self._req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
+
+        self.db = MySQLDatabase()
+
 
 #^ attribute : getter
 
@@ -95,11 +101,14 @@ class CourseModel:
         return self._num_of_stu_enroll
     
     # requirement + required to fill?
+    #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
+
     def getRequirement(self):
         return self._requirement
 
     def getReqToFill(self):
         return self._req_to_fill
+
 
 #^ attribute : setter
 
@@ -153,21 +162,59 @@ class CourseModel:
         self._num_of_stu_enroll = num_of_stu_enroll
 
     # requirement + required to fill?
+    #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
     def setRequirement(self, requirement):
         self._requirement = requirement
     
     def setReqToFill(self, req_to_fill):
         self._req_to_fill = req_to_fill
 
-#^ database : getDataFromDB
-    def getDataFromDB(self):
+#^ db getter : getDataFromDB
+    def getDataFromDB(self, which_course_id):
+        '''get(import) all data from database then set it into CourseModel.py attribute'''
         # เป็น method สำหรับดึงจาก database โดยตรง
         # เดี๋ยวมาเขียน
-        
 
-        pass
+        self.db.connect()
+        query_all= 'select * from course where course_id = %d' %which_course_id
+        message = self.db.fetch_data(query_all)
 
-#^ database : setDataToDB
+        print(message)
+
+        self.setCourseID(message[0]['course_id'])
+        self.setName(message[0]['name'])
+        self.setYear(message[0]['YEAR'])
+        self.setAnnounceL_Status(message[0]['description'])
+        self.setWaitingL_Status(message[0]['image'])
+        self.setDescription(message[0]['adate'])
+        self.setImage(message[0]['wdate'])
+        self.setAdate(message[0]['cdate'])
+        self.setWdate(message[0]['qtype'])
+        self.setCdate(message[0]['contact'])
+        self.setQualification_type(message[0]['qtype'])
+        self.setContact(message[0]['contact'])
+
+        query_history = 'select * from history'
+        message_history = self.db.fetch_data(query_history)
+        print('message_history :', message_history)
+        # self.setRegisteredStuNo(message[0]['']) #! สงสัยได้ใช่ right outer join
+        # self.setMaxTA(message[0][''])
+        # self.setNumOfTA(message[0][''])
+
+        query_enroll = 'select * from enroll where course_id = %d' %which_course_id
+        message_enroll = self.db.fetch_data(query_enroll)
+
+        # print(message_enroll)
+
+        # print(len(message_enroll))
+        self.setNumOfStuEnroll(len(message_enroll))
+
+        #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
+        # self.setRequirement(message[0][''])
+        # self.setReqToFill(message[0][''])
+
+
+#^ db setter : setDataToDB
     def setDataToDB(self):
         """ยังไม่ได้ทำ"""
         # เป็น method สำหรับส่งข้อมูลไป database โดยตรง
