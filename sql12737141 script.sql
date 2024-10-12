@@ -44,9 +44,12 @@ create table sql12737141.prof_req (
 describe sql12737141.course;
 describe sql12737141.enroll;
 DESCRIBE sql12737141.grade;
-desc
 describe sql12737141.professor;
+describe sql12737141.prof_course;
+describe sql12737141.prof_req;
 describe sql12737141.student;
+describe sql12737141.student_req;
+describe sql12737141.wage;
 
 
 -- alter table modify
