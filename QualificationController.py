@@ -6,8 +6,14 @@ class getInfoFromDB:
         self.studentId = studentId
         self.Course = [CourseModel() for _ in range(num)]
         self.Student = StudentModel()
-        self.db 
+        self.db = MySQLDatabase()
 
+    def getNumOfCourse(self):
+        self.db.connect()
+        query = "select count(course_id) from course"
+        num = self.db.fetch_data(query)
+        return num
+        
 
     def setStudentModel(self):
         self.Student.setStudentID
