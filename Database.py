@@ -1,0 +1,45 @@
+from fastapi import FastAPI
+import mysql.connector
+from mysql.connector import Error
+
+class MySQLDatabase:
+    def __init__(self, host, user, password, database, port):
+        self.host = "sql12.freesqldatabase.com"
+        self.user = "sql12737141"
+        self.password = "J4SDu1KBvf"
+        self.database = "sql12737141"
+        self.port = "3306"
+        self.connection = None
+
+    def connect(self):
+        try:
+            self.connection = mysql.connector.connect(
+                host=self.host,
+                user=self.user,
+                password=self.password,
+                database=self.database,
+                port=self.port
+            )
+            if self.connection.is_connected():
+                print("Connected to the database")
+        except Error as e:
+            print(f"Error while connecting to MySQL: {e}")
+
+    def fetch_data(self, query):
+        cursor = None
+        result = None
+        try:
+            cursor = self.connection.cursor(dictionary=True)
+            cursor.execute(query)
+            result = cursor.fetchall()
+        except Error as e:
+            print(f"Error while fetching data: {e}")
+        finally:
+            if cursor:
+                cursor.close()
+        return result
+
+    def close(self):
+        if self.connection.is_connected():
+            self.connection.close()
+            print("Connection closed")
