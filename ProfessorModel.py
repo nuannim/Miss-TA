@@ -56,7 +56,16 @@ class ProfessorModel:
         self._prof_id = prof_id
 
 
+
+
+#######################################################^
+#######################################################^
+
+
+
+
 #^ db getter
+
     def getDataFromDB(self, which_id):
         '''get data from database then set it into ProfessorModel.py attribute'''
         self.db.connect()
@@ -91,5 +100,6 @@ class ProfessorModel:
         self.setProfId(which_id)
 
 #^ db setter
+
     def setDataToDB(self):
         pass
