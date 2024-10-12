@@ -17,6 +17,33 @@ class ProfOperationController:
     def nullCheck(self):
         pass
 
+#^ old
+    # def sendToDatabase(self, 
+    #                    course : CourseModel = None,
+    #                    pCourse : ProfCourseView = None):
+
+    #     course.setName(pCourse.getcName())
+    #     course.setCourseID(pCourse.getcID())
+    #     course.setDescription(pCourse.getdesc())
+    #     course.setImage(pCourse.getimage())
+    #     course.setRequirement(pCourse.getreq())
+    #     course.setReqToFill(pCourse.getreq_to_fill())
+    #     course.setAdate(pCourse.getadate())
+    #     course.setWdate(pCourse.getwdate())
+    #     course.setCdate(pCourse.getcdate())
+    #     course.setQualification_type(pCourse.getqtype())
+    #     course.setContact(pCourse.getcontact())
+
+    #     print("send to database succesfully")
+
+    # def getInfoFromDatabase(self,
+    #                         course : CourseModel = None, 
+    #                         pCourse : ProfCourseView = None): # get course from db
+        
+        # pass
+### ^
+
+#^ new
     def sendToModel(self, course : CourseModel, 
                        cName, cID, desc, image, req, reqToFill, adate, wdate, cdate, qtype, contact):
         course.setName(cName)
@@ -63,6 +90,10 @@ class ProfOperationController:
                                 # course.getQualification_type(),
                                 # course.getContact()
                                 # )
+
+### ^
+
+
 
     def popUp(self):
         pass

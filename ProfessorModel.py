@@ -1,3 +1,5 @@
+from Database import *
+
 class ProfessorModel:
     def __init__(self, first_name="", last_name="", num_of_course=0, course=None, prof_id=""):
         self._first_name = first_name
@@ -5,6 +7,8 @@ class ProfessorModel:
         self._num_of_course = num_of_course
         self._course = course if course is not None else []
         self._prof_id = prof_id
+
+        self.db = MySQLDatabase()
 
 #^ getter
 
@@ -42,3 +46,14 @@ class ProfessorModel:
 
     def setProfId(self, prof_id):
         self._prof_id = prof_id
+
+
+#^ db getter
+    def getAllDataFromDB(self):
+        self.db.connect()
+        query = "select "
+        pass
+
+#^ db setter
+    def setDataToDB(self):
+        pass
