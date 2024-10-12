@@ -24,8 +24,10 @@ body {
     border-radius: 16px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: auto; /* เปิดการ scroll อัตโนมัติ */
-    max-height: 85vh;
+    overflow: scroll;
+    overflow-y: auto; /* เปิดการ scroll แนวตั้ง */
+    overflow-x: hidden; /* ซ่อนการ scroll แนวนอน */
+    max-height: 80vh;
 }
 
 .container header {
@@ -92,7 +94,7 @@ body {
 
 .select-box3 label {
     color: #333;
-    margin-right: 5px; /* ระยะห่างระหว่างป้ายกับ dropdown ให้ชิดกันที่สุด */
+    margin-right: 20px; /* ระยะห่างระหว่างป้ายกับ dropdown ให้ชิดกันที่สุด */
 }
 
 .select-box3 select {
@@ -101,6 +103,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 0 10px;
+    
     color: white; /* สีข้อความเป็นสีขาว */
     background-color: #ffb866; /* สีพื้นหลังของ dropdown */
     cursor: pointer;
