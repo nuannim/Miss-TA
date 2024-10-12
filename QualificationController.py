@@ -1,10 +1,12 @@
 from StudentModel import *
 from CourseModel import *
+from Database import *
 class getInfoFromDB:
     def __init__(self,studentId,num):
         self.studentId = studentId
         self.Course = [CourseModel() for _ in range(num)]
         self.Student = StudentModel()
+        self.db 
 
 
     def setStudentModel(self):
