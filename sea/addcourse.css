@@ -362,11 +362,11 @@ body{
 
 .form .input-box3 input{
     position: relative;
-    height: 50px;
-    /* width: 30%; */
+    height: 4vh;
+    width: 30%;
     outline: none;
-    font-size: 1rem;
-    color: #707070;
+    font-size: 1.8vh;
+    color: #000000;
     margin-top: 8px;
     margin-left: 25px;
     border: 1px solid #ddd;
