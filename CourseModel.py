@@ -159,14 +159,17 @@ class CourseModel:
     def setReqToFill(self, req_to_fill):
         self._req_to_fill = req_to_fill
 
-#^ database : getDataFromDatabase
-    def getDataFromDatabase(self):
+#^ database : getDataFromDB
+    def getDataFromDB(self):
         # เป็น method สำหรับดึงจาก database โดยตรง
         # เดี๋ยวมาเขียน
+        
+
         pass
 
-#^ database : setDataToDatabase
-    def setDataToDatabase(self):
+#^ database : setDataToDB
+    def setDataToDB(self):
+        """ยังไม่ได้ทำ"""
         # เป็น method สำหรับส่งข้อมูลไป database โดยตรง
         # เดี๋ยวมาเขียน
         pass

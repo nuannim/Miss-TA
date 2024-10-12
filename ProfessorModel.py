@@ -102,4 +102,5 @@ class ProfessorModel:
 #^ db setter
 
     def setDataToDB(self):
+        '''ยังไม่ได้ทำ'''
         pass
