@@ -76,6 +76,7 @@ body{
     margin-left: auto; 
     margin-right: auto;
     margin-bottom: 1%;
+    height: auto;
 }
 
 
@@ -88,21 +89,22 @@ body{
 
     /*cjay แก้*/
     padding-left: 2%;
-    /*padding-bottom: 2%;*/
+    padding-bottom: 1%;
 }
 
-.input-box label{
+.input-box label{ /*textของแต่ละข้อ, -> ชื่อวิชา รหัสวิชา คำอธิบาย*/
     color: #333;
     margin-right: 20px;
+    font-size: 1.8vh;
 }
 
 .form .input-box input{
     position: relative;
-    height: 50px;
+    height: 4vh;
     width: 30%;
     outline: none;
-    font-size: 1rem;
-    color: #707070;
+    font-size: 1.8vh;
+    color: #000000;
     margin-top: 8px;
     margin-left: 25px;
     border: 1px solid #ddd;
@@ -116,29 +118,30 @@ body{
 
 .form .input-box textarea{
     position: relative;
-    height: 100px;
+    height: 10vh;
     width: 30%;
     outline: none;
-    font-size: 1rem;
-    color: #707070;
-    margin-top: 8px;
+    font-size: 1.8vh;
+    color: #000000;
+    margin-top: 1%;
     /* margin-left: 25px; */
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 20px 15px;
+    padding: 1vh 1.5vh;
 }
 
 .form .column {
     display: flex;
     align-items: center;
-    column-gap: 15px;
+    /*column-gap: 0.2vh;*/
 }
 
 .form .input-box input[type="file"] {
-    margin-left: 20px;
+    margin-left: 1.5vh;
+    padding: 0;
     border: none;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 1.2vh;
 }
 
 .input-box input :focus{
@@ -151,12 +154,14 @@ body{
     height: 30px; 
     padding: 0 15px; 
     color: #ffffff;
-    font-size: 0.85rem;
+    font-size: 1.8vh;
     font-weight: 400;
     border: none;
-    border-radius: 100px; 
+    border-radius: 20vh; 
     background-color: #ffb866; 
     cursor: pointer;
+
+    border: 1px solid green;
 }
 
 
