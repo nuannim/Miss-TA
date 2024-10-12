@@ -64,10 +64,11 @@ class ProfessorModel:
         #* query firstname / lastname
         query = "select * from professor where prof_id = %d" %which_id
         message = self.db.fetch_data(query)
-        # print(message[which_id-1]["firstname"])
+        
+        print(message)
 
-        self.setFirstName(message[which_id-1]["firstname"])
-        self.setLastName(message[which_id-1]["lastname"])
+        self.setFirstName(message[0]["firstname"])
+        self.setLastName(message[0]["lastname"])
         # self.setNumOfCourse(message[which_id-1]["num_of_course"])
 
         #* query prof_course 
