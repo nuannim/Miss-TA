@@ -197,7 +197,7 @@ class CourseModel:
         query_history = 'select * from history'
         message_history = self.db.fetch_data(query_history)
         print('message_history :', message_history)
-        # self.setRegisteredStuNo(message[0]['']) #! สงสัยได้ใช่ right outer join
+        # self.setRegisteredStuNo(message[0]['']) #! สงสัยได้ใช่ equi join
         # self.setMaxTA(message[0][''])
         # self.setNumOfTA(message[0][''])
 

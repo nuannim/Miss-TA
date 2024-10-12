@@ -54,8 +54,3 @@ where course_id = 104;
 alter table sql12737141.enroll
 MODIFY enroll_id int AUTO_INCREMENT;
 
-select history_id
-FROM history
-where enroll_id = (select enroll_id
-                from enroll
-                where course_id = 102);
