@@ -103,7 +103,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 0 10px;
-    
+    font-size: 1.7vh;
     color: white; /* สีข้อความเป็นสีขาว */
     background-color: #ffb866; /* สีพื้นหลังของ dropdown */
     cursor: pointer;
