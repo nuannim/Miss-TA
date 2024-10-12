@@ -95,7 +95,7 @@ body{
 .input-box label{ /*textของแต่ละข้อ, -> ชื่อวิชา รหัสวิชา คำอธิบาย*/
     color: #333;
     margin-right: 20px;
-    font-size: 1.8vh;
+    font-size: 1.7vh;
 }
 
 .form .input-box input{
@@ -103,7 +103,7 @@ body{
     height: 4vh;
     width: 30%;
     outline: none;
-    font-size: 1.8vh;
+    font-size: 1.5vh;
     color: #000000;
     margin-top: 8px;
     margin-left: 25px;
@@ -121,7 +121,7 @@ body{
     height: 10vh;
     width: 30%;
     outline: none;
-    font-size: 1.8vh;
+    font-size: 1.5vh;
     color: #000000;
     margin-top: 1%;
     /* margin-left: 25px; */
@@ -151,7 +151,7 @@ body{
 
 .form  button {
     margin-left: 20px; 
-    height: 30px; 
+    height: 3.5vh; 
     padding: 0 15px; 
     color: #ffffff;
     font-size: 1.8vh;
@@ -160,8 +160,7 @@ body{
     border-radius: 20vh; 
     background-color: #ffb866; 
     cursor: pointer;
-
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 
@@ -217,12 +216,12 @@ body{
 
 .choose label {
     font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
-    font-size: 1 rem; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
     color: #333; /* ใช้สีข้อความเดียวกัน */
 }
 .option label {
     font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
-    font-size: 1 rem; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
     color: #333; /* ใช้สีข้อความเดียวกัน */
 }
 
@@ -261,12 +260,12 @@ body{
 
 .choose2 label {
     font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
-    font-size: 1 rem; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
     color: #333; /* ใช้สีข้อความเดียวกัน */
 }
 .option2 label {
     font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
-    font-size: 1 rem; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
     color: #333; /* ใช้สีข้อความเดียวกัน */
 }
 
@@ -280,16 +279,16 @@ body{
 }
 
 .select-box select{
-    height: 40px;
-    /* width: 50%; */
+    height: 4vh;
+    /* width: 30%; */
     outline: none;
     border: none;
     padding: 0 10px;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.7vh;
     /* margin-top: 15px; */
     /* margin-right: 500px; */
-    border-radius: 8px;
+    border-radius: 1vh;
     background-color: #ffb866;
     cursor: pointer;
 
@@ -328,16 +327,16 @@ body{
 }
 
 .select-box2 select{
-    height: 40px;
+    height: 4vh;
     /* width: 40%; */
     outline: none;
     border: none;
-    padding: 0 10px;
+    padding: 0 20px;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.7vh;
     /* margin-top: 15px; */
     /* margin-right: 710px; */
-    border-radius: 8px;
+    border-radius: 1vh;
     background-color: #ffb866;
     cursor: pointer;
 
@@ -349,8 +348,6 @@ body{
     width: 100%;
     margin-top: 20px;
     margin-left: 30px;
-
-    /*cjay แก้*/
     padding-left: 2%;
     /* padding-bottom: 2%; */
 }
@@ -358,6 +355,7 @@ body{
 .input-box3 label{
     color: #333;
     margin-right: 20px;
+    font-size: 1.7vh;
 }
 
 .form .input-box3 input{
@@ -365,7 +363,7 @@ body{
     height: 4vh;
     width: 30%;
     outline: none;
-    font-size: 1.8vh;
+    font-size: 1.5vh;
     color: #000000;
     margin-top: 8px;
     margin-left: 25px;
@@ -383,10 +381,10 @@ body{
 
     button{
         margin-left: 5px; 
-        height: 30px; 
+        height: 3.5vh; 
         padding: 0 15px; 
         color: #ffffff;
-        font-size: 0.85rem;
+        font-size: 1.7vh;
         font-weight: 400;
         border: none;
         border-radius: 100px; 
@@ -424,14 +422,14 @@ body{
     align-items: center;
 }
 .but button{
-    height: 45px;
+    height: 5vh;
     width: 10%;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.7vh;
     font-weight: 400;
     margin-top: 30px;
     border: none;
-    border-radius: 16px;
+    border-radius: 1vh;
     cursor: pointer;
     transition: all0.2s ease;
     background-color: #ffb866;
