@@ -42,6 +42,12 @@ values (66070999, 102);
 insert into enroll(student_id, course_id)
 values (66070999, 104);
 
+insert into history(enroll_id, ta_status)
+VALUES (1, 'passed'), (3, 'waiting');
+
+insert into history(enroll_id, ta_status)
+VALUES (2, 'not passed');
+
 update course
 SET name = 'pc'
 where course_id = 104;
@@ -53,4 +59,14 @@ where course_id = 104;
 
 alter table sql12737141.enroll
 MODIFY enroll_id int AUTO_INCREMENT;
+
+select *
+from history, enroll, student
+where history.enroll_id = enroll.enroll_id
+and enroll.student_id = student.student_id;
+
+select *
+from history, enroll
+where history.enroll_id = enroll.enroll_id
+ORDER BY history_id;
 

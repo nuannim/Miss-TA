@@ -176,7 +176,9 @@ class CourseModel:
         # เดี๋ยวมาเขียน
 
         self.db.connect()
-        query_all= 'select * from course where course_id = %d' %which_course_id
+        
+        #* query all
+        query_all = 'select * from course where course_id = %d' %which_course_id
         message = self.db.fetch_data(query_all)
 
         print(message)
@@ -194,13 +196,19 @@ class CourseModel:
         self.setQualification_type(message[0]['qtype'])
         self.setContact(message[0]['contact'])
 
-        query_history = 'select * from history'
+        #* query history
+        # query_history = 'select * from history'
+        query_history = 'select * from history, enroll\
+                        where history.enroll_id = enroll.enroll_id\
+                        and course_id = %d' %which_course_id
         message_history = self.db.fetch_data(query_history)
-        print('message_history :', message_history)
-        # self.setRegisteredStuNo(message[0]['']) #! สงสัยได้ใช่ equi join
-        # self.setMaxTA(message[0][''])
-        # self.setNumOfTA(message[0][''])
+        # print('message_history :', message_history)
+        # print('ta registered stu number :', len(message_history))
+        self.setRegisteredStuNo(len(message_history))
+        # self.setMaxTA(message[0]['']) #! คำนวณยังไง
+        # self.setNumOfTA(message[0]['']) #! อันนี้อะไร
 
+        #* query_enroll
         query_enroll = 'select * from enroll where course_id = %d' %which_course_id
         message_enroll = self.db.fetch_data(query_enroll)
 

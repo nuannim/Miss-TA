@@ -16,6 +16,7 @@ describe sql12737141.wage;
 select * from sql12737141.course;
 select * from sql12737141.enroll;
 select * from sql12737141.grade;
+select * from sql12737141.history;
 select * from sql12737141.professor;
 select * FROM sql12737141.prof_course;
 select * from sql12737141.prof_req;
