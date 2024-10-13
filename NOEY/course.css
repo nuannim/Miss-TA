@@ -31,7 +31,7 @@ body {
 }
 
 .container header {
-    font-size: 1.5rem;
+    font-size: 3vh; /* ปรับจาก 1.5rem เป็น vh */
     color: #FB9520;
     font-weight: 500;
     text-align: center;
@@ -74,7 +74,7 @@ body {
     height: 50px;
     width: 30%;
     outline: none;
-    font-size: 1rem;
+    font-size: 2vh; /* ปรับจาก 1rem เป็น vh */
     color: #707070;
     margin-top: 8px;
     border: 1px solid #ddd;
@@ -125,7 +125,7 @@ body {
     height: 45px;
     width: 10%;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 2vh; /* ปรับจาก 1rem เป็น vh */
     margin-top: 30px;
     border: none;
     border-radius: 16px;
@@ -190,7 +190,7 @@ body {
     position: absolute;
     overflow: hidden;
     font-family: 'Prompt', sans-serif;
-    font-size: 20px;
+    font-size: 2vh;
     font-weight: 500;
     white-space: nowrap;
     line-height: 40px;
