@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Course</title>
+    <link rel="stylesheet" href="../static/course.css">
+    <link rel="stylesheet" href="../static/popup.css">
+</head>
+<body>
+    <section class="container">
+        {% for course in courses %}
+        <header>{{course.name}}</header>
+        
+        
+        <div class="subject-details">
+            <p>*คำอธิบายรายวิชา*</p>
+            <p>{{course.description}}</p>
+        </div>
+        {% endfor %}
+
+        <form action="#" class="form">
+            {% for req in req0 %}
+            <div class="input-box">
+                <label for="reason">-{{req.qest0}}:</label>
+            </div>
+            {% endfor %}
+            {% for req in req1 %}
+            <div class="input-box">
+                <label for="reason">-{{req.qest}}:</label>
+                <input type="text" id="reason" placeholder="กรอกเหตุผล" required>
+            </div>
+            {% endfor %}
+                 <!--  -->
+            <div class="colunm"></div>
+                <div class="select-box3">
+                    <div class="input-box">
+                        <label for="text">-บัญชีธนาคาร :</label>
+                        <select>
+                            <option>ธนาคารกรุงเทพ</option>
+                            <option>ธนาคารกสิกรไทย</option>
+                            <option>ธนาคารกรุงไทย</option>
+                            <option>ธนาคารไทยพาณิชย์</option>
+                            <option>ธนาคารออมสิน</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="input-box">
+                <label for="text">-เลขบัญชี :</label>
+                <input type="" placeholder="กรอกเลขบัญชี" required>
+            </div>
+            <div class="teachar-details">
+                <p>ช่องทางการติดต่ออาจารย์</p>
+                <p>เบอร์โทร อาจารย์ อุอิอะ อู้อี้ : 099-909-1910</p>
+            </div>
+            <!--  -->
+            <div class="but">
+                <button onclick="openAddCoursePopup()">Submit</button>
+            </div>
+        </form>
+
+        <div class="wrapper">
+            <ul class="menu">
+                <li class="list-item">
+                    <a href="../CJ/admin_subject.html" class="home">
+                        <span>Home</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="popup_box">
+            <div class="popup">
+                <p>ทำการสมัคร TA สำเร็จ</p>
+            </div>
+            <div class="close_popup_button"></div>
+        </div>
+    </section>
+
+    <script src="../sea/addcourse.js"></script>
+    <!-- <script>
+        function submitForm() {
+            alert("ทำการสมัคร TA สำเร็จ");
+        }
+    </script>  -->
+    <!-- ชัชขอcommentตรงนี้นะะ -->
+</body>
+</html>
