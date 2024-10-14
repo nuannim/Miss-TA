@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Course</title>
+    <link rel="stylesheet" href="course.css">
+    <link rel="stylesheet" href="../CHAT/popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container">
+        <header>Physical Computing</header>
+        
+        <div class="subject-details">
+            <p>*คำอธิบายรายวิชา*</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit esse eius, iure doloribus, mollitia harum soluta cupiditate sint, maxime facilis inventore asperiores consequuntur. Quibusdam aliquid sint vitae possimus pariatur sapiente totam fugiat ratione deserunt voluptate, illum atque esse recusandae, eligendi nihil. Quia est fugit a ipsam non eaque dolores doloremque! Iste aliquid doloremque ullam cupiditate eaque vitae velit quisquam sapiente amet incidunt, laborum adipisci, placeat repellat. Labore nulla consequuntur temporibus quisquam alias sapiente quibusdam at sequi ab hic impedit aliquid, quis possimus! Dignissimos commodi sit mollitia sequi, doloribus nam quis obcaecati quisquam explicabo, vel nulla, impedit animi enim totam vitae.</p>
+        </div>
+
+        <form action="#" class="form">
+            <div class="input-box">
+                <label for="reason">-คำถามที่ไม่ต้องตอบ</label>
+            </div>
+            <div class="input-box">
+                <label for="reason">-เหตุผลที่อยากเป็น TA วิชานี้ :</label>
+                <input type="text" id="reason" placeholder="กรอกเหตุผล" required>
+            </div>
+            <div class="input-box">
+                <label for="food">-เลี้ยงข้าวอาจารย์ได้มั้ย :</label>
+                <input type="text" id="food" placeholder="กรอกเลี้ยงข้าวอาจารย์ได้ปุ" required>
+            </div>
+            
+            <!--  -->
+            <div class="colunm"></div>
+                <div class="select-box3">
+                    <div class="input-box">
+                        <label for="text">-บัญชีธนาคาร :</label>
+                        <select>
+                            <option>ธนาคารกรุงเทพ</option>
+                            <option>ธนาคารกสิกรไทย</option>
+                            <option>ธนาคารกรุงไทย</option>
+                            <option>ธนาคารไทยพาณิชย์</option>
+                            <option>ธนาคารออมสิน</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="input-box">
+                <label for="text">-เลขบัญชี :</label>
+                <input type="" placeholder="กรอกเลขบัญชี" required>
+            </div>
+            <div class="teachar-details">
+                <p>ช่องทางการติดต่ออาจารย์</p>
+                <p>เบอร์โทร อาจารย์ อุอิอะ อู้อี้ : 099-909-1910</p>
+            </div>
+            <!--  -->
+            <div class="but">
+                <button onclick="openAddCoursePopup()">Submit</button>
+            </div>
+        </form>
+
+        <div class="wrapper">
+            <ul class="menu">
+                <li class="list-item">
+                    <a href="../CJ/admin_subject.html" class="home">
+                        <span>Home</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="popup_box">
+            <div class="popup">
+                <p>ทำการสมัคร TA สำเร็จ</p>
+            </div>
+            <div class="close_popup_button"></div>
+        </div>
+    </section>
+
+    <script src="../sea/addcourse.js"></script>
+    <!-- <script>
+        function submitForm() {
+            alert("ทำการสมัคร TA สำเร็จ");
+        }
+    </script>  -->
+    <!-- ชัชขอcommentตรงนี้นะะ -->
+</body>
+</html>
