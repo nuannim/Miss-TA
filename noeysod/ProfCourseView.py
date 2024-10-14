@@ -1,13 +1,3 @@
-class ProfCourseView:
-    
-
-
-
-
-
-
-
-
 
 # ###! โอ้ยน้องคะ view เอาไว้ใส่การ display เท่านั้นค่ะ ใส่ attribute ไม่ได้ เดี๋นยมาแก้อย่างหนัด
 # class ProfCourseView:
