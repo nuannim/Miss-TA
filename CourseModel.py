@@ -1,6 +1,7 @@
 from Database import *
 
 class CourseModel:
+    '''ดูแลตาราง course / enroll / prof_req / history'''
     def __init__(self, 
                  course_id="", 
                  name="", 
@@ -43,6 +44,7 @@ class CourseModel:
 
         # requirement + required to fill?
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
+        #! รอเชื่อมก่อนค่อยว่ากัน
         self._requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
         self._req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
 
@@ -102,6 +104,7 @@ class CourseModel:
     
     # requirement + required to fill?
     #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
+    #! รอเชื่อมก่อนค่อยว่ากัน
 
     def getRequirement(self):
         return self._requirement
@@ -163,6 +166,8 @@ class CourseModel:
 
     # requirement + required to fill?
     #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
+    #! รอเชื่อมก่อนค่อยว่ากัน
+
     def setRequirement(self, requirement):
         self._requirement = requirement
     

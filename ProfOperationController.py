@@ -1,13 +1,17 @@
 from ProfCourseView import *
 from ProfCourseAddnEditView import *
 
-from CourseModel import *
+from CourseModel import *       #* done
+from ProfessorModel import *    #* done
 
 class ProfOperationController:
-
-    def __init__(self, pCourse, pCourseAddEdit, course):
-        self.pCourse = pCourse
-        self.pCourseAddEdit = pCourseAddEdit
+    def __init__(self, 
+                 pCourseV : ProfCourseView, 
+                 pCourseAddEditV : ProfCourseAddnEditView, 
+                 course : CourseModel,
+                 ):
+        self.pCourseV = pCourseV
+        self.pCourseAddEditV = pCourseAddEditV
         self.course = course
 
     def getInfoFromDisplay():
