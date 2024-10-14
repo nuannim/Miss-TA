@@ -1,0 +1,466 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+body{
+    background-color: #C0DFFF;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* margin-top: 0px; */
+    justify-content: center;
+    padding: 20px;
+
+    /*cjayแก้*/
+    width: 100%;
+
+}
+
+.topic{
+    color: #ffb866;
+    padding-left: 4%;
+    padding-top: 1%;
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-size: 4.5vh;
+    margin-right: auto;
+    text-decoration: underline;
+
+}
+
+/*.text{
+    color: #333;
+    font-family: "Prompt", sans-serif;
+    font-size: 1.7vh;
+    padding-left: 0%;
+}*/
+
+.container{
+    position: relative;
+    /*max-width: 1400px;*/
+    width: 100%;
+    padding: 25px;
+    margin-left: 110px;
+    margin-top: -20px;
+    border-radius: 35px;
+    background-color: #fff;
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  
+    overflow: scroll;
+    overflow-y: auto; /* เปิดการ scroll แนวตั้ง */
+    overflow-x: auto; /* ซ่อนการ scroll แนวนอน */
+    /*max-height: 85vh; //เปลี่ยนจากจำกัดกรอบเป็นปล่อยให้กรอบยาวไปถึงข้างล่างแทน*/ 
+
+    /*cjay แก้*/
+    margin-top: 2%;
+    justify-content: center;
+    max-width: 80%;
+}
+
+
+.container header{
+    color: #FB9520;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+.container .form{
+    margin-top: 3%;
+    /*padding: auto;
+
+    /*cjay แก้*/
+    width: 90%;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 1%;
+    height: auto;
+}
+
+
+.form .input-box{
+    display: flex; /* Aligns children in a row */
+    align-items: center;
+    width: 100%;
+    /* margin-top: 20px; */
+    margin-left: 30px;
+
+    /*cjay แก้*/
+    padding-left: 2%;
+    padding-bottom: 1%;
+}
+
+.input-box label{ /*textของแต่ละข้อ, -> ชื่อวิชา รหัสวิชา คำอธิบาย*/
+    color: #333;
+    margin-right: 20px;
+    font-size: 1.8vh;
+}
+
+.form .input-box input{
+    position: relative;
+    height: 4vh;
+    width: 30%;
+    outline: none;
+    font-size: 1.8vh;
+    color: #000000;
+    margin-top: 8px;
+    margin-left: 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.input-box input :focus{
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .input-box textarea{
+    position: relative;
+    height: 10vh;
+    width: 30%;
+    outline: none;
+    font-size: 1.8vh;
+    color: #000000;
+    margin-top: 1%;
+    /* margin-left: 25px; */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1vh 1.5vh;
+}
+
+.form .column {
+    display: flex;
+    align-items: center;
+    /*column-gap: 0.2vh;*/
+}
+
+.form .input-box input[type="file"] {
+    margin-left: 1.5vh;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.2vh;
+}
+
+.input-box input :focus{
+    box-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+
+.form  button {
+    margin-left: 20px; 
+    height: 30px; 
+    padding: 0 15px; 
+    color: #ffffff;
+    font-size: 1.8vh;
+    font-weight: 400;
+    border: none;
+    border-radius: 20vh; 
+    background-color: #ffb866; 
+    cursor: pointer;
+
+    border: 1px solid green;
+}
+
+
+/* check box */
+.check{  
+    display: flex;
+    align-items: center; 
+    margin-left: 20px; 
+}
+.form .check input[type="checkbox"] {
+    height: 20px; 
+    width: 20px; 
+    margin-top: 0;  
+
+}
+
+.form .input-box input[type="date"] {
+    width:65%;
+}
+
+
+
+.choose-box {
+    margin-left: 5%; 
+    margin-top: 30px;
+    
+    
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    column-gap: 2%;
+    /* margin-left: -10px;   */
+    margin-bottom: 30px;
+    
+    
+}
+.choose {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.choose input {
+    margin-left: 50px; 
+}
+
+.select-box{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.select-box select{
+    height: 40px;
+    /* width: 50%; */
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    /* margin-top: 15px; */
+    /* margin-right: 500px; */
+    border-radius: 8px;
+    background-color: #ffb866;
+    cursor: pointer;
+
+
+}
+
+/* ค่าจ้าง จนวัน */
+.daymon {
+    /* display: flex; */
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: -60px;
+}
+
+.daymon input {
+    width: 20%;
+    margin-left: 25px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.daymon label {
+    margin-left: 60px;
+    color: #333;
+}
+
+
+.select-box2{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.select-box2 select{
+    height: 40px;
+    /* width: 40%; */
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    /* margin-top: 15px; */
+    /* margin-right: 710px; */
+    border-radius: 8px;
+    background-color: #ffb866;
+    cursor: pointer;
+
+}
+
+.form .input-box3{
+    display: flex; /* Aligns children in a row */
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.input-box3 label{
+    color: #333;
+    margin-right: 20px;
+}
+
+.form .input-box3 input{
+    position: relative;
+    height: 50px;
+    width: 20%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    /* margin-left: 25px; */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.numofta{
+    margin-left: 60px;
+
+    button{
+        margin-left: 5px; 
+        height: 30px; 
+        padding: 0 15px; 
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 400;
+        border: none;
+        border-radius: 100px; 
+        background-color: #ffb866; 
+        cursor: pointer; 
+    }
+}
+
+.select-box3{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.select-box3 select{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-right: 900px;
+    border-radius: 8px;
+    background-color: #ffb866;
+    cursor: pointer;
+
+}
+
+.but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.but button{
+    height: 45px;
+    width: 10%;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all0.2s ease;
+    background-color: #ffb866;
+
+    /*cjayเพิ่ม เพิ่มระยะห่างของปุ่มกับพทด้านบน*/
+    margin-top: 5%;
+}
+.but button:hover{
+    background-color: #FFD3A1;
+    border: 0.5vh solid #C0DFFF;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper .title{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.menu{
+    position: fixed;
+    top: 250px;
+    left: 30px;
+    width: 80px;
+    height: 400px;
+    background-color: #FFD3A1;
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+
+.list-item a{
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 9.5px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    color: black;
+    position: relative;
+    border-radius: 50%;
+    position: relative;
+    background-image: url(home_icon.png);
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.list-item a:hover{
+    border: solid 6px #C0DFFF;
+    padding: 0;
+}
+
+.list-item a span{
+    width: 0;
+    top: 7px;
+    left: 60px;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 40px;
+    transition: 0.20s;
+    border-radius: 25px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+    
+}
+
+.list-item a:hover span{
+    width: auto;
+    padding: 0 20px;
+    overflow: visible;
+}
+
+.list-item *{
+    background: white;
+}
+
+.home {
+    width: 5px;
+    height: 5px;
+    display: block;
+    background-image: url('home_icon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+

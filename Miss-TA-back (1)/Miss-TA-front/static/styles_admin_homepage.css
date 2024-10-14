@@ -1,0 +1,280 @@
+.header{
+    display: flex;
+    justify-content: space-between; /* แยกหัวข้อและปุ่มไปคนละข้าง */
+    align-items: center; /* จัดให้ตรงกลางตามแนวแกน y */
+    padding: 0 5%; /* เพิ่ม padding ข้าง ๆ */
+}
+
+.box {
+    width: 85%;
+    height: 88vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 35px;
+    margin: auto;
+    margin-top: 3%;
+    text-align: left;
+}
+
+body {
+    background-color: #C0DFFF;
+}
+
+.topic{
+    color: #74B9FF;
+    padding-left: 1%;
+    padding-top: 1%;
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-size: 4.5vh;
+    margin-right: auto;
+}
+
+.allsubject{
+    width: 95%;
+    height: 80%;
+    margin-top: 1%;
+    margin-left: 5%;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.allsubject::-webkit-scrollbar
+{
+    width: 2vh;
+    height: auto;
+    background-color: #F5F5F5;
+    border-radius: 2vh;
+}
+.allsubject::-webkit-scrollbar-thumb
+{
+    background: #D9D9D9;
+    border: solid 0.35vh #F5F5F5;
+    border-radius: 2vh;
+}
+.allsubject::-webkit-scrollbar-thumb:hover {
+    background: #c3c3c3;
+}
+
+
+.subjectBox{
+    width: 80%;
+    height: 30%;
+    background-color: white;
+
+    border: solid 2px #D9D9D9;
+    border-radius: 5px;
+    display: flex; /* เพิ่ม flex เพื่อให้กล่องย่อยจัดเรียงในแนวนอน */
+    align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางตามแนวตั้ง */
+    position: relative; /* เพื่อให้ปุ่มกลมอยู่ในตำแหน่งสัมพันธ์กับกรอบนี้ */
+
+    margin-bottom: 2%;
+}
+
+
+.subject-information{
+    height: 90%;
+    width: 100%;
+    padding-right: 1%;
+    flex-direction: column;
+    flex-grow: 1; /* ให้ subject-information ขยายพื้นที่เท่าที่เหลืออยู่ */
+    margin-left: 3%; /* เพิ่มระยะห่างระหว่างภาพกับข้อมูล */
+    margin-right: 8%;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0.5vh;
+}
+
+.subject-name{
+    font-size: 2vh;
+    font-weight: 500;
+    height: auto;;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    
+    width: auto; 
+    margin-top: 0.2%;
+    box-sizing: border-box;
+
+
+}
+
+.subject-description{
+    font-size: 1.6vh;
+    font-weight: 400;
+    color: black;
+    font-family: 'Prompt', sans-serif;   
+    width: 80%;
+    height: 50%;
+    padding-right: 2vh;
+    padding-top: 0.3vh;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    overflow-y: auto;
+}
+.subject-description::-webkit-scrollbar
+{
+    width: 1.4vh;
+    background-color: #F5F5F5;
+    border-radius: 1vh;
+}
+.subject-description::-webkit-scrollbar-thumb
+{
+    background: #D9D9D9;
+    border: solid 0.3vh #F5F5F5;
+    border-radius: 1vh;
+}
+.subject-description::-webkit-scrollbar-thumb:hover {
+    background: #c3c3c3;
+}
+
+.subjectImage img {
+    width: 100%; /* รูปภาพจะปรับขนาดเต็มความกว้างของ container */
+    height: 100%; /* ปรับขนาดอัตโนมัติตามความกว้าง */
+}
+
+.subjectImage {
+    width: 17vh; /* ปรับขนาดความกว้างตามหน้าจอ */
+    height: auto; /* ปรับความสูงตามสัดส่วนของภาพ */
+    flex-shrink: 0; /* ทำให้ subjectImage ไม่ย่อขนาดเมื่อมีพื้นที่น้อย */
+    box-sizing: border-box;
+    margin-left: 2vh;
+    margin-top: 0.5vh;
+}
+
+.view-button{
+    width: 6vh;
+    height: 3vh;
+    background-color: #FFD3A1;
+    text-align: center;
+    font-size: 1.5vh;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 2%;
+    padding-top: 1%;  /* ชัชแก้นะะ คือตัวอักษรมันเยี้ยงไปบนๆนิดนึงเพราะเราแก้tagจาก button เป็น a อ่ะ*/
+
+}
+.view-button:hover {
+    background-color: #d9a973;
+}
+
+.edit-button{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: #C0DFFF;
+    border: solid 0.5vh #FFD3A1;
+    position: absolute;
+    right: 3vh;
+    top: 1.5vh;
+    cursor: pointer;
+    align-items: center;
+    background-image: url(edit_icon.png);
+    background-size: 3vh 3vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.edit-button:hover {
+    background-color: #acccec;
+    border: solid 0.5vh #d9a973;
+}
+
+/*ADD button*/
+.add-button{
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    background-color: #C0DFFF;
+    border: solid 0.5vh #FFD3A1;
+    margin-top: 3vh;
+    margin-right: 5vh;
+    cursor: pointer;
+    background-image: url(add_icon.png);
+    background-size:  4vh 4vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.add-button:hover {
+    background-color: #acccec;
+    border: solid 0.5vh #d9a973;
+}
+
+/*navigation bar*/
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu{
+    position: fixed;
+    top: 25vh;
+    left: 2vh;
+    width: 5vh;
+    height: 40vh;
+    background-color: #FFD3A1;
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-bottom: 1vh;
+}
+
+
+.list-item a{
+    width: 6.5vh;
+    height: 6.5vh;
+    top: 2vh;
+    left: -2.7vh;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    color: black;
+    position: relative;
+    border-radius: 50%;
+    position: relative;
+    background-image: url(home_icon.png);
+    background-size: 3.5vh 3.5vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.list-item a:hover{
+    border: solid 0.65vh #C0DFFF;
+    padding: 0;
+}
+
+.list-item a span{
+    width: 0;
+    top: 0.75vh;
+    left: 6.3vh;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Prompt', sans-serif;
+    font-size: 2vh;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.20s;
+    border-radius: 2vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+    
+}
+
+.list-item a:hover span{
+    width: auto;
+    padding: 0 2vh;
+    overflow: visible;
+}
+
+.list-item *{
+    background: white;
+}
+
+
