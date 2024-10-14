@@ -5,6 +5,7 @@ import uvicorn
 
 app = FastAPI()
 
+app.mount("")
 template = Jinja2Templates(directory='CJ')
 
 @app.get('/', )

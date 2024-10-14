@@ -9,65 +9,102 @@ body{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    /* margin-top: 0px; */
+    margin-top: 70px;
     justify-content: center;
     padding: 20px;
-    
-    
+
+    /*cjayแก้*/
+    width: 100%;
 
 }
 
+.topic{
+    color: #ffb866;
+    padding-left: 4%;
+    padding-top: 1%;
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-size: 4.5vh;
+    margin-right: auto;
+    text-decoration: underline;
+
+}
+
+/*.text{
+    color: #333;
+    font-family: "Prompt", sans-serif;
+    font-size: 1.7vh;
+    padding-left: 0%;
+}*/
+
 .container{
     position: relative;
-    max-width: 1300px;
+    /*max-width: 1400px;*/
     width: 100%;
     padding: 25px;
     margin-left: 110px;
-    margin-top: 50px;
-    border-radius: 16px;
+    margin-top: -20px;
+    border-radius: 35px;
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  
     overflow: scroll;
     overflow-y: auto; /* เปิดการ scroll แนวตั้ง */
-    overflow-x: hidden; /* ซ่อนการ scroll แนวนอน */
-    max-height: 80vh;
-    }
+    overflow-x: auto; /* ซ่อนการ scroll แนวนอน */
+    /*max-height: 85vh; //เปลี่ยนจากจำกัดกรอบเป็นปล่อยให้กรอบยาวไปถึงข้างล่างแทน*/ 
+
+    /*cjay แก้*/
+    margin-top: 2%;
+    justify-content: center;
+    max-width: 80%;
+}
 
 
 .container header{
-    font-size: 3vh; /* เปลี่ยนเป็นหน่วย vh */
     color: #FB9520;
     font-weight: 500;
     text-align: center;
     text-decoration: underline;
-    
 }
 
 
 .container .form{
-    margin-top: 30px;
+    margin-top: 3%;
+    /*padding: auto;
+
+    /*cjay แก้*/
+    width: 90%;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 1%;
+    height: auto;
 }
+
 
 .form .input-box{
     display: flex; /* Aligns children in a row */
     align-items: center;
     width: 100%;
-    margin-top: 20px;
-    margin-left: 60px;
+    /* margin-top: 20px; */
+    margin-left: 30px;
+
+    /*cjay แก้*/
+    padding-left: 2%;
+    padding-bottom: 1%;
 }
 
-.input-box label{
+.input-box label{ /*textของแต่ละข้อ, -> ชื่อวิชา รหัสวิชา คำอธิบาย*/
     color: #333;
     margin-right: 20px;
+    font-size: 1.7vh;
 }
 
 .form .input-box input{
     position: relative;
-    height: 50px;
+    height: 4vh;
     width: 30%;
     outline: none;
-    font-size: 2vh; /* ปรับขนาดตัวอักษรเป็น vh */
-    color: #707070;
+    font-size: 1.5vh;
+    color: #000000;
     margin-top: 8px;
     margin-left: 25px;
     border: 1px solid #ddd;
@@ -81,29 +118,30 @@ body{
 
 .form .input-box textarea{
     position: relative;
-    height: 100px;
+    height: 10vh;
     width: 30%;
     outline: none;
-    font-size: 2vh; /* ปรับขนาดตัวอักษรเป็น vh */
-    color: #707070;
-    margin-top: 8px;
+    font-size: 1.5vh;
+    color: #000000;
+    margin-top: 1%;
     /* margin-left: 25px; */
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 20px 15px;
+    padding: 1vh 1.5vh;
 }
 
 .form .column {
     display: flex;
-    /* align-items: center; */
-    column-gap: 15x;
+    align-items: center;
+    /*column-gap: 0.2vh;*/
 }
 
 .form .input-box input[type="file"] {
-    margin-left: 20px;
+    margin-left: 1.5vh;
+    padding: 0;
     border: none;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 1.2vh;
 }
 
 .input-box input :focus{
@@ -111,18 +149,21 @@ body{
 }
 
 
-.form .column button {
-    margin-left: 10px; 
-    height: 30px; 
+.form  button {
+    margin-left: 20px; 
+    height: 3.5vh; 
     padding: 0 15px; 
     color: #ffffff;
-    font-size: 0.85rem;
+    font-size: 1.8vh;
     font-weight: 400;
     border: none;
-    border-radius: 100px; 
+    border-radius: 20vh; 
     background-color: #ffb866; 
     cursor: pointer;
+    /* border: 1px solid green; */
+
 }
+
 
 
 /* check box */
@@ -143,19 +184,24 @@ body{
 }
 
 
-
+/* กระบวนการคัดเลือก */
 .choose-box {
-    margin-left: 60px; 
     margin-top: 30px;
-    
-    
+    display: flex; /* Aligns children in a row */
+    align-items: center;
+    width: 100%;
+    /* margin-top: 20px; */
+    margin-left: 30px;
+    padding-left: 2%;
+    /*padding-bottom: 2%;*/  
 }
 
 .option {
     display: flex;
     align-items: center;
-    column-gap: 10px;
-    margin-left: 60px;  
+    /* column-gap: 2%; */
+    /* margin-left: -10px;   */
+    margin-bottom: 30px;
     
     
 }
@@ -170,6 +216,63 @@ body{
     margin-left: 50px; 
 }
 
+.choose label {
+    font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    color: #333; /* ใช้สีข้อความเดียวกัน */
+}
+.option label {
+    font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    color: #333; /* ใช้สีข้อความเดียวกัน */
+}
+
+
+/* รูปแบบการประกาศ */
+.choose-box2 {
+    margin-top: 30px;
+    display: flex; /* Aligns children in a row */
+    align-items: center;
+    width: 100%;
+    /* margin-top: 20px; */
+    margin-left: 30px;
+    padding-left: 2%;
+    /*padding-bottom: 2%;*/  
+}
+
+.option2 {
+    display: flex;
+    align-items: center;
+    /* column-gap: 2%; */
+    /* margin-left: -10px;   */
+    margin-bottom: 30px;
+    
+    
+}
+.choose2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.choose2 input {
+    margin-left: 50px; 
+}
+
+.choose2 label {
+    font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    color: #333; /* ใช้สีข้อความเดียวกัน */
+}
+.option2 label {
+    font-family: "Prompt", sans-serif; /* ใช้ฟอนต์เดียวกัน */
+    font-size: 1.7vh; /* ขนาดเดียวกับฟอนต์ในส่วนอื่น ๆ */
+    color: #333; /* ใช้สีข้อความเดียวกัน */
+}
+
+/* ช่องทางติดต่อ */
+
 .select-box{
     display: flex;
     align-items: center;
@@ -178,23 +281,25 @@ body{
 }
 
 .select-box select{
-    height: 40px;
-    width: 100%;
+    height: 4vh;
+    /* width: 30%; */
     outline: none;
     border: none;
     padding: 0 10px;
     color: #ffffff;
-    font-size: 2vh; /* ปรับขนาดตัวอักษรเป็น vh */
-    margin-top: 15px;
-    margin-right: 700px;
-    border-radius: 8px;
+    font-size: 1.7vh;
+    /* margin-top: 15px; */
+    /* margin-right: 500px; */
+    border-radius: 1vh;
     background-color: #ffb866;
     cursor: pointer;
+
+
 }
 
 /* ค่าจ้าง จนวัน */
 .daymon {
-    /* display: flex; */
+    display: flex;
     align-items: center;
     width: 100%;
     margin-top: 20px;
@@ -224,41 +329,44 @@ body{
 }
 
 .select-box2 select{
-    height: 40px;
-    width: 40%;
+    height: 4vh;
+    /* width: 40%; */
     outline: none;
     border: none;
-    padding: 0 10px;
+    padding: 0 20px;
     color: #ffffff;
-    font-size: 1rem;
-    margin-top: 15px;
-    margin-right: 950px;
-    border-radius: 8px;
+    font-size: 1.7vh;
+    /* margin-top: 15px; */
+    /* margin-right: 710px; */
+    border-radius: 1vh;
     background-color: #ffb866;
     cursor: pointer;
 
 }
 
 .form .input-box3{
-    display: flex; /* Aligns children in a row */
+    display: flex; 
     align-items: center;
     width: 100%;
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 30px;
+    padding-left: 2%;
+    /* padding-bottom: 2%; */
 }
 
 .input-box3 label{
     color: #333;
     margin-right: 20px;
+    font-size: 1.7vh;
 }
 
 .form .input-box3 input{
     position: relative;
-    height: 50px;
-    width: 13%;
+    height: 4vh;
+    width: 30%;
     outline: none;
-    font-size: 1rem;
-    color: #707070;
+    font-size: 1.5vh;
+    color: #000000;
     margin-top: 8px;
     margin-left: 25px;
     border: 1px solid #ddd;
@@ -266,15 +374,19 @@ body{
     padding: 0 15px;
 }
 
+.input-box3 input :focus{
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
 .numofta{
     margin-left: 60px;
 
     button{
         margin-left: 5px; 
-        height: 30px; 
+        height: 3.5vh; 
         padding: 0 15px; 
         color: #ffffff;
-        font-size: 0.85rem;
+        font-size: 1.7vh;
         font-weight: 400;
         border: none;
         border-radius: 100px; 
@@ -283,7 +395,7 @@ body{
     }
 }
 
-.select-box3{
+/* .select-box3{
     display: flex;
     align-items: center;
     margin-top: 15px;
@@ -304,7 +416,7 @@ body{
     background-color: #ffb866;
     cursor: pointer;
 
-}
+} */
 
 .but {
     display: flex;
@@ -312,20 +424,24 @@ body{
     align-items: center;
 }
 .but button{
-    height: 45px;
+    height: 5vh;
     width: 10%;
     color: #ffffff;
-    font-size: 2vh; /* ปรับขนาดตัวอักษรเป็น vh */
+    font-size: 1.7vh;
     font-weight: 400;
     margin-top: 30px;
     border: none;
-    border-radius: 16px;
+    border-radius: 1vh;
     cursor: pointer;
     transition: all0.2s ease;
     background-color: #ffb866;
+
+    /*cjayเพิ่ม เพิ่มระยะห่างของปุ่มกับพทด้านบน*/
+    margin-top: 5%;
 }
 .but button:hover{
     background-color: #FFD3A1;
+    border: 0.5vh solid #C0DFFF;
 }
 
 .wrapper{
@@ -415,6 +531,9 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+
 
 .del {
     position: absolute;

@@ -4,7 +4,7 @@
   <head>
     <meta   charset="UTF-8">
     <title>Homepage</title>
-    <link rel="stylesheet" href="styles_admin_homepage.css" />
+    <link rel="stylesheet" href="../static/styles_admin_homepage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -14,12 +14,14 @@
       <div class="box">
         <div class="header">
           <div class="topic">รายวิชา / COURSE</div>
-          <a href="../sea/addcourse.html" class="add-button"></a>
+          <!-- เดี๋ยวต้องเปลี่ยน <a href="../sea/addcourse.html" class="add-button"></a> -->
+          <a href="addcourse.html" class="add-button"></a>
+
         </div>
         <div class="allsubject">
 
         <div class="subjectBox">
-          <div class="subjectImage"><img src="subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
+          <div class="subjectImage"><img src="../static/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
             <div class="subject-name">Physical Computing</div>
             <div class="subject-description">Oohh I
@@ -47,13 +49,16 @@
               So I'ma love you every night like it's the last night
               Like it's the last night
             </div>
+            <!--* ไม่ได้เชื่อมหน้าเนยนะ เนยสดไม่ได้ทำส่วนนี้ <a style="text-decoration: none;" href="../NOEY/course.html" class="view-button">VIEW</a> -->
             <a style="text-decoration: none;" href="../NOEY/course.html" class="view-button">VIEW</a>
 
           </div>
-          <a href="../sea/editcourse.html" class="edit-button"></a>
+          <a href="editcourse.html" class="edit-button"></a>
         </div>
 
-        <div class="subjectBox">
+        <!-- ! เดี๋ยวใช้ loop in jinja2 -->
+        <!--^ ใช้ template ข้างบน -->
+        <!-- <div class="subjectBox">
           <div class="subjectImage"><img src="subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
             <div class="subject-name">Information System Analysis and Design</div>
@@ -115,7 +120,8 @@
             <a style="text-decoration: none;" href="../NOEY/course.html" class="view-button">VIEW</a>
           </div>
           <a href="../sea/editcourse.html" class="edit-button"></a>
-        </div>
+        </div> -->
+        <!-- ^ -->
 
       </div>
 
