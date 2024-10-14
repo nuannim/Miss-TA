@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta   charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../static/styles_user_homepage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+      <div class="box">
+        <div class="header">
+          <div class="topic">รายวิชา / COURSE</div>
+        </div>
+        <div class="allsubject">
+        {% for course in courses %}
+        <div class="subjectBox">
+          <div class="subjectImage"><img src="subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
+          <div class="subject-information">
+            <div class="subject-name">{{ course.name }}</div>
+            <div class="subject-description">
+              {{ course.description }}
+            </div>
+            <a style="text-decoration: none;" href="/course/{{ course.index_id }}?course_id={{ course.course_id }}" class="view-button">VIEW</a>
+          </div>
+          <div class="status-text">{{ course.status }}</div>
+        </div>
+        {% endfor %}
+
+        <div class="wrapper">
+          <ul class="menu">
+            <li class="list-item">
+            <a href="../CJ/user_subject.html" class="้home">
+              <span>Home</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        </div>
+  </body>
+
+</html>
