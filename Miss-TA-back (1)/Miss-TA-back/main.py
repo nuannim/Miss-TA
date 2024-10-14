@@ -7,7 +7,7 @@ from QualificationController import *
 from generalController import *
 from Database import *
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="Miss-TA-front/static"), name="static")
+app.mount("/static", StaticFiles(directory="/Miss-TA-front/static"), name="static")
 # กำหนดตำแหน่งของ Jinja2 template
 templates = Jinja2Templates(directory="Miss-TA-front\page")
 
