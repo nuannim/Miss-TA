@@ -175,6 +175,7 @@ body {
     cursor: pointer;
     align-items: center;
     background-image: url(edit_icon.png);
+    background-image: url('/static/images/edit_icon.png');
     background-size: 3vh 3vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -194,7 +195,8 @@ body {
     margin-top: 3vh;
     margin-right: 5vh;
     cursor: pointer;
-    background-image: url(add_icon.png);
+    /* background-image: url(add_icon.png); */
+    background-image: url('/static/images/add_icon.png');
     background-size:  4vh 4vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -268,7 +270,9 @@ body {
     text-decoration: none;
     color: black;
     position: relative;
-    background-image: url(home_icon.png);
+    /* background-image: url(home_icon.png); */
+    /* background-image: url("{{ url_for('static', path='images/home_icon.png')}} "); */
+    background-image: url('/static/images/home_icon.png');
     background-size: 1.7vw 1.7vw;
     background-position: center;
     background-repeat: no-repeat;

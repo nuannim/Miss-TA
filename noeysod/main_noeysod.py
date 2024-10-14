@@ -15,7 +15,7 @@ import uvicorn
 app = FastAPI()
 
 # app.mount("/static", StaticFiles(directory='noeysod/static'), name="static")
-app.mount("/static", StaticFiles(directory='static/css'), name="static")
+app.mount("/static", StaticFiles(directory='static'), name="static") #! เดี๋ยวแก้ตาม copilot
 
 template = Jinja2Templates(directory='page')
 
@@ -39,6 +39,8 @@ async def editcourse(request : Request):
         name="editcourse.html",
         context={"request" : request}
     )
+
+# @app.get('/')
 
 
 if __name__ == "__main_noeysod__":

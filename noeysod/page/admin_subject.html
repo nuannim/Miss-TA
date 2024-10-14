@@ -4,7 +4,8 @@
   <head>
     <meta   charset="UTF-8">
     <title>Homepage</title>
-    <link rel="stylesheet" href="../static/styles_admin_homepage.css" />
+    <!--^ งงเหมือนกันว่าทำไมตำแหน่งผิดแล้วมันยังดึง css ได้ -->
+    <link rel="stylesheet" href="../static/css/styles_admin_homepage.css" /> <!--! เดี๋ยวแก้ตาม copilot -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -108,8 +109,9 @@
       <div class="wrapper">
         <div class="nav-bar">
         <li class="list-item">
-          <a href="admin_subject.html" class="้home">
-            <span>Home</span>
+          <!-- <a href="admin_subject.html" class="้home"> -->
+            <a href="{{ url_for('admin_subject') }}" class="้home">
+              <span>Home</span>
           </a>
         </li>
       </div>
