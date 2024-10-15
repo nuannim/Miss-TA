@@ -8,24 +8,14 @@ class getInfoFromDB:
         self.Student = StudentModel()
         self.db = MySQLDatabase()
 
-    def getNumOfCourse(self):
-        self.db.connect()
-        query = "select count(course_id) from course"
-        num = self.db.fetch_data(query)
-        return num
-        
-
-    def setStudentModel(self):
-        self.Student.setStudentID
     
     def setCourseModel(self, Id):
-        self.Course[Id].setCourseID(Id)
-        self.Course[Id].setName(Id)
-        self.Course[Id].setReqToFill(Id)
+        self.Course[Id].setCourseID(self.db.getCourseId(Id))
+        self.Course[Id].setName(self.db.getCourseName(Id))
         self.Course[Id].setImage(Id)
-        self.Course[Id].setDescription(Id)
+        self.Course[Id].setDescription(self.db.getCourseDes(Id))
         self.Course[Id].setRequirement(Id)
-        self.Course[Id].setYear(Id)
+        self.Course[Id].setYear(self.db.getCourseYear(Id))
 
         
     # def sendToDatabase():
