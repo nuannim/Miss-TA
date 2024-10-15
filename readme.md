@@ -1,5 +1,5 @@
 # back end deadline 16/10
-# อัพเดทงาน
+# อัพเดทงาน (ของเนยสด)
 ### ความคืบหน้า
 - get / post แล้ว (main_noeysod.py)
 - เชื่อม database ได้แล้ว (main_noeysod.py)
