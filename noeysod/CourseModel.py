@@ -182,9 +182,9 @@ class CourseModel:
 
         self.db.connect()
         
-        #* query all
-        query_all = 'select * from course where course_id = %d' %which_course_id
-        message = self.db.fetch_data(query_all)
+        #* query_course
+        query_course = 'select * from course where course_id = %d' %which_course_id
+        message = self.db.fetch_data(query_course)
 
         print(message)
 
@@ -226,10 +226,37 @@ class CourseModel:
         # self.setRequirement(message[0][''])
         # self.setReqToFill(message[0][''])
 
+        self.db.close()
+
 
 #^ db setter : setDataToDB
     def setDataToDB(self):
         """ยังไม่ได้ทำ"""
         # เป็น method สำหรับส่งข้อมูลไป database โดยตรง
         # เดี๋ยวมาเขียน
-        pass
+        self.db.connect()
+
+        #* insert_course
+        add_course_test = 'insert into course( \
+            course_id, name, year, description, image, \
+            adate, wdate, cdate, qtype, contact)\
+                values (%s, %s, %s, %s, %s,\
+                    %s, %s, %s, %s, %s)'
+
+        data = (self.getCourseID(), self.getName(), self.getYear(), self.getDescription(), self.getImage(),
+                self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact())
+
+        # add_course_test = ('insert into course(name, course_id, description)'
+        #                    'values (%s, %s, %s)')
+        
+        # data = (self.getName(), self.getCourseID(), self.getDescription())
+        # # data = ('test', 848484, 'test ahhhhh')
+
+        self.db.insert_data(add_course_test, data)
+
+        #* insert_history
+
+
+
+
+        #* insert_enroll
