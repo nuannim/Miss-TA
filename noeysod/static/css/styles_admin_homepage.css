@@ -174,7 +174,7 @@ body {
     top: 1.5vh;
     cursor: pointer;
     align-items: center;
-    background-image: url(edit_icon.png);
+    /* background-image: url(edit_icon.png); */
     background-image: url('/static/images/edit_icon.png');
     background-size: 3vh 3vh;
     background-position: center;
