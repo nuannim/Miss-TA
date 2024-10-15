@@ -4,7 +4,6 @@
   <head>
     <meta   charset="UTF-8">
     <title>Homepage</title>
-    <!--^ งงเหมือนกันว่าทำไมตำแหน่งผิดแล้วมันยังดึง css ได้ -->
     <link rel="stylesheet" href="../static/css/styles_admin_homepage.css" /> <!--! เดี๋ยวแก้ตาม copilot -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +20,13 @@
         </div>
         <div class="allsubject">
 
+        {% for i in allProfCourses %}
         <div class="subjectBox">
           <!-- <div class="subjectImage"><img src="../static/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div> -->
           <div class="subjectImage"><img src="{{ url_for('static', path='images/subject_image.png') }}" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
-            <div class="subject-name">Physical Computing</div>
+            <!-- <div class="subject-name">Physical Computing</div> -->
+            <div class="subject-name">{{ i }}</div>
             <div class="subject-description">
               Oohh I just woke up from a dream
             </div>
@@ -36,6 +37,7 @@
           <!-- <a href="editcourse.html" class="edit-button"></a> -->
           <a href="{{ url_for('editcourse') }}" class="add-button"></a>
         </div>
+        {% endfor %}
 
         <!-- ! เดี๋ยวใช้ loop in jinja2 -->
         <!--^ ใช้ template ข้างบน -->
