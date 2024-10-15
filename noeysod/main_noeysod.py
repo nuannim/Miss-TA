@@ -21,9 +21,6 @@ app.mount("/static", StaticFiles(directory='static'), name="static") #! เด�
 template = Jinja2Templates(directory='page')
 
 
-
-
-
 #* ลองสร้าง object ดึงวิชาต่าง ๆ (controller)
 from ProfessorModel import ProfessorModel
 from CourseModel import CourseModel
