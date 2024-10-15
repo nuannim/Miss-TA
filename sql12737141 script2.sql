@@ -70,3 +70,6 @@ from history, enroll
 where history.enroll_id = enroll.enroll_id
 ORDER BY history_id;
 
+
+insert into course (name, course_id, description)
+VALUES ('test in sql', 9999999999, 'test in sql');

@@ -160,3 +160,17 @@ class MySQLDatabase:
         if result:
             return result[0]['year']
         return None  # ถ้าไม่พบข้อมูลใด ๆ
+
+#^ ##############################################
+
+    def insert_data(self, query, params=None):
+        cursor = None
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(query, params)
+            self.connection.commit()  # Committing the transaction
+        except Error as e:
+            print(f"Error while inserting data: {e}")
+        finally:
+            if cursor:
+                cursor.close()
