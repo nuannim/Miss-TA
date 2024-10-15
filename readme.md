@@ -7,6 +7,7 @@
 ### ที่ต้องทำต่อ
 - CourseModel.py (progress : 80%)
 - ProfessorModel.py
+(มีบางอย่างต้องถามฟ้แน)
 
 ### ยังไม่ได้เริ่ม
 - ProfCourseView.py
