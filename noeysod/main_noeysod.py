@@ -70,6 +70,8 @@ async def editcourse(request : Request):
 
 # @app.get('/')
 
+@app.post("/")
+
 
 if __name__ == "__main_noeysod__":
     uvicorn.run("main_noeysod:app")
