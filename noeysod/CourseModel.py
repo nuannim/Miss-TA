@@ -223,12 +223,14 @@ class CourseModel:
         self.setNumOfStuEnroll(len(message_enroll))
 
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
+        #! ((care ถ้าทำอันอื่นเสร็จแล้วฝากดู)) ไม่ คือมันต้องแหละแต่ทำไงวะ ยังคิดไม่ออก
         # self.setRequirement(message[0][''])
         # self.setReqToFill(message[0][''])
 
         self.db.close()
 
-#! continue
+
+#! ((care)) continue แคทำอันนี้
 #^ db setter : setDataToDB
     def setDataToDB(self):
         """ยังไม่ได้ทำ"""
@@ -255,8 +257,7 @@ class CourseModel:
         self.db.insert_data(add_course_test, data)
 
         #* insert_history
-
-
+        #! insert history อันนี้น่าจะต้องใช้วิธี equijoin จริง ๆ ทำยังไงก็ได้ขอแค่คำตอบถูกพอ
 
 
         #* insert_enroll

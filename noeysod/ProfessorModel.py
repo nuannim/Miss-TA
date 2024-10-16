@@ -99,8 +99,8 @@ class ProfessorModel:
         #* query prof_id
         self.setProfId(which_id)
 
+#! ((care)) แคเขียนอันนี้คล้าย ๆ setDataToDB() ของ CourseModel.py
 #^ db setter
-
     def setDataToDB(self):
         '''ยังไม่ได้ทำ'''
         pass
