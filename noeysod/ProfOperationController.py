@@ -4,6 +4,7 @@ from ProfCourseAddnEditView import *
 from CourseModel import *       #* done
 from ProfessorModel import *    #* done
 
+#! เขียนตอนเชื่อม front เสร็จแล้ว
 class ProfOperationController:
     def __init__(self):
         pass
