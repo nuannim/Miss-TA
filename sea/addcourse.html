@@ -79,25 +79,27 @@
             </div>
 
             <div class="colunm"></div>
-                <div class="select-box">
-                    <div class="input-box">
-                        <label for="text">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
-                        <select>
-                            <option>ผู้ช่วยงานวิชาปฏิบัติ</option>
-                            <option>ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
-                            <option>ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
-                            <option>ผู้ช่วยงคุมสอบ</option>
-                            <option>อื่นๆ</option>
-                        </select>
-                    </div>
-                    
+            <div class="select-box">
+                <div class="input-box">
+                    <label for="assistantType">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
+                    <select id="assistantType">
+                        <option class="option1">ผู้ช่วยงานวิชาปฏิบัติ</option>
+                        <option class="option2">ผู้ช่วยเตรียทการสอนวิชาปฏิบัติ</option> <!-- อันนี้มีมั้ยนะ-->
+                        <option class="option3">ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
+                        <option class="option4">ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
+                        <option class="option5">ผู้ช่วยคุมสอบ</option>
+                        <option class="option6">อื่นๆ</option>
+                    </select>
+                </div>
             </div>
-            <div class="input-box">
-                <div class="daymon">
-                    <label for="text">ค่าจ้าง :</label>
-                    <input type="number" placeholder="กรอกจำนวนเงิน" required>
-                    <label for="text">จำนวนวัน :</label>
-                    <input type="number" placeholder="กรอกได้ไม่เกิน 15 วัน" required>
+            <div id="task-detail">
+                <div class="input-box">
+                    <div class="daymon">
+                        <label for="wage">ค่าจ้าง :</label>
+                         <input type="number" id="wage" placeholder="กรอกจำนวนเงิน" required>
+                         <label for="days">จำนวนวัน :</label>
+                         <input type="number" id="days" placeholder="กรอกได้ไม่เกิน 15 วัน" min="0" max="15" required>
+                    </div>
                 </div>
             </div>
 
