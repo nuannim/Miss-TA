@@ -1,7 +1,7 @@
 from StudentModel import *
 from CourseModel import *
 from Database import *
-class getInfoFromDB:
+class CourseController:
     def __init__(self,studentId,num):
         self.studentId = studentId
         self.Course = [CourseModel() for _ in range(num)]

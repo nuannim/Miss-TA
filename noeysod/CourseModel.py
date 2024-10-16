@@ -1,4 +1,5 @@
 from Database import *
+from Requirement import *
 
 class CourseModel:
     '''ดูแลตาราง course / enroll / prof_req / history'''
@@ -19,8 +20,7 @@ class CourseModel:
                  max_ta=0, 
                  num_of_ta=0, 
                  num_of_stu_enroll=0,
-                 requirement=[],
-                 req_to_fill=0):
+                 requirement=[]):
 
         self._course_id = course_id # รหัสวิชา
         self._name = name # ชื่อวิชา
@@ -45,8 +45,7 @@ class CourseModel:
         # requirement + required to fill?
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
         #! รอเชื่อมก่อนค่อยว่ากัน
-        self._requirement = requirement # array requirement ที่ add เพิ่มได้ในหน้าวิชา
-        self._req_to_fill = req_to_fill # จำเป็นต้องกรอก 0 = no / 1 = yes
+        self._requirement = [] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
 
         self.db = MySQLDatabase()
 
@@ -109,8 +108,6 @@ class CourseModel:
     def getRequirement(self):
         return self._requirement
 
-    def getReqToFill(self):
-        return self._req_to_fill
 
 
 #^ attribute : setter
@@ -164,15 +161,11 @@ class CourseModel:
     def setNumOfStuEnroll(self, num_of_stu_enroll):
         self._num_of_stu_enroll = num_of_stu_enroll
 
-    # requirement + required to fill?
-    #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
-    #! รอเชื่อมก่อนค่อยว่ากัน
-
-    def setRequirement(self, requirement):
-        self._requirement = requirement
-    
-    def setReqToFill(self, req_to_fill):
-        self._req_to_fill = req_to_fill
+    def add_requirement(self, requirement):
+        if isinstance(requirement, Requirement):
+            self._requirement.append(requirement)
+        else:
+            raise TypeError("ต้องเป็น object ของคลาส Requirement เท่านั้น")
 
 #^ db getter : getDataFromDB
     def getDataFromDB(self, which_course_id):
