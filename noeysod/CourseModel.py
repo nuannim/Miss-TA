@@ -228,7 +228,7 @@ class CourseModel:
 
         self.db.close()
 
-
+#! continue
 #^ db setter : setDataToDB
     def setDataToDB(self):
         """ยังไม่ได้ทำ"""
