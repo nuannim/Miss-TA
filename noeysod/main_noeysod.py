@@ -46,8 +46,10 @@ db.close()
 
 #################* if view in view file
 from ProfCourseView import ProfCourseView
+from ProfCourseAddnEditView import ProfCourseAddnEditView
 
 view = ProfCourseView(db, app, template, prof_id)
+viewAddEdit = ProfCourseAddnEditView(db, app, template, prof_id)
 
 if __name__ == "__main_noeysod__":
     uvicorn.run("main_noeysod:app")
