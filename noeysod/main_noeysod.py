@@ -12,10 +12,11 @@ import uvicorn
 ###^ update 1ุ6/10/67 ###
     #^ มี app.post() แล้ว แต่มีปัญหาเรื่อง datatype ของ date
 
+
+#################* view (มีต่อ)
 app = FastAPI()
 
-# app.mount("/static", StaticFiles(directory='noeysod/static'), name="static")
-app.mount("/static", StaticFiles(directory='static'), name="static") #! เดี๋ยวแก้ตาม copilot
+app.mount("/static", StaticFiles(directory='static'), name="static")
 
 template = Jinja2Templates(directory='page')
 
@@ -43,65 +44,10 @@ message = db.fetch_data(query_course_name)
 print('message from query :', message)
 db.close()
 
-#################* view
+#################* if view in view file
+from ProfCourseView import ProfCourseView
 
-#^ app.get()
-@app.get('/', response_class=HTMLResponse)
-async def admin_subject(request: Request):
-    message2 = [i['name'] for i in message]
-    print(message2)
-    return template.TemplateResponse(
-        name="admin_subject.html",
-        context={"request": request, "allProfCourses": message2}
-    )
-
-@app.get('/addcourse', response_class=HTMLResponse)
-async def addcourse(request : Request):
-    return template.TemplateResponse(
-        name="addcourse.html",
-        context={"request" : request}
-    )
-
-@app.get('/editcourse', response_class=HTMLResponse)
-async def editcourse(request : Request):
-    return template.TemplateResponse(
-        name="editcourse.html",
-        context={"request" : request}
-    )
-
-# @app.get('/')
-
-#^ app.post()
-@app.post("/addcourse", response_class=HTMLResponse)
-async def addcourse_submit(request : Request,
-                           name:str=Form(...),
-                           course_id:str=Form(...),
-                           image:str=Form(...),
-                           
-                           contact:str=Form(...),
-                           
-                            ):
-    print(name)
-    print(course_id)
-    # print(desc)
-    print(image)
-    # print(req)
-
-    # print(qtype)
-    print(contact)
-
-    #* render same page with @app.get() addcourse()
-    return template.TemplateResponse(
-        name="addcourse.html",
-        context={"request" : request}
-    )
-
-#! continue
-@app.post("/editcourse")
-async def editcourse_submit():
-    pass
-
-
+view = ProfCourseView(db, app, template, prof_id)
 
 if __name__ == "__main_noeysod__":
     uvicorn.run("main_noeysod:app")
