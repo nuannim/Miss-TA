@@ -16,14 +16,21 @@
     <!-- <div class="tab-bar"> </div> -->
     <section class="container">
         <div class="topic">เพิ่มรายวิชา / ADD COURSE</div>
-        <form action="#" class="form">
+<!-- * -->
+        <!-- <form action="#" class="form"> -->
+        <form action="/addcourse" class="form" method="post">
+
             <div class="input-box">
                 <label for="text">ชื่อวิชา :</label>
-                <input type="text" placeholder="กรอกชื่อวิชา" required>
+<!-- * -->
+                <!-- <input type="text" placeholder="กรอกชื่อวิชา" required> -->
+                <input type="text" placeholder="กรอกชื่อวิชา" name="name" required>
+
             </div>
             <div class="input-box">
                 <label for="text">รหัสวิชา :</label>
-                <input type="text" placeholder="กรอกรหัสวิชา" required>
+<!-- * -->
+                <input type="text" placeholder="กรอกรหัสวิชา" name="course_id" required>
             </div>
             <div class="input-box">
                 <label for="course-description">คำอธิบายรายวิชา :</label>
@@ -31,7 +38,7 @@
             </div>
             <div class="input-box">
                 <label for="file">รูปปกรายวิชา :</label>
-                <input type="file">
+                <input type="file" name="image">
             </div>
             <!-- <div class="column"> 
                 
@@ -77,7 +84,8 @@
             
             <div class="input-box">
                 <label for="text">ช่องทางการติดต่ออาจารย์ :</label>
-                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" required>
+<!--  -->
+                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" name="contact" required>
             </div>
 
             <div class="colunm"></div>
@@ -164,7 +172,9 @@
             </div> -->
 
             <div class="but">
-                <button onclick="openAddCoursePopup()">Submit</button>
+<!-- * -->
+                <!-- <button onclick="openAddCoursePopup()">Submit</button> -->\
+                <button type="submit" onclick="openAddCoursePopup()">Submit</button>
             </div>
             <div class="wrapper">
               <ul class="menu">

@@ -1,6 +1,6 @@
 '''run by put 'fastapi dev main_noeysod.py' in terminal'''
 
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -9,8 +9,9 @@ import uvicorn
 
 
 #! เดี๋ยวตอนสุดท้ายต้องย้ายพวก @app.get ไปไว้ที่ view ด้วย
-###^ update 1ุ6/10/67 ###
-    #^ มี app.post() แล้ว แต่มีปัญหาเรื่อง datatype ของ date
+###^ update 15/10/67 ###
+    #^ เหลือเชื่อมส่งข้อมูลจาก db to html
+    #^ problem : รูปที่ปุ่มไม่ขึ้น ทำไมไม่รู้ ไว้พน
 
 app = FastAPI()
 
@@ -20,7 +21,7 @@ app.mount("/static", StaticFiles(directory='static'), name="static") #! เด�
 template = Jinja2Templates(directory='page')
 
 
-#################* ลองสร้าง object ดึงวิชาต่าง ๆ (controller)
+#* ลองสร้าง object ดึงวิชาต่าง ๆ (controller)
 from ProfessorModel import ProfessorModel
 from CourseModel import CourseModel
 
@@ -43,9 +44,7 @@ message = db.fetch_data(query_course_name)
 print('message from query :', message)
 db.close()
 
-#################* view
-
-#^ app.get()
+#* view
 @app.get('/', response_class=HTMLResponse)
 async def admin_subject(request: Request):
     message2 = [i['name'] for i in message]
@@ -71,28 +70,7 @@ async def editcourse(request : Request):
 
 # @app.get('/')
 
-#^ app.post()
-@app.post("/addcourse")
-async def addcourse_submit(name:str=Form(...),
-                           course_id:str=Form(...),
-                           image:str=Form(...),
-                           
-                           contact:str=Form(...),
-                           
-                            ):
-    print(name)
-    print(course_id)
-    # print(desc)
-    print(image)
-    # print(req)
-
-    # print(qtype)
-    print(contact)
-
-@app.post("/editcourse")
-async def editcourse_submit():
-    pass
-
+@app.post("/")
 
 
 if __name__ == "__main_noeysod__":
