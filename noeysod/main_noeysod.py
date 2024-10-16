@@ -8,7 +8,6 @@ import uvicorn
 
 
 
-#! เดี๋ยวตอนสุดท้ายต้องย้ายพวก @app.get ไปไว้ที่ view ด้วย
 ###^ update 1ุ6/10/67 ###
     #^ มี app.post() แล้ว แต่มีปัญหาเรื่อง datatype ของ date
 
@@ -44,7 +43,7 @@ message = db.fetch_data(query_course_name)
 print('message from query :', message)
 db.close()
 
-#################* if view in view file
+#################* call view class
 from ProfCourseView import ProfCourseView
 from ProfCourseAddnEditView import ProfCourseAddnEditView
 
