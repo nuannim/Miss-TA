@@ -44,7 +44,7 @@ function addRequirements(){
 }
 
 function openAddCoursePopup(){
-    document.querySelector('.but button').addEventListener('click', function() {
+    document.querySelector('.but').addEventListener('click', function() {
     
         const form = document.querySelector('.form');
         const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');

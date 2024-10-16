@@ -64,7 +64,7 @@ function openEditCoursePopup(){
         const form = document.querySelector('.form');
         const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
         let allFilled = true;
-    
+
         // ! ชัชลองเช็คหน่อย
         inputs.forEach(input => {
             if (!input.value) {
@@ -73,6 +73,8 @@ function openEditCoursePopup(){
         });
         if (allFilled) {
             document.querySelector(".edit_popup_box").style.display = "flex";
+            // console.log("hihi");
         }
     });
+
 }
