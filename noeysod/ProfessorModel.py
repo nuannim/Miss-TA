@@ -12,6 +12,7 @@ class ProfessorModel:
 
         self.db = MySQLDatabase()
 
+
 #^ getter
 
     def getFirstName(self):
@@ -31,6 +32,7 @@ class ProfessorModel:
 
     def getProfId(self):
         return self._prof_id
+
 
 #^ setter
 
@@ -56,8 +58,6 @@ class ProfessorModel:
         self._prof_id = prof_id
 
 
-
-
 #######################################################^
 #######################################################^
 
@@ -78,26 +78,34 @@ class ProfessorModel:
 
         self.setFirstName(message[0]["firstname"])
         self.setLastName(message[0]["lastname"])
-        # self.setNumOfCourse(message[which_id-1]["num_of_course"])
 
         #* query prof_course 
-        query_prof_course = 'select course_id from prof_course where prof_id = %d' %which_id
+        query_prof_course = ('SELECT * '
+                    'FROM course AS c '
+                    'JOIN prof_course AS pc ON c.course_id = pc.course_id '
+                    'WHERE pc.prof_id = %d;') %(which_id)
         prof_course_message = self.db.fetch_data(query_prof_course)
 
-        courselist = [i["course_id"] for i in prof_course_message]
-        
-        # print(courselist)
-        self.setProfCourse(courselist)
-        # print(prof_course_message[0:]["course_id"])
-        # self.setProfCourse(prof_course_message[which_id-1]["course_id"])
 
-        # self.setProfCourse(message)
+        print()
+        print("====================")
+        print('ProfessorModel.py :', prof_course_message)
+        print("====================")
+        print()
+
+        self.setProfCourse(prof_course_message)
 
         #* set num_of_course
-        self.setNumOfCourse(len(courselist))
+        self.setNumOfCourse(len(prof_course_message))
+        print()
+        print("====================")
+        print('ProfessorModel.py :', len(prof_course_message))
+        print("====================")
+        print()
 
         #* query prof_id
         self.setProfId(which_id)
+
 
 #! ((care)) แคเขียนอันนี้คล้าย ๆ setDataToDB() ของ CourseModel.py
 #^ db setter

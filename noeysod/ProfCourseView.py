@@ -6,12 +6,14 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 # import uvicorn
 
+#* เดี่ยวจัดระเบียบใหม่ด้วย พวก pCourseName ...
 class ProfCourseView:
     def __init__(self,
                  db:MySQLDatabase, 
                  app:FastAPI, 
                  template:Jinja2Templates,
-                 prof_id):
+                 prof_id,
+                 pCourseName):
 
         # self.db = MySQLDatabase()
         # self.app = FastAPI()
@@ -24,6 +26,7 @@ class ProfCourseView:
         self.template = template
 
         self.prof_id = prof_id
+        self.prof_course_name_list = pCourseName
 
         self.view(self.prof_id)
 
@@ -35,16 +38,14 @@ class ProfCourseView:
         # @self.app.get('/test', response_class=HTMLResponse)
         @self.app.get('/', response_class=HTMLResponse)
         async def admin_subject(request: Request):
-        ##* controller
-            self.db.connect()
-            query_course_name = ('SELECT c.name '
-                                'FROM course AS c '
-                                'JOIN prof_course AS pc ON c.course_id = pc.course_id '
-                                'WHERE pc.prof_id = %d;') %(prof_id)
-            message = self.db.fetch_data(query_course_name)
-            message2 = [i['name'] for i in message]
-            print(message2)
-            # message2 = ['test00', 'test']
+        ##* 
+            message = self.prof_course_name_list
+            message2 = [i for i in message]
+            print()
+            print('====================')
+            print('ProfCourseView.py :', message2)
+            print('====================')
+            print()
         ##*
 
             return self.template.TemplateResponse(
@@ -52,82 +53,3 @@ class ProfCourseView:
                 context={"request": request, "allProfCourses": message2}
             )
     ################## & ##################
-
-
-
-
-
-##############################################################################
-##############################################################################
-
-# ###! โอ้ยน้องคะ view เอาไว้ใส่การ display เท่านั้นค่ะ ใส่ attribute ไม่ได้ เดี๋นยมาแก้อย่างหนัด
-# class ProfCourseView:
-
-# #! จากที่ไปอ่านเรื่อง MVC pattern มา พวกนี้ต้องอยู่ใน controller เท่านั้นจ้ะ
-# #! เวลารับค่า controller จะเป็นตัวรับค่า คลาส view ใช้สำหรับแสดงหน้าเท่านั้นเลย
-    
-#     # def __init__(self, 
-#     #             cName = None, 
-#     #             cID = None, 
-#     #             desc = None, 
-#     #             image = None, 
-#     #             req = None, 
-#     #             req_to_fill = None, 
-#     #             adate = None, wdate = None, cdate = None, 
-#     #             qtype = None, 
-#     #             contact = None):
-
-#     #     self.cName = cName
-#     #     self.cID = cID
-#     #     self.desc = desc
-#     #     self.image = image
-#     #     self.req = req
-#     #     self.req_to_fill = req_to_fill
-#     #     self.adate = adate
-#     #     self.wdate = wdate
-#     #     self.cdate = cdate
-#     #     self.qtype = qtype
-#     #     self.contact = contact
-#     #     pass
-
-#     def displayMainCourse(self, cName, cID, desc, image, req, reqToFill, adate, wdate, cdate, qtype, contact):
-#         #* call fastapi to display these parameter
-#         print("::::: ProfCourseView :: debug :::::")
-#         print("cname : " + cName)
-#         pass
-
-#     # def addCourse():
-#     #     pass
-
-#     # def editCourse():
-#     #     pass
-
-
-#     # def getInfoFromDisplay():
-#     #     pass
-
-#     # def setInfoToDisplay():
-#     #     pass
-
-#     # ตอนเชื่อม ยัดค่าใส่ตาม attribute นี้เลย
-#     # def getInfoFromCourseAddEdit(self, 
-#     #                          cName, 
-#     #                          cID, 
-#     #                          desc, 
-#     #                          image, 
-#     #                          req, 
-#     #                          reqToFill, 
-#     #                          adate, 
-#     #                          wdate, 
-#     #                          cdate,
-#     #                          qtype,
-#     #                          contact):
-        
-#     #     pass
-
-
-# ############################################################### !
-
-#     def __init__(self) -> None:
-#         pass
-

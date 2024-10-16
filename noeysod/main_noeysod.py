@@ -32,22 +32,12 @@ chotipat = ProfessorModel()
 chotipatCourse = CourseModel()
 
 chotipat.getDataFromDB(prof_id)
-# chotipatCourse.getDataFromDB(prof_id)
-
-db.connect()
-query_course_name = ('SELECT c.name '
-                     'FROM course AS c '
-                     'JOIN prof_course AS pc ON c.course_id = pc.course_id '
-                     'WHERE pc.prof_id = %d;') %(prof_id)
-message = db.fetch_data(query_course_name)
-print('message from query :', message)
-db.close()
 
 #################* call view class
 from ProfCourseView import ProfCourseView
 from ProfCourseAddnEditView import ProfCourseAddnEditView
 
-view = ProfCourseView(db, app, template, prof_id)
+view = ProfCourseView(db, app, template, prof_id, chotipat.getProfCourse())
 viewAddEdit = ProfCourseAddnEditView(db, app, template, prof_id)
 
 if __name__ == "__main_noeysod__":
