@@ -72,8 +72,9 @@ async def editcourse(request : Request):
 # @app.get('/')
 
 #^ app.post()
-@app.post("/addcourse")
-async def addcourse_submit(name:str=Form(...),
+@app.post("/addcourse", response_class=HTMLResponse)
+async def addcourse_submit(request : Request,
+                           name:str=Form(...),
                            course_id:str=Form(...),
                            image:str=Form(...),
                            
@@ -88,6 +89,12 @@ async def addcourse_submit(name:str=Form(...),
 
     # print(qtype)
     print(contact)
+
+    #* render same page with @app.get() addcourse()
+    return template.TemplateResponse(
+        name="addcourse.html",
+        context={"request" : request}
+    )
 
 #! continue
 @app.post("/editcourse")
