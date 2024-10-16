@@ -65,12 +65,12 @@ function openEditCoursePopup(){
         const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
         let allFilled = true;
     
+        // ! ชัชลองเช็คหน่อย
         inputs.forEach(input => {
             if (!input.value) {
                 allFilled = false; 
             }
         });
-    
         if (allFilled) {
             document.querySelector(".edit_popup_box").style.display = "flex";
         }
