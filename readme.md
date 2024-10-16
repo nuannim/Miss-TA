@@ -9,7 +9,7 @@
 - ProfessorModel.py
 (มีบางอย่างต้องถามฟ้แน)
 
-### ยังไม่ได้เริ่ม
+### ยังไม่ได้เริ่ม (รอทำตอนฟ้อนเสร็จแล้ว)
 - ProfCourseView.py
 - ProfCourseAddnEditView.py
 - ProfOperationController.py
