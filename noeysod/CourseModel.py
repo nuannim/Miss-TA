@@ -237,7 +237,6 @@ class CourseModel:
         self.db.connect()
 
         #* insert_course
-        #^ ยังไม่ final
         add_course_test = 'insert into course( \
             course_id, name, year, description, image, \
             adate, wdate, cdate, qtype, contact)\
@@ -256,8 +255,7 @@ class CourseModel:
         self.db.insert_data(add_course_test, data)
 
         #* insert_history
-        # add_history = ('insert into history()'
-        #                )
+
 
 
 
