@@ -1,5 +1,5 @@
 class Requirement:
-    def __init__(self,req,type):
+    def __init__(self,req="",type=""):
         self.req = req
         self.type = type
     
