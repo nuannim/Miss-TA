@@ -288,3 +288,44 @@ body {
 .list-item *{
     background: white;
 }
+
+@media (max-width: 1024px) {
+    .wrapper{
+        top: 35%;
+        height: 30%; /* สามารถเปลี่ยนเป็น 40vw ได้ถ้าต้องการ */
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: 7vh; /* เปลี่ยนเป็น 40vw ได้ถ้าต้องการ */
+        width: 80vw;
+        top: 92.5%;
+        left: 9%;
+        align-items: start;
+        justify-content: center;
+        padding-left: 15px;
+    }
+    .list-item a {
+        width: 35px;
+        height: 35px;
+        background-size: 15px 15px;
+    }
+    .list-item {
+        height: 50px;
+        width: 40px;
+        padding-top: 0;
+    }
+}
+
+@media (max-height: 594px) and (max-width: 768px){
+    .wrapper {
+        padding-left: 5px;
+    }
+    .list-item a {
+        width: 25px;
+        height: 25px;
+        background-size: 13px 13px;
+    }
+}
