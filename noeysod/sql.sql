@@ -9,3 +9,5 @@ SELECT *
 FROM course AS c 
 JOIN prof_course AS pc ON c.course_id = pc.course_id 
 WHERE pc.prof_id = 1;
+
+

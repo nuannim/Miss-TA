@@ -43,37 +43,37 @@ class ProfCourseAddnEditView:
             )
     ################## & ##################
 
-    ################## & app.post() ##################
-        # @self.app.post("/test/addcourse", response_class=HTMLResponse)
-        @self.app.post("/addcourse", response_class=HTMLResponse)
-        async def addcourse_submit(request : Request,
-                                name:str=Form(...),
-                                course_id:str=Form(...),
-                                image:str=Form(...),
+    #! ย้าย post ไปไว้ controller
+    # ################## & app.post() ##################
+    #     # @self.app.post("/test/addcourse", response_class=HTMLResponse)
+    #     @self.app.post("/addcourse", response_class=HTMLResponse)
+    #     async def addcourse_submit(request : Request,
+    #                             name:str=Form(...),
+    #                             course_id:str=Form(...),
+    #                             image:str=Form(...),
                                 
-                                contact:str=Form(...),
+    #                             contact:str=Form(...),
                                 
-                                    ):
-            print(name)
-            print(course_id)
-            # print(desc)
-            print(image)
-            # print(req)
+    #                                 ):
+    #         print(name)
+    #         print(course_id)
+    #         # print(desc)
+    #         print(image)
+    #         # print(req)
 
-            # print(qtype)
-            print(contact)
+    #         # print(qtype)
+    #         print(contact)
 
-            #* render same page with @app.get() addcourse()
-            return self.template.TemplateResponse(
-                name="addcourse.html",
-                context={"request" : request}
-            )
+    #         #* render same page with @app.get() addcourse()
+    #         return self.template.TemplateResponse(
+    #             name="addcourse.html",
+    #             context={"request" : request}
+    #         )
 
-        #! continue
-        # @self.app.post("/test/editcourse")
-        @self.app.post("/editcourse")
-        async def editcourse_submit():
-            pass
+        # # @self.app.post("/test/editcourse")
+        # @self.app.post("/editcourse")
+        # async def editcourse_submit():
+        #     pass
 
 
     ################## & ##################

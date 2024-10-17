@@ -1,6 +1,8 @@
 from Database import *
 from Requirement import *
 
+from datetime import date
+
 class CourseModel:
     '''ดูแลตาราง course / enroll / prof_req / history'''
     def __init__(self, 
@@ -217,16 +219,16 @@ class CourseModel:
 
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
         #! ((care ถ้าทำอันอื่นเสร็จแล้วฝากดู)) ไม่ คือมันต้องแหละแต่ทำไงวะ ยังคิดไม่ออก
+        #* ไตเติ้ลเพิ่งเขียน class ใหม่ ลองเอาไปใช้ได้
         # self.setRequirement(message[0][''])
         # self.setReqToFill(message[0][''])
 
         self.db.close()
 
 
-#! ((care)) continue แคทำอันนี้
-#^ db setter : setDataToDB
-    def setDataToDB(self):
-        """ยังไม่ได้ทำ"""
+#^ db setter : setCourseToDB() / setHistoryToDB()
+    def setCourseToDB(self):
+        """มีแค่ insert_course อย่างเดียว"""
         # เป็น method สำหรับส่งข้อมูลไป database โดยตรง
         # เดี๋ยวมาเขียน
         self.db.connect()
@@ -241,16 +243,21 @@ class CourseModel:
         data = (self.getCourseID(), self.getName(), self.getYear(), self.getDescription(), self.getImage(),
                 self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact())
 
-        # add_course_test = ('insert into course(name, course_id, description)'
-        #                    'values (%s, %s, %s)')
+        # add_course_test = ('insert into course(name, course_id, adate)'
+                        #    'values (%s, %s, %s)')
         
         # data = (self.getName(), self.getCourseID(), self.getDescription())
-        # # data = ('test', 848484, 'test ahhhhh')
+        # data = ('test', 848485, date(2024, 9, 9))
 
         self.db.insert_data(add_course_test, data)
 
-        #* insert_history
-        #! insert history อันนี้น่าจะต้องใช้วิธี equijoin จริง ๆ ทำยังไงก็ได้ขอแค่คำตอบถูกพอ
+        #* insert_history ==> ไม่ใช่ตรงนี้ละ เพิ่งฉุกคิดได้ว่า history จะเกิดขึ้นเมื่ออจเลือกนศแล้วกด submit
+        #*                      sooo ต้องแยก method
+        #*                ==> อีกเรื่องคือ usecase ที่ทำไม่มีเรื่องนี้ = ไม่ต้องเขียนก็ได้
+
+        #* insert_enroll ==> คือจริง ๆ เราไม่ได้ใส่ลิสคน enroll ด้วยอันนี้ เราดึงจากคณะเอา
 
 
-        #* insert_enroll
+    def setHistoryToDB(self):
+        '''set history everytime we make transaction'''
+        pass

@@ -107,8 +107,10 @@ class ProfessorModel:
         self.setProfId(which_id)
 
 
-#! ((care)) แคเขียนอันนี้คล้าย ๆ setDataToDB() ของ CourseModel.py
-#^ db setter
-    def setDataToDB(self):
-        '''ยังไม่ได้ทำ'''
-        pass
+#! ไม่ต้องทำ
+# #^ db setter
+#     def setDataToDB(self):
+#         '''ยังไม่ได้ทำ'''
+#         #* firstname / lastname ไม่ต้อง ดึงจากคณะ
+#* num_of_course นับจาก
+#         pass

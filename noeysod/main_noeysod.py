@@ -33,12 +33,21 @@ chotipatCourse = CourseModel()
 
 chotipat.getDataFromDB(prof_id)
 
+chotipatCourse.setCourseToDB()
+
 #################* call view class
 from ProfCourseView import ProfCourseView
 from ProfCourseAddnEditView import ProfCourseAddnEditView
 
 view = ProfCourseView(db, app, template, prof_id, chotipat.getProfCourse())
 viewAddEdit = ProfCourseAddnEditView(db, app, template, prof_id)
+
+#################* call controller class
+from CourseController import CourseController
+
+controller = CourseController(db, app, template, 
+                              chotipat, chotipatCourse, view, viewAddEdit)
+
 
 if __name__ == "__main_noeysod__":
     uvicorn.run("main_noeysod:app")
