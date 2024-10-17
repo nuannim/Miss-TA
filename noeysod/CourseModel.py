@@ -32,7 +32,7 @@ class CourseModel:
         self._description = description # คำอธิบายวิชา
         self._image = image # รูปปกวิชา
         self._adate = adate # announce_date วันประกาศผล
-        self._wdate = wdate # waiver_date วันสละสิทธิ์
+        self._wdate = wdate # waiver_date วันสละสิทธิ์/วันยืนยันสิทธิ์
 
         # วันปิดรับสมัคร ?
         self._cdate = cdate # closed_date วันปืดรับสมัคร

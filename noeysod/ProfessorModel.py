@@ -112,5 +112,5 @@ class ProfessorModel:
 #     def setDataToDB(self):
 #         '''ยังไม่ได้ทำ'''
 #         #* firstname / lastname ไม่ต้อง ดึงจากคณะ
-#* num_of_course นับจาก
+          #* num_of_course นับจาก CourseModel
 #         pass
