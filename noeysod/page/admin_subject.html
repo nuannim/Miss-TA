@@ -37,7 +37,7 @@
 
           </div>
           <!-- <a href="editcourse.html" class="edit-button"></a> -->
-          <a href="{{ url_for('editcourse') }}" class="edit-button"></a>
+          <a href="{{ url_for('editcourse', course_id=i['course_id']) }}" class="edit-button"></a>
         </div>
         {% endfor %}
 
