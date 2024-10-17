@@ -80,25 +80,27 @@
             </div>
 
             <div class="colunm"></div>
-                <div class="select-box">
-                    <div class="input-box">
-                        <label for="text">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
-                        <select>
-                            <option>ผู้ช่วยงานวิชาปฏิบัติ</option>
-                            <option>ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
-                            <option>ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
-                            <option>ผู้ช่วยงคุมสอบ</option>
-                            <option>อื่นๆ</option>
-                        </select>
-                    </div>
-                    
+            <div class="select-box">
+                <div class="input-box">
+                    <label for="assistantType">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
+                    <select id="assistantType">
+                        <option class="option1">ผู้ช่วยงานวิชาปฏิบัติ</option>
+                        <option class="option2">ผู้ช่วยเตรียทการสอนวิชาปฏิบัติ</option> <!-- อันนี้มีมั้ยนะ-->
+                        <option class="option3">ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
+                        <option class="option4">ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
+                        <option class="option5">ผู้ช่วยคุมสอบ</option>
+                        <option class="option6">อื่นๆ</option>
+                    </select>
+                </div>
             </div>
-            <div class="input-box">
-                <div class="daymon">
-                    <label for="text">ค่าจ้าง :</label>
-                    <input type="number" placeholder="กรอกจำนวนเงิน" required>
-                    <label for="text">จำนวนวัน :</label>
-                    <input type="number" placeholder="กรอกได้ไม่เกิน 15 วัน" required>
+            <div id="task-detail">
+                <div class="input-box">
+                    <div class="daymon">
+                        <label for="wage">ค่าจ้าง :</label>
+                         <input type="number" id="wage" placeholder="กรอกจำนวนเงิน" min="0" required>
+                         <label for="days">จำนวนวัน :</label>
+                         <input type="number" id="days" placeholder="กรอกได้ไม่เกิน 15 วัน" min="0" max="15" required>
+                    </div>
                 </div>
             </div>
 
@@ -163,7 +165,7 @@
             </div> -->
 
             <div class="but">
-                <button onclick="openAddCoursePopup()">Submit</button>
+                <button onclick="openEditCoursePopup()">Submit</button> <!-- ถ้าก็อบaddcourseมาแก้อันนี้เหมือนเดิมด้วยนะะ-->
             </div>
             <div class="wrapper">
               <ul class="menu">
@@ -177,14 +179,25 @@
             </div>
             </div>
         </form>
+        <!-- ถ้าก็อบaddcourseมาก็อบอันนี้ให้เหมือนเดิมด้วยนะะ-->
         <div class="popup_box">
             <div class="popup">
-              <p>ทำการเพิ่มรายวิชาสำเร็จ</p>
+              <p>ต้องการลบรายวิชานี้หรือไม่</p>
+              <button class="confirm_button">ยืนยัน</button>
             </div>
             <div class="close_popup_button">
             </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="edit_popup_box">
+            <div class="edit_popup">
+              <p>ทำการแก้ไขรายวิชาสำเร็จ</p>
+            </div>
+            <div class="edit_close_popup_button">
+            </div>
           </div>
     </section>
-    <script src="addcourse.js"></script>
+    <script src="editcourse.js"></script>
+    <!-- จนถึงตรงนี้เลย-->
 </body>
 </html>

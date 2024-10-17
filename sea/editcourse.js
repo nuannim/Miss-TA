@@ -78,3 +78,96 @@ function openEditCoursePopup(){
     });
 
 }
+// เอาไว้เปลี่ยนค่าจ้าง จำนวนวันตามรูปแบบงาน
+document.getElementById('assistantType').addEventListener('change', function() {
+    const wageInput = document.getElementById('wage');
+    const daysInput = document.getElementById('days');
+    const check3 = document.getElementById('check3');
+    const check4 = document.getElementById('check4');
+    const taskBox = document.getElementById('task-box');
+
+    if (taskBox) {
+        taskBox.remove();
+    }
+    if (this.options[this.selectedIndex].classList.contains('option1')) {
+        wageInput.value = 100; 
+        daysInput.value = null;
+        daysInput.placeholder = "ไม่ต้องกรอกจำนวนวัน";
+        wageInput.readOnly = true;
+        daysInput.readOnly = true;
+        daysInput.required = false;
+        check3.setAttribute('disabled', true);
+        check4.setAttribute('disabled', true);
+        check3.checked = true;
+    }
+    else if (this.options[this.selectedIndex].classList.contains('option2') || this.options[this.selectedIndex].classList.contains('option3')
+    || this.options[this.selectedIndex].classList.contains('option4') || this.options[this.selectedIndex].classList.contains('option5')) {
+        wageInput.value = 50;
+        daysInput.value = ""; 
+        daysInput.placeholder = "กรอกได้ไม่เกิน 15 วัน";
+        wageInput.readOnly = true;
+        daysInput.readOnly = false;
+        daysInput.required = true;
+        check3.disabled = false;
+        check4.disabled = false;
+        check3.checked = false;
+    }  
+    else if (this.options[this.selectedIndex].classList.contains('option6')) {
+        addTaskDetail();
+        wageInput.value = ''; 
+        daysInput.value = '';
+        wageInput.readOnly = false;
+        daysInput.readOnly = false;
+        daysInput.required = true;
+    }  
+    else {
+        wageInput.value = ''; 
+        daysInput.value = '';
+        wageInput.readOnly = false;
+        daysInput.readOnly = false;
+        daysInput.required = true;
+    }
+});
+
+const numberInput = document.getElementById('days');
+numberInput.addEventListener('input', function() {
+    if (numberInput.value > 15) {
+        numberInput.value = 15;
+        console.log("hehhe");
+    }
+});
+
+const wagemin = document.getElementById('wage');
+wagemin.addEventListener('input', function() {
+    if (wagemin.value < 0) {
+        wagemin.value = 0;
+        console.log("hehhe");
+    }
+});
+
+function addTaskDetail(){
+    const newHtml = `
+                <div class="input-box" id="task-box">
+                    <label for="task">งาน :</label>
+                    <input type="text" id="task" placeholder="กรอกชื่องาน" required>
+                </div>
+            `;
+            document.getElementById('task-detail').insertAdjacentHTML('afterbegin', newHtml);
+}
+
+window.onload = function() {
+    const wageInput = document.getElementById('wage');
+    const daysInput = document.getElementById('days');
+    const check3 = document.getElementById('check3');
+    const check4 = document.getElementById('check4');
+    const taskBox = document.getElementById('task-box');
+    wageInput.value = 100; 
+        daysInput.value = null;
+        daysInput.placeholder = "ไม่ต้องกรอกจำนวนวัน";
+        wageInput.readOnly = true;
+        daysInput.readOnly = true;
+        daysInput.required = false;
+        check3.setAttribute('disabled', true);
+        check4.setAttribute('disabled', true);
+        check3.checked = true;
+};
