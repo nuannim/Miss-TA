@@ -11,3 +11,10 @@ JOIN prof_course AS pc ON c.course_id = pc.course_id
 WHERE pc.prof_id = 1;
 
 
+alter table course
+modify wdate DATETIME;
+
+UPDATE course
+SET wdate = NULL
+WHERE course_id = 101;
+
