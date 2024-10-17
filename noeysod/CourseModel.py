@@ -16,7 +16,7 @@ class CourseModel:
                  adate=None, 
                  wdate=None, 
                  cdate=None,
-                 qualification_type="", 
+                 qualification_type=False, 
                  contact="", 
                  registered_stu_no=0, 
                  max_ta=0, 
@@ -47,7 +47,7 @@ class CourseModel:
         # requirement + required to fill?
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
         #! รอเชื่อมก่อนค่อยว่ากัน
-        self._requirement = [] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
+        self._requirement = [Requirement] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
 
         self.db = MySQLDatabase()
 
