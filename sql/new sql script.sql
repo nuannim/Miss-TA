@@ -1,20 +1,32 @@
+use sql12738833;
+
+------------------------- อันไหนสร้างแล้วจะ commit ไว้ -------------------------
+-- describe sql
+describe sql12737141.course;
+describe sql12737141.enroll;
+DESCRIBE sql12737141.grade;
+describe sql12737141.professor;
+describe sql12737141.prof_course;
+describe sql12737141.prof_req;
+describe sql12737141.student;
+describe sql12737141.student_req;
+describe sql12737141.wage;
+
+
 -- create table
-use sql12737141;
-create table sql12737141.professor (
+create table sql12738833.professor (
 	prof_id int,
     firstname varchar(255),
-    lastname varchar(255),
-    num_of_course int
+    lastname varchar(255)
 );
 
-use sql12737141;
-create table sql12737141.enroll (
+create table sql12738833.enroll (
 	enroll_id int primary key,
     student_id int,
     course_id int
 );
 
-create table sql12737141.course (
+create table sql12738833.course (
     id int not NULL,
     course_id int PRIMARY KEY,
     name VARCHAR(255) not NULL,
@@ -28,9 +40,7 @@ create table sql12737141.course (
     contact VARCHAR(255)
 );
 
-USE sql12737141;
-
-create table sql12737141.prof_req (
+create table sql12738833.prof_req (
     p_req_id INT PRIMARY key AUTO_INCREMENT,
     course_id INT,
     req_no INT,
@@ -40,25 +50,17 @@ create table sql12737141.prof_req (
             on delete CASCADE
 );
 
--- describe sql
--- describe sql12737141.course;
--- describe sql12737141.enroll;
-DESCRIBE sql12737141.grade;
--- describe sql12737141.professor;
-describe sql12737141.prof_course;
--- describe sql12737141.prof_req;
-describe sql12737141.student;
-describe sql12737141.student_req;
-describe sql12737141.wage;
 
 
+
+------------------------- สร้างตารางให้ครบก่อนแล้วค่อยใช้อันนี้ -------------------------
 -- alter table modify
-alter table sql12737141.student
+alter table sql12738833.student
 	modify student_id int,
     MODIFY firstname varchar(255),
     MODIFY lastname varchar(255);
 
-alter table sql12737141.course
+alter table sql12738833.course
 	modify course_id int,
     modify name varchar(255),
     modify year int,
@@ -66,24 +68,24 @@ alter table sql12737141.course
     
 
 -- alter table add primary
-alter table sql12737141.student
+alter table sql12738833.student
 add primary key (student_id);
 
 -- alter table add foreign key
-alter table sql12737141.enroll
+alter table sql12738833.enroll
 add constraint student_id_enroll_fk
 	foreign key (student_id)
-    references sql12737141.student(student_id)
+    references sql12738833.student(student_id)
     on delete cascade;
 
-alter table sql12737141.enroll
+alter table sql12738833.enroll
 add constraint course_id_enroll_fk
 	foreign key (course_id)
-    references sql12737141.course(course_id)
+    references sql12738833.course(course_id)
     on delete cascade;
 
 -- drop table
-drop Table sql12737141.course;
+drop Table sql12738833.course;
 
 
 
@@ -103,7 +105,7 @@ drop Table sql12737141.course;
 
 
 
-create table sql12737141.grade (
+create table sql12738833.grade (
     grade_id int PRIMARY KEY AUTO_INCREMENT,
     student_id INT not NULL,
     course_id INT not NULL,
@@ -127,11 +129,11 @@ create table wage(
             on delete CASCADE 
 );
 
-drop table sql12737141.grade;
+drop table sql12738833.grade;
 
 
 
-create table sql12737141.history(
+create table sql12738833.history(
     history_id INT PRIMARY KEY AUTO_INCREMENT,
     enroll_id INT not NULL,
     ta_status VARCHAR(255),
@@ -142,7 +144,7 @@ create table sql12737141.history(
 );
 
 
-create table sql12737141.student_req (
+create table sql12738833.student_req (
     s_req_id int PRIMARY KEY AUTO_INCREMENT,
     course_id int NOT NULL,
     req_no INT,
@@ -160,18 +162,18 @@ modify grade INT;
 
 delete from grade;
 
-DESCRIBE sql12737141.grade;
+DESCRIBE sql12738833.grade;
 select * from grade;
 
 
 alter table enroll
 add Foreign Key (course_id) REFERENCES course(course_id);
 
-alter table sql12737141.student
+alter table sql12738833.student
 add num_ta int;
 
 
-create table sql12737141.prof_course (
+create table sql12738833.prof_course (
     prof_course_id int primary key AUTO_INCREMENT,
     course_id INT not NULL,
     prof_id int not null,
@@ -181,10 +183,10 @@ create table sql12737141.prof_course (
             on delete CASCADE
 );
 
-describe sql12737141.course;
-describe sql12737141.professor;
+describe sql12738833.course;
+describe sql12738833.professor;
 
 
-alter Table sql12737141.professor
+alter Table sql12738833.professor
 add PRIMARY key (prof_id);
 
