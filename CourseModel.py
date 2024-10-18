@@ -185,6 +185,9 @@ class CourseModel:
         query_course = 'select * from course where course_id = %d' %which_course_id
         message = self.db.fetch_data(query_course)
 
+        # if not message:
+        #     raise ValueError("No data found for course_id: {}".format(which_course_id))
+    
         print(message)
 
         self.setCourseID(message[0]['course_id'])
