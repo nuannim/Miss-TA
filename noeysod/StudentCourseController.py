@@ -57,6 +57,8 @@ class StudentCourseController:
     def setStudentInfo(self):
         self.db.connect()
         query = "SELECT student_id, firstname, lastname, year, num_ta FROM student where student_id = %s"
+        query2 = "SELECT course_id, grade FROM student where student_id = %s"
+        result2 = self.db.fetch_data(query2, (self.studentId,))  # ส่งค่า id เป็น tuple
         result = self.db.fetch_data(query, (self.studentId,))  # ส่งค่า id เป็น tuple
         self.db.close()
         self.Student.setStudentID(result[0]['student_id'])
@@ -64,10 +66,10 @@ class StudentCourseController:
         self.Student.setLastName(result[0]['lastname'])
         self.Student.setYear(result[0]['year'])
         self.Student.setnum_ta(result[0]['num_ta'])
-        self.db.connect()
-        query2 = "SELECT course_id, grade FROM student where student_id = %s"
-        result2 = self.db.fetch_data(query2, (self.studentId,))  # ส่งค่า id เป็น tuple
-        self.db.close()
+        # self.db.connect()
+        # query2 = "SELECT course_id, grade FROM student where student_id = %s"
+        # result2 = self.db.fetch_data(query2, (self.studentId,))  # ส่งค่า id เป็น tuple
+        # self.db.close()
         if result2:
             for i in result2:
                 gd = Grade()
