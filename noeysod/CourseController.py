@@ -155,7 +155,7 @@ class CourseController:
             image = cModel.getImage()
 
             cdate = cModel.getCdate()
-            adate = cModel.getAdate
+            adate = cModel.getAdate()
             wdate = cModel.getWdate()
             qualification_type = cModel.getQualification_type()
             contact = cModel.getContact()
@@ -171,6 +171,7 @@ class CourseController:
                          "image":image,
                          "cdate":cdate,
                          "adate":adate,
+                         "wdate":wdate,
 
                         "qtype" :qualification_type,
                         "contact" : contact
