@@ -24,10 +24,8 @@ body {
     border-radius: 16px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: scroll;
-    overflow-y: auto; /* เปิดการ scroll แนวตั้ง */
-    overflow-x: hidden; /* ซ่อนการ scroll แนวนอน */
-    max-height: 80vh;
+    height: auto; /* เปลี่ยน max-height เป็น height */
+    overflow: hidden; /* ลบ scrollbar */
 }
 
 .container header {
