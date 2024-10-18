@@ -90,11 +90,92 @@ class CourseController:
 
         #! continue
         # @self.app.post("/test/editcourse")
-        @self.app.post("/editcourse")
-        async def editcourse_submit():
-            pass
+        @self.app.post("/editcourse", response_class=HTMLResponse)
+        async def editcourse_submit(request : Request,
+                                    name:str=Form(...),
+                                    course_id:str=Form(...),
+                                    description:str=Form(...),
+                                    image:str=Form(...),
+                                    
+                                    cdate:date=Form(...),
+                                    adate:date=Form(...),
+                                    wdate:datetime=Form(...),
+                                    qtype:int=Form(...),
+                                    contact:str=Form(...)
+                                    ):
+
+            print()
+            print('========= CourseController.py ==========')
+            print('name :', name)
+            print('course_id :', course_id)
+            print('description :', description)
+            print('image :', image)
+            # print(req)
+            print('cdate :', cdate)
+            print('adate :', adate)
+            print('wdate :', wdate)
+            print('qtype :', qtype) # * 1 = อาจารย์ / 0 = ระบบ
+            print('contact :', contact)
+
+            cModel.setName(name)
+            cModel.setCourseID(course_id)
+            cModel.setDescription(description)
+            cModel.setImage(image)
+
+            cModel.setCdate(cdate)
+            cModel.setAdate(adate)
+            cModel.setWdate(wdate)
+            cModel.setQualification_type(qtype)
+            cModel.setContact(contact)
+
+            cModel.setCourseToDB()
+            
+
+            print('===================')
+            print()
+        
+            return self.template.TemplateResponse(
+                name="editcourse.html",
+                context={"request" : request}
+            )
 
     ################## & ##################
+
+
+        # @self.app.get('/test/editcourse', response_class=HTMLResponse)
+        @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
+        async def editcourse(request : Request, course_id):
+            print(f"CourseController.py - Received course_id: {course_id}")
+            
+            cModel.getDataFromDB(int(course_id))
+
+            name = cModel.getName()
+            course_id = cModel.getCourseID()
+            description = cModel.getDescription()
+            image = cModel.getImage()
+
+            cdate = cModel.getCdate()
+            adate = cModel.getAdate
+            wdate = cModel.getWdate()
+            qualification_type = cModel.getQualification_type()
+            contact = cModel.getContact()
+
+            return self.template.TemplateResponse(
+                name="editcourse.html",
+                # context={"request" : request,
+                #          "course_id" : course_id}
+                context={"request" : request,
+                         "name": name,
+                         "course_id":course_id,
+                         "description":description,
+                         "image":image,
+                         "cdate":cdate,
+                         "adate":adate,
+
+                        "qtype" :qualification_type,
+                        "contact" : contact
+                         }
+            )
 
 
 ########################################################

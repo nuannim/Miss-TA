@@ -74,6 +74,8 @@ class ProfessorModel:
         query = "select * from professor where prof_id = %d" %which_id
         message = self.db.fetch_data(query)
         
+        print()
+        print('================ ProfessorModel.py - getDataFromDB() =================')
         print(message)
 
         self.setFirstName(message[0]["firstname"])
@@ -101,6 +103,8 @@ class ProfessorModel:
         print("====================")
         print('ProfessorModel.py :', len(prof_course_message))
         print("====================")
+        print()
+        print('====================================================================')
         print()
 
         #* query prof_id

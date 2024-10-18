@@ -18,3 +18,7 @@ UPDATE course
 SET wdate = NULL
 WHERE course_id = 101;
 
+
+UPDATE course 
+SET adate = '2024-10-18', cdate = '2024-10-17'
+WHERE course_id BETWEEN 102 and 104;
