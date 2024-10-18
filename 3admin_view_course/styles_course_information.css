@@ -1,8 +1,10 @@
 .header{
     width: 100%;
     text-align: center;
-    padding-top: 1%;
-    padding-bottom: 2%;
+}
+
+body {
+    background-color: #C0DFFF;
 }
 
 .box {
@@ -14,13 +16,10 @@
     margin-top: 3%;
     display: block;
     justify-content: center;
-    text-align: left;
+
     padding-bottom: 4%;
 }
 
-body {
-    background-color: #C0DFFF;
-}
 
 .subject-name{
     color: #ffad50;
@@ -36,7 +35,7 @@ body {
     height: auto;
     width: 95%;
     font-family: 'Prompt', sans-serif;
-    font-size: 2.3vh;
+    font-size: 2vh;
     font-weight: 400;
     padding-left: 2.5%;
     padding-right: 2.5%;
@@ -86,17 +85,17 @@ body {
 
 option{
     font-family: 'Prompt', sans-serif;
-    font-size: 2.3vh;
+    font-size: 2vh;
 }
 
 select{
     font-family: 'Prompt', sans-serif;
-    font-size: 2.3vh;
+    font-size: 2vh;
 }
 
 label{
     font-family: 'Prompt', sans-serif;
-    font-size: 2.3vh;
+    font-size: 2vh;
 }
 
 
@@ -104,10 +103,7 @@ label{
 .wrapper{
     display: flex;
     align-items: center;
-    /*height: 40vh;
-    width: 10vh;*/
     flex-direction: column;
-
     /*addition*/
     position: fixed;
     top: 25%;
@@ -117,31 +113,6 @@ label{
     background: #FFD3A1;
     border-radius: 2vh;
 }
-
-/*ไม่ใช้แล้ว แต่ถ้าเพิ่มปุ่มใน nav bar ต้องใช้เ้วย*/
-.menu{
-    /*position: fixed;
-    top: 25vh;
-    left: 2vh;
-    width: 5vh;
-    height: 40vh;
-    background-color: #FFD3A1;
-    border-radius: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    margin-bottom: 1vh;*/
-    
-    /*list-style: none;
-    height: 100%; /* สามารถเปลี่ยนเป็น 40vw ได้ถ้าต้องการ
-    width: 3vw;*/
-
-    /*addition*/
-    /*display: flex;
-    flex-direction: column;
-    align-items: left; /* Center the list-items horizontally
-    border: 2px solid green;*/
-}
-
 
 .list-item{
     height: 4vw;
@@ -168,7 +139,6 @@ label{
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    /*left: -50%;*/
     border-radius: 50%;
 }
 .list-item a:hover{
@@ -179,7 +149,6 @@ label{
 .list-item a span{
     width: 0;
     left: 7.2vh;
-    /*margin-left: 5vh;*/
     padding: 0;
     margin-top: 1.2vh;
     position: absolute;
@@ -209,14 +178,14 @@ label{
 @media (max-width: 1024px) {
     .wrapper{
         top: 35%;
-        height: 30%; /* สามารถเปลี่ยนเป็น 40vw ได้ถ้าต้องการ */
+        height: 30%;
     }
     
 }
 
 @media (max-width: 768px) {
     .wrapper {
-        height: 7vh; /* เปลี่ยนเป็น 40vw ได้ถ้าต้องการ */
+        height: 7vh;
         width: 80vw;
         top: 92.5%;
         left: 9%;
@@ -233,6 +202,9 @@ label{
         height: 50px;
         width: 40px;
         padding-top: 0;
+    }
+    .subject-description{
+        width: 20%;
     }
 }
 
