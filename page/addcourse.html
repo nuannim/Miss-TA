@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add-Course</title>
-    <link rel="stylesheet" href="addcourse.css">
-    <link rel="stylesheet" href="../CHAT/popup.css">
+    <link rel="stylesheet" href="../static/css/addcourse.css">
+    <!-- <link rel="stylesheet" href="../CHAT/popup.css"> -->
+    <link rel="stylesheet" href="../static/popup.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -14,22 +16,32 @@
     <!-- <div class="tab-bar"> </div> -->
     <section class="container">
         <div class="topic">เพิ่มรายวิชา / ADD COURSE</div>
-        <form action="#" class="form">
+<!-- * form action -->
+        <!-- <form action="#" class="form"> -->
+        <form action="/addcourse" class="form" method="post">
+
             <div class="input-box">
                 <label for="text">ชื่อวิชา :</label>
-                <input type="text" placeholder="กรอกชื่อวิชา" required>
+<!-- * name -->
+                <!-- <input type="text" placeholder="กรอกชื่อวิชา" required> -->
+                <input type="text" placeholder="กรอกชื่อวิชา" name="name" required>
+
             </div>
             <div class="input-box">
                 <label for="text">รหัสวิชา :</label>
-                <input type="text" placeholder="กรอกรหัสวิชา" required>
+<!-- * course_id  -->
+                <input type="text" placeholder="กรอกรหัสวิชา" name="course_id" required>
+                <!-- ! ควรเป็น text หรือ int -->
             </div>
             <div class="input-box">
                 <label for="course-description">คำอธิบายรายวิชา :</label>
-                <textarea id="course-description" placeholder="กรอกคำอธิบายรายวิชา"></textarea>
+<!-- * description -->
+                <textarea id="course-description" placeholder="กรอกคำอธิบายรายวิชา" name="description"></textarea>
             </div>
             <div class="input-box">
                 <label for="file">รูปปกรายวิชา :</label>
-                <input type="file">
+<!-- * image -->
+                <input type="file" name="image">
             </div>
             <!-- <div class="column"> 
                 
@@ -37,6 +49,7 @@
             <div class="requirements-column" id="requirements-column">
                 <div class="input-box">
                     <label for="text">Requirements :</label>
+<!-- ! requirement ไม่รู้จะเอาไง -->
                     <input type="text" placeholder="requirements" required>
                     <button class="add-requirement-button" type="button" onclick="addRequirements()">add</button>
                     <div class="check">
@@ -48,26 +61,35 @@
             <div class="column">
                 <div class="input-box">
                     <label >วันปิดรับสมัคร :</label>
-                    <input type="date" placeholder="วันปิดรับสมัคร" required>
+<!-- * cdate -->
+                    <!-- <input type="date" placeholder="วันปิดรับสมัคร" required> -->
+                    <input type="date" placeholder="วันปิดรับสมัคร" name="cdate" required>
                 </div>
                 <div class="input-box">
                     <label>วันประกาศผล :</label>
-                    <input type="date" placeholder="วันประกาศผล" required>
+<!-- * adate -->
+                    <!-- <input type="date" placeholder="วันประกาศผล" required> -->
+                    <input type="date" placeholder="วันประกาศผล" name="adate" required>
                 </div>
             </div>
             <div class="input-box">
                 <label>วันยืนยันสิทธิ์ :</label>
-                <input type="datetime-local" placeholder="วันยืนยันสิทธิ์" required>
+<!-- * wdate -->
+                <!-- <input type="datetime-local" placeholder="วันยืนยันสิทธิ์" required> -->
+                <input type="datetime-local" placeholder="วันยืนยันสิทธิ์" name="wdate" required>
             </div>
             <div class="choose-box">
                 <div class="option">
+<!-- ! qtype -->
                     <label>กระบวนการคัดเลือก :</label>
                     <div class="choose">
-                        <input type="radio" id="check1" name="choose" ch required>
+                        <!-- <input type="radio" id="check1" name="choose" ch> -->
+                        <input type="radio" id="check1" name="qtype" ch value=1>
                         <label for="check1">อาจารย์เป็นผู้คัดเลือก</label>
                     </div>
                     <div class="choose">
-                        <input type="radio" id="check2" name="choose" required>
+                        <!-- <input type="radio" id="check2" name="choose"> -->
+                        <input type="radio" id="check2" name="qtype" value=0 required>
                         <label for="check2">ระบบเป็นผู้คัดเลือก</label>
                     </div>
                 </div>
@@ -75,7 +97,8 @@
             
             <div class="input-box">
                 <label for="text">ช่องทางการติดต่ออาจารย์ :</label>
-                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" required>
+<!-- * contact -->
+                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" name="contact" required>
             </div>
 
             <div class="colunm"></div>
@@ -121,6 +144,7 @@
                 <div class="select-box2">
                     <div class="input-box">
                         <label for="text">ชั้นปีที่สมัครได้ :</label>
+<!-- ! ชั้นปีที่สมัครได้ -->
                         <select>
                             <option>ปี 1</option>
                             <option>ปี 2</option>
@@ -132,6 +156,7 @@
                     </div>
                     
             </div>
+<!-- & คำนวณ TA -->
             <div class="input-box3">
                 <label for="text">จำนวนนักศึกษาที่ลงทะเบียนเรียนทั้งหมด :</label>
                 <input type="number" placeholder="กรอกจำนวนทั้งหมด" required>
@@ -164,13 +189,16 @@
             </div> -->
 
             <div class="but">
-                <button onclick="openAddCoursePopup()">Submit</button>
+<!-- * submit -->
+                <!-- <button onclick="openAddCoursePopup()">Submit</button> -->\
+                <button type="submit" onclick="openAddCoursePopup()">Submit</button>
             </div>
             <div class="wrapper">
               <ul class="menu">
                 <li class="list-item">
-                <a href="../1admin_homepage/admin_homepage.html" class="้home">
-                  <span>Home</span>
+                <!-- <a href="../page/admin_subject.html" class="้home"> -->
+                <a href="{{ url_for('admin_subject') }}" class="้home">
+                        <span>Home</span>
                 </a>
                 </li>
               </ul>
@@ -186,6 +214,6 @@
             </div>
           </div>
     </section>
-    <script src="addcourse.js"></script>
+    <script src="../static/addcourse.js"></script>
 </body>
 </html>

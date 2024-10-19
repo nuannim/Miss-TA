@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdminHomepage</title>
-    <link rel="stylesheet" href="styles_admin_homepage.css" />
+    <link rel="stylesheet" href="../static/css/styles_admin_homepage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -14,46 +14,34 @@
       <div class="box">
         <div class="header">
           <div class="topic">รายวิชา / COURSE</div>
-          <a href="../5add_course/addcourse.html" class="add-button"></a>
+          <!-- <a href="../5add_course/addcourse.html" class="add-button"></a> -->
+          <a href="{{ url_for('addcourse') }}" class="add-button"></a>
         </div>
         <div class="allsubject">
 
+        {% for i in allProfCourses %}
         <div class="subjectBox">
-          <div class="subjectImage"><img src="subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
+          <!-- <div class="subjectImage"><img src="../static/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div> -->
+          <div class="subjectImage"><img src="{{ url_for('static', path='images/subject_image.png') }}" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
-            <div class="subject-name">Physical Computing</div>
-            <div class="subject-description">Oohh I
-              I just woke up from a dream
-              Where you and I had to say goodbye
-              And I don't know what it all means
-              But since I survived, I realized
-              Wherever you go, that's where I'll follow
-              Nobody's promised tomorrow
-              So I'ma love you every night like it's the last night
-              Like it's the last night
-              If the world was ending, I'd wanna be next to you
-              If the party was over and our time on Earth was through
-              I'd wanna hold you just for a while
-              And die with a smile
-              If the world was ending, I'd wanna be next to you
-              Woo-ooh
-              Ooh, lost
-              Lost in the words that we scream
-              I don't even wanna do this anymore
-              'Cause you already know what you mean to me
-              And our love is the only war worth fighting for
-              Wherever you go, that's where I'll follow
-              Nobody's promised tomorrow
-              So I'ma love you every night like it's the last night
-              Like it's the last night
+            <!-- <div class="subject-name">Physical Computing</div> -->
+            <div class="subject-name">{{ i['name'] }}</div>
+            <div class="subject-description">
+              <!-- Oohh I just woke up from a dream -->
+               {{ i['description'] }}
             </div>
+<!-- ! -->
             <a style="text-decoration: none;" href="../3admin_view_course/teachercourse.html" class="view-button">VIEW</a>
 
           </div>
-          <a href="../6edit_course/editcourse.html" class="edit-button"></a>
+          <!-- <a href="../6edit_course/editcourse.html" class="edit-button"></a> -->
+          <a href="{{ url_for('editcourse', course_id=i['course_id']) }}" class="edit-button"></a>
         </div>
+        {% endfor %}
 
-        <div class="subjectBox">
+        <!-- ! เดี๋ยวใช้ loop in jinja2 -->
+        <!--^ ใช้ template ข้างบน -->
+        <!-- <div class="subjectBox">
           <div class="subjectImage"><img src="subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
             <div class="subject-name">Information System Analysis and Design</div>
@@ -117,13 +105,13 @@
           <a href="../6edit_course/editcourse.html" class="edit-button"></a>
         </div>
 
-      </div>
-
+      </div>-->
       <div class="wrapper">
         <div class="nav-bar">
         <li class="list-item">
-          <a href="admin_homepage.html" class="้home">
-            <span>Home</span>
+          <!-- <a href="admin_homepage.html" class="้home"> -->
+            <a href="{{ url_for('admin_subject') }}" class="้home">
+              <span>Home</span>
           </a>
         </li>
       </div>

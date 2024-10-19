@@ -49,7 +49,7 @@ class ProfCourseView:
         ##*
 
             return self.template.TemplateResponse(
-                name="admin_subject.html",
+                name="admin_homepage.html",
                 context={"request": request, "allProfCourses": message2}
             )
     ################## & ##################

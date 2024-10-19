@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit-Course</title>
-    <link rel="stylesheet" href="editcourse.css">
-    <link rel="stylesheet" href="../CHAT/delete_popup.css">
-    <link rel="stylesheet" href="../CHAT/edit_popup.css">
+    <link rel="stylesheet" href="../static/css/editcourse.css">
+    <link rel="stylesheet" href="../static/css/delete_popup.css">
+    <link rel="stylesheet" href="../static/css/ edit_popup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -19,18 +19,23 @@
      </div>
     <section class="container">
         <div class="topic">แก้ไขรายวิชา / EDIT COURSE</div>
-        <form action="#" class="form">
+
+        <form action="/editcourse" class="form">
+<!-- * name -->
+
             <div class="input-box">
                 <label for="text">ชื่อวิชา :</label>
-                <input type="text" placeholder="กรอกชื่อวิชา" required>
+                <input type="text" placeholder="กรอกชื่อวิชา" value="{{ name }}" required>
             </div>
+<!-- * course_id -->
             <div class="input-box">
                 <label for="text">รหัสวิชา :</label>
-                <input type="text" placeholder="กรอกรหัสวิชา" required>
+                <input type="text" placeholder="กรอกรหัสวิชา" value="{{ course_id }}" required>
             </div>
+<!-- * description-->
             <div class="input-box">
                 <label for="course-description">คำอธิบายรายวิชา :</label>
-                <textarea id="course-description" placeholder="กรอกคำอธิบายรายวิชา"></textarea>
+                <textarea id="course-description" placeholder="กรอกคำอธิบายรายวิชา" value="{{ description }}"></textarea>
             </div>
             <div class="input-box">
                 <label for="file">รูปปกรายวิชา :</label>
@@ -39,6 +44,7 @@
             <!-- <div class="column"> 
                 
             </div> -->
+<!-- * requirement -->
             <div class="requirements-column" id="requirements-column">
                 <div class="input-box">
                     <label for="text">Requirements :</label>
@@ -50,20 +56,68 @@
                     </div>
                 </div>
             </div>
+
+<!-- * cdate -->
             <div class="column">
                 <div class="input-box">
-                    <label >วันปิดรับสมัคร :</label>
-                    <input type="date" placeholder="วันปิดรับสมัคร" required>
+                    <label for="cdate">วันปิดรับสมัคร :</label>
+                    <input type="date" id="cdate" name="cdate" required>
                 </div>
-                <div class="input-box">
-                    <label>วันประกาศผล :</label>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var cdate = '{{ cdate }}'; // Check if this logs correctly
+                        console.log('cdate:', cdate); // Look at your browser's console for this log
+                        if(cdate) {
+                            document.getElementById('cdate').value = cdate;
+                        } else {
+                            console.error('cdate variable is not defined.');
+                        }
+                    });
+                </script>
+
+<!-- * adate -->
+                <!-- <div class="input-box">
+                    <label for="adate">วันประกาศผล :</label>
+
                     <input type="date" placeholder="วันประกาศผล" required>
+                </div> -->
+<!-- & -->
+                <div class="input-box">
+                    <label for="adate">วันประกาศผล : </label>
+                    <input type="date" id="adate" name="adate" required>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var adate = '{{ adate }}'; // Check if this logs correctly
+                        console.log('adate:', adate); // Look at your browser's console for this log
+                        if(adate) {
+                            document.getElementById('adate').value = adate;
+                        } else {
+                            console.error('adate variable is not defined.');
+                        }
+                    });
+                </script>
+<!-- & -->
             </div>
+<!-- * wdate -->
             <div class="input-box">
-                <label>วันยืนยันสิทธิ์ :</label>
-                <input type="datetime-local" placeholder="วันยืนยันสิทธิ์" required>
+                <label>วันยืนยันสิทธิ์ : </label>
+                <input type="datetime-local" id="wdate" name="wdate" required>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var wdate = '{{ wdate }}'; // Check if this logs correctly
+                    console.log('wdate:', wdate); // Look at your browser's console for this log
+                    if(wdate) {
+                        document.getElementById('wdate').value = wdate;
+                    } else {
+                        console.error('wdate variable is not defined.');
+                    }
+                });
+            </script>
+<!-- * qtype -->
             <div class="choose-box">
                 <div class="option">
                     <label>กระบวนการคัดเลือก :</label>
@@ -77,10 +131,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="input-box">
+<!-- * contact -->
                 <label for="text">ช่องทางการติดต่ออาจารย์ :</label>
-                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" required>
+                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" value="{{ contact }}" required>
             </div>
 
             <div class="colunm"></div>
@@ -174,7 +229,7 @@
             <div class="wrapper">
               <ul class="menu">
                 <li class="list-item">
-                <a href="../1admin_homepage/admin_homepage.html" class="้home">
+                <a href="{{ url_for('admin_subject') }}" class="้home">
                   <span>Home</span>
                 </a>
                 </li>
