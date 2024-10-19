@@ -274,7 +274,7 @@ class CourseModel:
 
         ############* new insert ############
 
-        # #* insert_course (new)
+        #* insert_course (new)
         try:
             add_course = ('insert into course(course_id, name, year) values (%s, %s, %s)')
             data = (self.getCourseID(), self.getName(), self.getYear())
