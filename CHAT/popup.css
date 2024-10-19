@@ -2,6 +2,14 @@
     width: 700px;
     height: 300px;
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999; /* อยู่เหนือเนื้อหาทั้งหมด */
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; 
 }
 
 .popup {
@@ -27,6 +35,7 @@
     font-size: 5vh;
     box-sizing: content-box;
 }
+
 
 .close_popup_button{
     position: fixed;
