@@ -17,41 +17,32 @@
           <div class="topic">รายวิชา / COURSE</div>
         </div>
         <div class="allsubject">
-
+        {% for course in courses %}
         <div class="subjectBox">
           <div class="subjectImage"><img src="../static/images/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
-            <div class="subject-name">Physical Computing</div>
-            <div class="subject-description">Oohh I
-              I just woke up from a dream
-              Where you and I had to say goodbye
-              And I don't know what it all means
-              But since I survived, I realized
-              Wherever you go, that's where I'll follow
-              Nobody's promised tomorrow
-              So I'ma love you every night like it's the last night
-              Like it's the last night
-              If the world was ending, I'd wanna be next to you
-              If the party was over and our time on Earth was through
-              I'd wanna hold you just for a while
-              And die with a smile
-              If the world was ending, I'd wanna be next to you
-              Woo-ooh
-              Ooh, lost
-              Lost in the words that we scream
-              I don't even wanna do this anymore
-              'Cause you already know what you mean to me
-              And our love is the only war worth fighting for
-              Wherever you go, that's where I'll follow
-              Nobody's promised tomorrow
-              So I'ma love you every night like it's the last night
-              Like it's the last night
+            <div class="subject-name">{{ course.name }}</div>
+            <div class="subject-description">
+              {{ course.description }}
             </div>
             <a style="text-decoration: none;" href="/course/{{111}}" class="view-button">VIEW</a>
           </div>
           <div class="status-text">สมัครได้</div>
         </div>
-
+        {% endfor %}
+        {% for course in coursef %}
+        <div class="subjectBox-cantregis">
+          <div class="subjectImage"><img src="../static/images/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
+          <div class="subject-information">
+            <div class="subject-name">{{ course.name }}</div>
+            <div class="subject-description">
+              {{ course.description }}
+            </div>
+            <span style="text-decoration: none; cursor: default;" class="view-button">VIEW</span>
+          </div>
+          <div class="status-text">สมัครไม่ได้</div>
+        </div>
+        {% endfor %}
       </div>
       <div class="wrapper">
           <li class="list-item">

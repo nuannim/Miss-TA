@@ -6,31 +6,43 @@ from fastapi.staticfiles import StaticFiles
 from StudentCourseController import *
 from Database import *
 from Requirement import *
+from CourseModel import *
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 # กำหนดตำแหน่งของ Jinja2 template
 templates = Jinja2Templates(directory="page")
 
-# scc = StudentCourseController(66070998)
-# course = scc.getCourseForStudent()
+
+import asyncio
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
 
 @app.get("/", response_class=HTMLResponse)
 async def homepage(request: Request):
+    scc = StudentCourseController(66070998)
+
+    # รัน setStudentInfo() ใน thread
+    await asyncio.to_thread(scc.setStudentInfo)
     
-    # print("---------------------")
-    # # print(course)
-    # print("---------------------")
-    # # course_data = []
-    # for i in course:
-    #     if isinstance(i, CourseModel):
-    #         name = i.getName()
-    #         status = i.getQualification_type()
-    #         descrip = i.getDescription()
-    #         cid = i.getCourseID()
-    #         tup = {"name": name, "status": status, "description": descrip, "index_id" : i, "course_id" : cid}
-    #         course_data.append(tup)
+    # รัน getCourseForStudent() ใน thread และรับค่าผลลัพธ์
+    course = await asyncio.to_thread(scc.getCourseForStudent)
+
+    course_data = []
+    coursefdata = []
+    for i in course:
+        if isinstance(i, CourseModel):  
+            name = i.getName()
+            descrip = i.getDescription()
+            cid = i.getCourseID()
+            status = scc.checkstatus(cid)
+            tup = {"name": name, "status": status, "description": descrip, "index_id": i, "course_id": cid}
+            if status:
+                course_data.append(tup)
+            else:
+                coursefdata.append(tup)
+
+    return templates.TemplateResponse("user_homepage.html", {"request": request, "courses": course_data, "coursef": coursefdata})
     
-    return templates.TemplateResponse("user_homepage.html", {"request": request})
 
 @app.get("/course/{course_id}", response_class=HTMLResponse)
 async def course_detail(request: Request,course_id: int):

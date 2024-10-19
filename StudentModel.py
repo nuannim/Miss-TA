@@ -1,4 +1,5 @@
 from Grade import *
+from Database import *
 class StudentModel:
     def __init__(self, 
                  student_id="", 
@@ -18,6 +19,7 @@ class StudentModel:
         self._grade = [Grade]
         self._wage = wage
         self._num_ta = num_ta
+        self.db = MySQLDatabase()
 
 #^ getter
 
@@ -45,6 +47,16 @@ class StudentModel:
     def getallGrade(self):
         return self._grade
 
+    def getspecGrade(self, cid):
+        if Grade is None:
+            return 0
+        else:
+            for i in self._grade:
+                if isinstance(i, Grade):  
+                    if i.getcourse_id() == cid:
+                        return i.getgrade()
+            return 0 
+    
     def getWage(self):
         return self._wage
 
@@ -80,3 +92,25 @@ class StudentModel:
     def setWage(self, wage):
         self._wage = wage
 
+    def getDataFromDB(self, studentId):
+        self.db.connect()
+        query = "SELECT student_id, firstname, lastname, year, num_ta FROM student where student_id = %s"
+        query2 = "SELECT course_id, grade FROM student where student_id = %s"
+        result2 = self.db.fetch_data(query2, (studentId,))  # ส่งค่า id เป็น tuple
+        result = self.db.fetch_data(query, (studentId,))  # ส่งค่า id เป็น tuple
+        self.db.close()
+        self.setStudentID(result[0]['student_id'])
+        self.setFirstName(result[0]['firstname'])
+        self.setLastName(result[0]['lastname'])
+        self.setYear(result[0]['year'])
+        self.setnum_ta(result[0]['num_ta'])
+        # self.db.connect()
+        # query2 = "SELECT course_id, grade FROM student where student_id = %s"
+        # result2 = self.db.fetch_data(query2, (self.studentId,))  # ส่งค่า id เป็น tuple
+        # self.db.close()
+        if result2:
+            for i in result2:
+                gd = Grade()
+                gd.setcourse_id(i['course_id'])
+                gd.setgrade(i['grade'])
+                self.setallGrade(gd)
