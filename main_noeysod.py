@@ -32,9 +32,9 @@ chotipat = ProfessorModel()
 chotipatCourse = CourseModel()
 
 chotipat.getDataFromDB(prof_id)
-
+chotipatCourse.getDataFromDB(prof_id)
 #! มันต้องมีไหมวะ
-chotipatCourse.setCourseToDB()
+# chotipatCourse.setCourseToDB()
 
 #################* call view class
 from ProfCourseView import ProfCourseView

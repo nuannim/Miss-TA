@@ -23,7 +23,13 @@ class CourseModel:
                  num_of_ta=0, 
                  num_of_stu_enroll=0,
                  requirement=[],
-                 course_history_id=0):
+
+                 course_history_id=0,
+                 
+                 ta_type='',
+                 an_type='',
+                 enroll_num='',
+                 num_regis=''):
 
         self._course_id = course_id # รหัสวิชา
         self._name = name # ชื่อวิชา
@@ -51,6 +57,11 @@ class CourseModel:
         self._requirement = [Requirement] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
 
         self._course_history_id=course_history_id
+
+        self._ta_type = ta_type
+        self._an_type = an_type
+        self._enroll_num = enroll_num
+        self._num_regis = num_regis
 
         self.db = MySQLDatabase()
 
@@ -116,6 +127,19 @@ class CourseModel:
     def getCourseHistoryID(self):
         return self._course_history_id
 
+#* new
+    def getTaType(self):
+        return self._ta_type
+
+    def getAnType(self):
+        return self._an_type
+
+    def getEnrollNum(self):
+        return self._enroll_num
+    
+    def getNumRegis(self):
+        return self._num_regis
+    
 
 #^ attribute : setter
 
@@ -176,6 +200,21 @@ class CourseModel:
 
     def setCourseHistoryID(self, course_history_id):
         self._course_history_id = course_history_id
+
+#* new
+    def setTaType(self, ta_type):
+        self._ta_type = ta_type
+
+    def setAnType(self, an_type):
+        self._an_type = an_type
+
+    def setEnrollNum(self, enroll_num):
+        self._enroll_num = enroll_num
+
+    def setNumRegis(self, num_regis):
+        self._num_regis = num_regis
+
+
 
 
 #^ db getter : getDataFromDB
@@ -249,6 +288,10 @@ class CourseModel:
         self.setContact(fetch_courseNcoursehistory[0]['contact'])
 
         self.setCourseHistoryID(fetch_courseNcoursehistory[0]['course_history_id'])
+        self.setTaType(fetch_courseNcoursehistory[0]['ta_type'])
+        self.setAnType(fetch_courseNcoursehistory[0]['an_type'])
+        self.setNumRegis(fetch_courseNcoursehistory[0]['num_regis'])
+        self.setEnrollNum(fetch_courseNcoursehistory[0]['enroll_num'])
 
         self.db.close()
 
@@ -276,16 +319,18 @@ class CourseModel:
 
         #* insert_course (new)
         try:
-            add_course = ('insert into course(course_id, name, year) values (%s, %s, %s)')
-            data = (self.getCourseID(), self.getName(), self.getYear())
+            add_course = ('insert into course(course_id, name, year, enroll_num) values (%s, %s, %s, %s)')
+            data = (self.getCourseID(), self.getName(), self.getYear(), self.getEnrollNum())
             self.db.insert_data(add_course, data)
         except Exception as e:
             print(f"Error inserting course: {e}")
 
         #* insert_course_history (new)
         # Always attempt to insert course history
-        add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image) values (%s, %s, %s, %s, %s, %s, %s, %s)')
-        data_history = (self.getCourseID(), self.getDescription(), self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact(), self.getImage())
+        add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image, ta_type, an_type, num_regis) '
+                              'values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s ,%s)')
+        data_history = (self.getCourseID(), self.getDescription(), self.getAdate(), self.getWdate(), self.getCdate(), 
+                        self.getQualification_type(), self.getContact(), self.getImage(), self.getTaType(), self.getAnType(), self.getNumRegis())
         self.db.insert_data(add_course_history, data_history)
 
 
@@ -311,4 +356,8 @@ class CourseModel:
 
     def setHistoryToDB(self):
         '''set history everytime we make transaction'''
+        pass
+
+    def setProfCourseToDB(self, which_prof_id):
+        # add_prof_course =
         pass

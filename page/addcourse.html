@@ -84,7 +84,7 @@
                     <label>กระบวนการคัดเลือก :</label>
                     <div class="choose">
                         <!-- <input type="radio" id="check1" name="choose" ch> -->
-                        <input type="radio" id="check1" name="qtype" ch value=1>
+                        <input type="radio" id="check1" name="qtype" value=1>
                         <label for="check1">อาจารย์เป็นผู้คัดเลือก</label>
                     </div>
                     <div class="choose">
@@ -106,13 +106,13 @@
             <div class="select-box">
                 <div class="input-box">
                     <label for="assistantType">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
-                    <select id="assistantType">
-                        <option class="option1">ผู้ช่วยงานวิชาปฏิบัติ</option>
-                        <option class="option2">ผู้ช่วยเตรียมการสอนวิชาปฏิบัติ</option> <!-- อันนี้มีมั้ยนะ-->
-                        <option class="option3">ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
-                        <option class="option4">ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
-                        <option class="option5">ผู้ช่วยคุมสอบ</option>
-                        <option class="option6">อื่นๆ</option>
+                    <select id="assistantType" name="ta_type">
+                        <option class="option1" name="ta_type">ผู้ช่วยงานวิชาปฏิบัติ</option>
+                        <option class="option2" name="ta_type">ผู้ช่วยเตรียมการสอนวิชาปฏิบัติ</option> <!-- อันนี้มีมั้ยนะ-->
+                        <option class="option3" name="ta_type">ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
+                        <option class="option4" name="ta_type">ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
+                        <option class="option5" name="ta_type">ผู้ช่วยคุมสอบ</option>
+                        <option class="option6" name="ta_type">อื่นๆ</option>
                     </select>
                 </div>
             </div>
@@ -126,16 +126,16 @@
                     </div>
                 </div>
             </div>
-
+<!--* an_type -->
             <div class="choose-box2">
                 <div class="option2">
                     <label>รูปแบบการประกาศ :</label>
-                    <div class="choose2">
-                        <input type="radio" id="check3" name="choose2" ch required>
+                    <div class="choose2" name="an_type">
+                        <input type="radio" id="check3" name="an_type" value=1 required>
                         <label for="check3">ขึ้นทุกคน</label>
                     </div>
-                    <div class="choose2">
-                        <input type="radio" id="check4" name="choose2" required>
+                    <div class="choose2" name="an_type">
+                        <input type="radio" id="check4" name="an_type" value=0 required>
                         <label for="check4">ขึ้นเฉพาะ TA วิชานี้</label>
                     </div>
                 </div>
@@ -146,21 +146,23 @@
                     <div class="input-box">
                         <label for="text">ชั้นปีที่สมัครได้ :</label>
 <!-- ! ชั้นปีที่สมัครได้ -->
-                        <select>
-                            <option>ปี 1</option>
-                            <option>ปี 2</option>
-                            <option>ปี 3</option>
-                            <option>ปี 4</option>
-                            <option>ป.โท</option>
-                            <option>ป.เอก</option>
+ <!-- * year (course) -->
+                        <select name="year">
+                            <option name="year" value=1>ปี 1</option>
+                            <option name="year" value=2>ปี 2</option>
+                            <option name="year" value=3>ปี 3</option>
+                            <option name="year" value=4>ปี 4</option>
+                            <option name="year" value=5>ป.โท</option>
+                            <option name="year" value=6>ป.เอก</option>
                         </select>
                     </div>
                     
             </div>
 <!-- & คำนวณ TA -->
             <div class="input-box3">
+<!-- * enroll_num -->
                 <label for="text">จำนวนนักศึกษาที่ลงทะเบียนเรียนทั้งหมด :</label>
-                <input type="number" placeholder="กรอกจำนวนทั้งหมด" required>
+                <input type="number" placeholder="กรอกจำนวนทั้งหมด" name="enroll_num" required>
                 <div class="numofta">
                     <label for="text">คำนวณจำนวน TA ที่เป็นไปได้</label>
                     <button type="button">cal</button>
@@ -169,7 +171,7 @@
             <div class="input-box3">
                 <label for="text">จำนวน TA ที่เป็นไปได้ทั้งหมด :</label>
 <!--* num_regis -->
-                <input type="number" placeholder="จำนวน TA" required>
+                <input type="number" placeholder="จำนวน TA" name="num_regis" required>
             </div>
             <!-- ไม่ต้องมี -->
             <!-- <div class="colunm"></div>
@@ -192,7 +194,7 @@
 
             <div class="but">
 <!-- * submit -->
-                <!-- <button onclick="openAddCoursePopup()">Submit</button> -->\
+                <!-- <button onclick="openAddCoursePopup()">Submit</button> -->
                 <button type="submit" onclick="openAddCoursePopup()">Submit</button>
             </div>
             <div class="wrapper">

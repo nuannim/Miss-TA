@@ -50,7 +50,12 @@ class CourseController:
                                 adate:date=Form(...),
                                 wdate:datetime=Form(...),
                                 qtype:int=Form(...),
-                                contact:str=Form(...)
+                                contact:str=Form(...),
+                                ta_type:str=Form(...),
+                                an_type:str=Form(...),
+                                year:str=Form(...),
+                                enroll_num:str=Form(...),
+                                num_regis:str=Form(...)
                                     ):
             print()
             print('========= CourseController.py ==========')
@@ -65,6 +70,14 @@ class CourseController:
             print('qtype :', qtype) # * 1 = อาจารย์ / 0 = ระบบ
             print('contact :', contact)
 
+            print()
+            print('ta_type :', ta_type)
+            print('an_type :', an_type)
+            print('year :', year)
+            print('enroll_num :', enroll_num)
+            print('num_regis :', num_regis)
+
+
             cModel.setName(name)
             cModel.setCourseID(course_id)
             cModel.setDescription(description)
@@ -76,7 +89,15 @@ class CourseController:
             cModel.setQualification_type(qtype)
             cModel.setContact(contact)
 
+            cModel.setTaType(ta_type)
+            cModel.setAnType(an_type)
+            cModel.setYear(year)
+            cModel.setEnrollNum(enroll_num)
+            cModel.setNumRegis(num_regis)
+
+
             cModel.setCourseToDB()
+
             
 
             print('===================')
