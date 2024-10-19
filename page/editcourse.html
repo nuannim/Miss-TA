@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit-Course</title>
+    <link rel="stylesheet" href="editcourse.css">
+    <link rel="stylesheet" href="../CHAT/delete_popup.css">
+    <link rel="stylesheet" href="../CHAT/edit_popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- <div class="tab-bar"> </div> -->
+     <div class="del">
+        <button onclick="openDeletePopup()">Delete Course</button>
+     </div>
+    <section class="container">
+        <div class="topic">แก้ไขรายวิชา / EDIT COURSE</div>
+        <form action="#" class="form">
+            <div class="input-box">
+                <label for="text">ชื่อวิชา :</label>
+                <input type="text" placeholder="กรอกชื่อวิชา" required>
+            </div>
+            <div class="input-box">
+                <label for="text">รหัสวิชา :</label>
+                <input type="text" placeholder="กรอกรหัสวิชา" required>
+            </div>
+            <div class="input-box">
+                <label for="course-description">คำอธิบายรายวิชา :</label>
+                <textarea id="course-description" placeholder="กรอกคำอธิบายรายวิชา"></textarea>
+            </div>
+            <div class="input-box">
+                <label for="file">รูปปกรายวิชา :</label>
+                <input type="file">
+            </div>
+            <!-- <div class="column"> 
+                
+            </div> -->
+            <div class="requirements-column" id="requirements-column">
+                <div class="input-box">
+                    <label for="text">Requirements :</label>
+                    <input type="text" placeholder="requirements" required>
+                    <button class="add-requirement-button" type="button" onclick="addRequirements()">add</button>
+                    <div class="check">
+                        <label>จำเป็นต้องตอบคำถามนี้</label>
+                        <input type="checkbox">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <label >วันปิดรับสมัคร :</label>
+                    <input type="date" placeholder="วันปิดรับสมัคร" required>
+                </div>
+                <div class="input-box">
+                    <label>วันประกาศผล :</label>
+                    <input type="date" placeholder="วันประกาศผล" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <label>วันยืนยันสิทธิ์ :</label>
+                <input type="datetime-local" placeholder="วันยืนยันสิทธิ์" required>
+            </div>
+            <div class="choose-box">
+                <div class="option">
+                    <label>กระบวนการคัดเลือก :</label>
+                    <div class="choose">
+                        <input type="radio" id="check1" name="choose" ch>
+                        <label for="check1">อาจารย์เป็นผู้คัดเลือก</label>
+                    </div>
+                    <div class="choose">
+                        <input type="radio" id="check2" name="choose">
+                        <label for="check2">ระบบเป็นผู้คัดเลือก</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-box">
+                <label for="text">ช่องทางการติดต่ออาจารย์ :</label>
+                <input type="text" placeholder="กรอกเบอร์โทรศัพท์" required>
+            </div>
+
+            <div class="colunm"></div>
+            <div class="select-box">
+                <div class="input-box">
+                    <label for="assistantType">รูปแบบผู้ช่วยปฏิบัติงาน :</label>
+                    <select id="assistantType">
+                        <option class="option1">ผู้ช่วยงานวิชาปฏิบัติ</option>
+                        <option class="option2">ผู้ช่วยเตรียทการสอนวิชาปฏิบัติ</option> <!-- อันนี้มีมั้ยนะ-->
+                        <option class="option3">ผู้ช่วยงานวิชาทฤษฎีทั่วไป</option>
+                        <option class="option4">ผู้ช่วยงานวิชาทฤษฎี Projectbase</option>
+                        <option class="option5">ผู้ช่วยคุมสอบ</option>
+                        <option class="option6">อื่นๆ</option>
+                    </select>
+                </div>
+            </div>
+            <div id="task-detail">
+                <div class="input-box">
+                    <div class="daymon">
+                        <label for="wage">ค่าจ้าง :</label>
+                         <input type="number" id="wage" placeholder="กรอกจำนวนเงิน" min="0" required>
+                         <label for="days">จำนวนวัน :</label>
+                         <input type="number" id="days" placeholder="กรอกได้ไม่เกิน 15 วัน" min="0" max="15" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choose-box2">
+                <div class="option2">
+                    <label>รูปแบบการประกาศ :</label>
+                    <div class="choose2">
+                        <input type="radio" id="check3" name="choose2" ch>
+                        <label for="check3">ขึ้นทุกคน</label>
+                    </div>
+                    <div class="choose2">
+                        <input type="radio" id="check4" name="choose2">
+                        <label for="check4">ขึ้นเฉพาะ TA วิชานี้</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="colunm"></div>
+                <div class="select-box2">
+                    <div class="input-box">
+                        <label for="text">ชั้นปีที่สมัครได้ :</label>
+                        <select>
+                            <option>ปี 1</option>
+                            <option>ปี 2</option>
+                            <option>ปี 3</option>
+                            <option>ปี 4</option>
+                            <option>ป.โท</option>
+                            <option>ป.เอก</option>
+                        </select>
+                    </div>
+                    
+            </div>
+            <div class="input-box3">
+                <label for="text">จำนวนนักศึกษาที่ลงทะเบียนเรียนทั้งหมด :</label>
+                <input type="number" placeholder="กรอกจำนวนทั้งหมด" required>
+                <div class="numofta">
+                    <label for="text">คำนวณจำนวน TA ที่เป็นไปได้</label>
+                    <button type="button">cal</button>
+                </div>
+            </div>
+            <div class="input-box3">
+                <label for="text">จำนวน TA ที่เป็นไปได้ทั้งหมด :</label>
+                <input type="number" placeholder="จำนวน TA" required>
+            </div>
+            <!-- ไม่ต้องมี -->
+            <!-- <div class="colunm"></div>
+                <div class="select-box3">
+                    <div class="input-box">
+                        <label for="text">บัญชีธนาคาร :</label>
+                    </div>
+                    <select>
+                        <option>ธนาคารกรุงเทพ</option>
+                        <option>ธนาคารกสิกรไทย</option>
+                        <option>ธนาคารกรุงไทย</option>
+                        <option>ธนาคารไทยพาณิชย์</option>
+                        <option>ธนาคารออมสิน</option>
+                    </select>
+            </div>
+            <div class="input-box">
+                <label for="text">เลขบัญชี :</label>
+                <input type="" placeholder="กรอกเลขบัญชี" required>
+            </div> -->
+
+            <div class="but">
+                <button onclick="openEditCoursePopup()">Submit</button> <!-- ถ้าก็อบaddcourseมาแก้อันนี้เหมือนเดิมด้วยนะะ-->
+            </div>
+            <div class="wrapper">
+              <ul class="menu">
+                <li class="list-item">
+                <a href="../1admin_homepage/admin_homepage.html" class="้home">
+                  <span>Home</span>
+                </a>
+                </li>
+              </ul>
+            </div>
+            </div>
+            </div>
+        </form>
+        <!-- ถ้าก็อบaddcourseมาก็อบอันนี้ให้เหมือนเดิมด้วยนะะ-->
+        <div class="popup_box">
+            <div class="popup">
+              <p>ต้องการลบรายวิชานี้หรือไม่</p>
+              <button class="confirm_button">ยืนยัน</button>
+            </div>
+            <div class="close_popup_button">
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="edit_popup_box">
+            <div class="edit_popup">
+              <p>ทำการแก้ไขรายวิชาสำเร็จ</p>
+            </div>
+            <div class="edit_close_popup_button">
+            </div>
+          </div>
+    </section>
+    <script src="editcourse.js"></script>
+    <!-- จนถึงตรงนี้เลย-->
+</body>
+</html>

@@ -1,0 +1,588 @@
+.header{
+    display: flex;
+    justify-content: space-between; /* แยกหัวข้อและปุ่มไปคนละข้าง */
+    align-items: center; /* จัดให้ตรงกลางตามแนวแกน y */
+    padding: 0 5%; /* เพิ่ม padding ข้าง ๆ */
+}
+
+.box {
+    width: 1600px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 35px;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+body {
+    background-color: #87b5ff;
+}
+
+.topic{
+    color: #58a3ff;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin-right: auto;
+}
+
+/*container กล่องของรายวิชาทั้งหมด*/
+.allsubject{
+    width: 1500px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 80px;
+    box-sizing: border-box;
+}
+
+/*container กล่องของรายวิชา 1 วิชา*/
+.subjectBox{
+    width: 1050px;
+    height: 200px;
+    background-color: white;
+
+    border: solid 2px #D9D9D9;
+    border-radius: 5px;
+    display: flex; /* เพิ่ม flex เพื่อให้กล่องย่อยจัดเรียงในแนวนอน */
+    align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางตามแนวตั้ง */
+    position: relative; /* เพื่อให้ปุ่มกลมอยู่ในตำแหน่งสัมพันธ์กับกรอบนี้ */
+
+    margin-bottom: 30px;
+}
+
+/*container ชื่อวิชา+วิชาdescription*/
+.subject-information{
+    height: 190px;
+    width: 700px;
+    padding-right: 10px;
+    flex-direction: column;
+    /*flex-grow: 1; /* ให้ subject-information ขยายพื้นที่เท่าที่เหลืออยู่ */
+    margin-left: 30px; 
+    /* margin-right: 100px; */
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5px;
+
+    /* border: 1px solid rgb(255, 7, 7); */
+}
+
+.subject-name{
+    font-size: 18px;
+    font-weight: 400;
+    height: auto;;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    
+    width: auto; 
+    padding-bottom: 5px;
+    /* margin-top: 10px; */
+    box-sizing: border-box;
+}
+
+.subject-description{
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    font-family: 'Prompt', sans-serif;   
+    width: 100%;
+    /* height: 100px; */
+    padding-right: 15px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    line-height: 1.5em;
+    max-height: 6em; /*show only 4 line*/
+    
+    /* border: 1px solid rgb(255, 3, 217); */
+}
+.subject-description::-webkit-scrollbar
+{
+    width: 13px;
+    background-color: #F5F5F5;
+}
+.subject-description::-webkit-scrollbar-thumb
+{
+    background: #D9D9D9;
+    border: solid 2px #F5F5F5;
+}
+.subject-description::-webkit-scrollbar-thumb:hover {
+    background: #c3c3c3;
+}
+
+/*ทำให้เป็นรูปสี่เหลี่ยมจตุรัส*/
+.subjectImage img {
+    width: 100%;
+    height: 100%; 
+}
+
+.subjectImage {
+    width: 170px; 
+    height: auto; 
+    /* flex-shrink: 0;  */
+    box-sizing: border-box;
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+/*view button*/
+.view-button{
+    width: 60px;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    background-color: #d5e6ff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 16px;
+    padding-top: 3px;  /* ชัชแก้นะะ คือตัวอักษรมันเยี้ยงไปบนๆนิดนึงเพราะเราแก้tagจาก button เป็น a อ่ะ*/
+
+}
+.view-button:hover {
+    background-color: #ffdbb2;
+    border: 2px solid #f9c182;
+}
+
+.edit-button{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #d5e6ff;
+    border: solid 1px #606060;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    align-items: center;
+    background-image: url(edit_icon.png);
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.edit-button:hover {
+    background-color: #ffdbb2;
+    border: 2px solid #f9c182;
+}
+
+/*ADD button*/
+.add-button{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #d5e6ff;
+    border: solid 4px #bddeff;
+    margin-top: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-image: url(add_icon.png);
+    background-size:  45px 45px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.add-button:hover {
+    background-color: #ffdbb2;
+    border: 4px solid #f9c182;
+}
+
+/*navigation bar*/
+.wrapper{
+    display: flex;
+    align-items: center;
+    height: 350px;
+    width: 90px;
+    flex-direction: column;
+
+    /*addition*/
+    position: fixed;
+    top: 260px;
+    left: 20px;
+    background: #f9c182;
+    border-radius: 20px;
+    /* border: 2px solid red; */
+}
+
+/*ไม่ใช้แล้ว แต่ถ้าเพิ่มปุ่มใน nav bar ต้องใช้ด้วย*/
+/*.menu{
+    /*position: fixed;
+    top: 25vh;
+    left: 2vh;
+    width: 5vh;
+    height: 40vh;
+    background-color: #FFD3A1;
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-bottom: 1vh;*/
+    
+    /*list-style: none;
+    height: 100%; /* สามารถเปลี่ยนเป็น 40vw ได้ถ้าต้องการ
+    width: 3vw;*/
+
+    /*addition*/
+    /*display: flex;
+    flex-direction: column;
+    align-items: left; /* Center the list-items horizontally
+    border: 2px solid green;
+}*/
+
+
+.list-item{
+    height: 100px;
+    width: 100px;
+    /* padding-top: 15px; */
+    /* margin: 10px -10px; */
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item a{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 20px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    background-image: url(home_icon.png);
+    background-size: 35px 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.list-item a:hover{
+    border: solid 5px #bddeff;
+    padding: 0;
+}
+
+.list-item a span{
+    width: 0;
+    left: 70px;
+    /*margin-left: 5vh;*/
+    padding: 0;
+    margin-top: 12px;
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.6;
+    white-space: nowrap;
+    line-height: 35px;
+    transition: 0.2s;
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+    
+}
+
+.list-item a:hover span{
+    width: auto;
+    padding: 0 15px;
+    overflow: visible;
+}
+
+.list-item *{
+    background: white;
+}
+
+/*@media (max-width: 1024px) {
+    .wrapper{
+        top: 35%;
+        height: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: 7vh;
+        width: 80vw;
+        top: 92.5%;
+        left: 9%;
+        align-items: start;
+        justify-content: center;
+        padding-left: 15px;
+    }
+    .list-item a {
+        width: 35px;
+        height: 35px;
+        background-size: 15px 15px;
+    }
+    .list-item {
+        height: 50px;
+        width: 40px;
+        padding-top: 0;
+    }
+}
+
+@media (max-height: 594px) and (max-width: 768px){
+    .wrapper {
+        padding-left: 5px;
+    }
+    .list-item a {
+        width: 25px;
+        height: 25px;
+        background-size: 13px 13px;
+    }
+}*/
+
+/*Iphone*/
+@media (max-width: 600px){
+    .box{
+        width: 100%;
+    }
+    .topic{
+        font-size: 40px;
+        width: 70%;
+    }
+    .add-button{
+        margin-left: -15%;
+    }
+    .allsubject{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .subjectBox{
+        width: 90%;
+    }
+    .subject-information{
+        width: 50%;
+        margin-left: -20%;
+    }
+    .subject-description{
+        width: 120%;
+        height: 50px
+    }
+    .subjectImage img{
+        height: 50%;
+        width: 50%;
+    }
+    .subjectImage{
+        margin-left: 3%;
+    }
+    .edit-button{
+        right: 2%;
+    }
+    .view-button{
+        margin-top: 10px;
+    }
+    .wrapper {
+        height: 60px;
+        width: 300px;
+        top: 91.5%;
+        left: 9%;
+        align-items: start;
+        justify-content: center;
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+    .list-item a {
+        width: 45px;
+        height: 45px;
+        background-size: 25px 25px;
+        box-sizing: border-box;
+    }
+    .list-item {
+        height: 45px;
+        width: 45px;
+        padding-top: 0;
+        margin-top: 1px;
+    }
+    .list-item a span{
+        top: -50px;
+        left: -20px;
+        line-height: 30px;
+    }
+    .list-item a:hover span {
+        display: none;
+    }
+    .list-item a:hover{
+        border: 3px solid #C0DFFF;     
+    }
+}
+
+/*iPad+iPadPro*/
+@media (min-width: 601px) and (max-width: 1024px){
+    .box{
+        width: 90%;
+    }
+    .topic{
+        width: 70%;
+    }
+    .add-button{
+        margin-left: -15%;
+    }
+    .allsubject{
+        width: 80%;
+        margin-left: 5%;
+    }
+    .subjectBox{
+        width: 90%;
+    }
+    .subject-information{
+        width: 50%;
+        margin-left: -3%;
+    }
+    .subject-description{
+        width: 100%;
+        height: 80px
+        /* max-height: 3em; */
+    }
+    .subjectImage img{
+        height: 70%;
+        width: 70%;
+    }
+    .subjectImage{
+        margin-left: 3%;
+    }
+    .edit-button{
+        right: 2%;
+    }
+    .view-button{
+        margin-top: 10px;
+    }
+    .wrapper{
+        width: 80px;
+    }
+}
+/*Macbook+Notebook*/
+@media (min-width: 1025px) and (max-width: 1440px){
+    .box{
+        width: 85%;
+    }
+    .topic{
+        width: 70%;
+    }
+    .add-button{
+        margin-left: -15%;
+    }
+    .allsubject{
+        width: 75%;
+        margin-left: 5%;
+    }
+    .subjectBox{
+        width: 90%;
+    }
+    .subject-information{
+        width: 65%;
+        margin-left: -2%;
+    }
+    .subject-description{
+        width: 100%;
+        height: 80px
+        max-height: 4em;
+    }
+    .subjectImage img{
+        height: 80%;
+        width: 80%;
+    }
+    .subjectImage{
+        margin-left: 2%;
+    }
+    .edit-button{
+        right: 2%;
+    }
+    .view-button{
+        margin-top: 10px;
+    }
+    .wrapper{
+        left: 10px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px){
+    .box{
+        width: 85%;
+    }
+    .topic{
+        width: 70%;
+    }
+    .add-button{
+        margin-left: -15%;
+    }
+    .allsubject{
+        width: 75%;
+        margin-left: 5%;
+    }
+    .subjectBox{
+        width: 90%;
+    }
+    .subject-information{
+        width: 65%;
+        margin-left: -2%;
+    }
+    .subject-description{
+        width: 100%;
+        height: 80px
+        max-height: 4em;
+    }
+    .subjectImage img{
+        height: 80%;
+        width: 80%;
+    }
+    .subjectImage{
+        margin-left: 2%;
+    }
+    .edit-button{
+        right: 2%;
+    }
+    .view-button{
+        margin-top: 10px;
+    }
+    .wrapper{
+        left: 10px;
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1919px){
+    .box{
+        width: 85%;
+    }
+    .topic{
+        width: 70%;
+    }
+    .add-button{
+        margin-left: -15%;
+    }
+    .allsubject{
+        width: 75%;
+        margin-left: 5%;
+    }
+    .subjectBox{
+        width: 90%;
+    }
+    .subject-information{
+        width: 65%;
+        margin-left: -2%;
+    }
+    .subject-description{
+        width: 100%;
+        height: 80px
+        max-height: 4em;
+    }
+    .subjectImage img{
+        height: 80%;
+        width: 80%;
+    }
+    .subjectImage{
+        margin-left: 2%;
+    }
+    .edit-button{
+        right: 2%;
+    }
+    .view-button{
+        margin-top: 10px;
+    }
+}
+
