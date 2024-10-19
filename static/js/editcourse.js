@@ -87,7 +87,7 @@ function openEditCoursePopup() {
     }
 
     if (allFilled) {
-        document.querySelector(".popup_box").style.display = "flex";
+        document.querySelector(".edit_popup_box").style.display = "flex";
     }
 }
 
