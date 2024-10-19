@@ -82,11 +82,16 @@ class ProfessorModel:
         self.setLastName(message[0]["lastname"])
 
         #* query prof_course 
-        query_prof_course = ('SELECT * '
-                    'FROM course AS c '
-                    'JOIN prof_course AS pc ON c.course_id = pc.course_id '
-                    'WHERE pc.prof_id = %d;') %(which_id)
-        prof_course_message = self.db.fetch_data(query_prof_course)
+        # query_prof_course = ('SELECT * '
+        #             'FROM course AS c '
+        #             'JOIN prof_course AS pc ON c.course_id = pc.course_id '
+        #             'WHERE pc.prof_id = %d;') %(which_id)
+        query_all_prof_course = ('SELECT * FROM course '
+                        'JOIN course_history ON course.course_id = course_history.course_id '
+                        'JOIN prof_course ON course.course_id = prof_course.course_id '
+                        'WHERE prof_id = %d' %which_id)
+        # prof_course_message = self.db.fetch_data(query_prof_course)
+        prof_course_message = self.db.fetch_data(query_all_prof_course)
 
 
         print()

@@ -142,11 +142,11 @@ class CourseController:
     ################## & ##################
 
         # @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
-        @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
-        async def editcourse(request : Request, course_id):
-            print(f"CourseController.py - Received course_id: {course_id}")
+        @self.app.get('/editcourse/{course_history_id}', response_class=HTMLResponse)
+        async def editcourse(request : Request, course_history_id):
+            print(f"CourseController.py - Received course_history_id: {course_history_id}")
             
-            cModel.getDataFromDB(int(course_id))
+            cModel.getDataFromDB(int(course_history_id))
 
             name = cModel.getName()
             course_id = cModel.getCourseID()
