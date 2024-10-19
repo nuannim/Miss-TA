@@ -25,7 +25,7 @@ body{
 
 .container{
     position: relative;
-    width: 1600px;
+    width: 90%;
     padding: 25px;
     border-radius: 35px;
     background-color: #fff;
@@ -49,7 +49,7 @@ body{
     /*padding: auto;
 
     /*cjay แก้*/
-    width: 1500px;
+    width: 90%;
     margin-left: auto; 
     margin-right: auto;
     margin-bottom: 20px;
@@ -76,7 +76,7 @@ body{
 .form .input-box input{
     position: relative;
     height: 40px;
-    width: 600px;
+    width: 50%;
     outline: none;
     font-size: 16px;
     color: #000000;
@@ -94,7 +94,7 @@ body{
 .form .input-box textarea{
     position: relative;
     height: 100px;
-    width: 600px;
+    width: 50%;
     outline: none;
     font-size: 16px;
     color: #000000;
@@ -168,7 +168,7 @@ body{
     margin-top: 30px;
     display: flex;
     align-items: center;
-    width: 1400px;
+    width: 90%;
     margin-left: 50px;
 }
 
@@ -315,7 +315,7 @@ body{
 .form .input-box3{
     display: flex; 
     align-items: center;
-    width: 1400px;
+    width: 100%;
     margin-top: 20px;
     /* margin-left: 20px; */
     padding-left: 50px;
@@ -488,9 +488,12 @@ body{
 }
 
 /*Iphone*/
-@media (max-width: 600px){
+@media (max-width: 1000px){
     .box{
         width: 100%;
+    }
+    .form .column{
+        flex-direction: column;
     }
     .topic{
         font-size: 40px;
@@ -587,204 +590,3 @@ body{
         height: auto;
     }
 }
-
-/*iPad+iPadPro*/
-@media (min-width: 601px) and (max-width: 1024px){
-    .box{
-        width: 90%;
-    }
-    .topic{
-        width: 70%;
-    }
-    .add-button{
-        margin-left: -15%;
-    }
-    .allsubject{
-        width: 80%;
-        margin-left: 5%;
-    }
-    .subjectBox{
-        width: 90%;
-    }
-    .subjectBox-cantregis{
-        width: 90%;
-    }
-    .subject-information{
-        width: 50%;
-        margin-left: -3%;
-    }
-    .subject-description{
-        width: 100%;
-        height: 80px
-        /* max-height: 3em; */
-    }
-    .subjectImage img{
-        height: 70%;
-        width: 70%;
-    }
-    .subjectImage{
-        margin-left: 3%;
-    }
-    .edit-button{
-        right: 2%;
-    }
-    .view-button{
-        margin-top: 10px;
-    }
-    .wrapper{
-        width: 80px;
-    }
-
-    .container{
-        width: 80%;
-        margin-left: 0;
-    }
-    .input-box input{
-        width: 50%;
-    }
-    .but button{
-        width: 150px;
-    }
-
-    .container{
-        margin-left: 0;
-        margin-right: 0;
-        width: 95%;
-        padding: 0;
-        margin-bottom: 50px;
-    }
-    .input-box input{
-        width: 0%;
-    }
-    .but button{
-        width: 120px;
-    }
-    .container.form{
-        padding-left: 0;
-        margin-left: 0;
-        margin-right: 0;
-        width: 500px;
-        height: auto;
-    }
-}
-/*Macbook+Notebook*/
-@media (min-width: 1025px) and (max-width: 1440px){
-    .box{
-        width: 85%;
-    }
-    .topic{
-        width: 70%;
-    }
-    .add-button{
-        margin-left: -15%;
-    }
-    .allsubject{
-        width: 75%;
-        margin-left: 5%;
-    }
-    .subjectBox{
-        width: 90%;
-    }
-    .subjectBox-cantregis{
-        width: 90%;
-    }
-    .subject-information{
-        width: 65%;
-        margin-left: -2%;
-    }
-    .subject-description{
-        width: 100%;
-        height: 80px
-        max-height: 4em;
-    }
-    .subjectImage img{
-        height: 80%;
-        width: 80%;
-    }
-    .subjectImage{
-        margin-left: 2%;
-    }
-    .edit-button{
-        right: 2%;
-    }
-    .view-button{
-        margin-top: 10px;
-    }
-    .wrapper{
-        left: 10px;
-    }
-
-    .container{
-        margin-left: 0;
-        margin-right: 0;
-        width: 85%;
-        padding: 0;
-        margin-bottom: 50px;
-    }
-    .input-box{
-        width: 50%;
-    }
-    .but button{
-        width: 120px;
-    }
-    .container.form{
-        padding-left: 0;
-        margin-left: 0;
-        margin-right: 0;
-        height: auto;
-    }
-    .requirements-column{
-        width: 60%;
-    }
-}
-
-@media (min-width: 1441px) and (max-width: 1919px){
-    .box{
-        width: 85%;
-    }
-    .topic{
-        width: 70%;
-    }
-    .add-button{
-        margin-left: -15%;
-    }
-    .allsubject{
-        width: 75%;
-        margin-left: 5%;
-    }
-    .subjectBox{
-        width: 90%;
-    }
-    .subjectBox-cantregis{
-        width: 90%;
-    }
-    .subject-information{
-        width: 65%;
-        margin-left: -2%;
-    }
-    .subject-description{
-        width: 100%;
-        height: 80px
-        max-height: 4em;
-    }
-    .subjectImage img{
-        height: 80%;
-        width: 80%;
-    }
-    .subjectImage{
-        margin-left: 2%;
-    }
-    .edit-button{
-        right: 2%;
-    }
-    .view-button{
-        margin-top: 10px;
-    }
-
-    .container{
-        width: 85%;
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
-
