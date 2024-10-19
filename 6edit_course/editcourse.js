@@ -58,26 +58,39 @@ document.querySelector('.edit_close_popup_button').addEventListener('click', fun
     document.querySelector('.edit_popup_box').style.display = 'none';
 });
 
-function openEditCoursePopup(){
-    document.querySelector('.but button').addEventListener('click', function() {
-    
-        const form = document.querySelector('.form');
-        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-        let allFilled = true;
+function openEditCoursePopup() {
+    const form = document.querySelector('.form');
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    let allFilled = true;
 
-        // ! ชัชลองเช็คหน่อย
-        inputs.forEach(input => {
-            if (!input.value) {
-                allFilled = false; 
-            }
-        });
-        if (allFilled) {
-            document.querySelector(".edit_popup_box").style.display = "flex";
-            // console.log("hihi");
+    inputs.forEach(input => {
+        if (!input.value && !(input.type === 'radio' && input.checked)) {
+            allFilled = false; 
         }
     });
 
+    const radioGroups = {};
+    form.querySelectorAll('input[type="radio"][name]').forEach(radio => {
+        if (!radioGroups[radio.name]) {
+            radioGroups[radio.name] = { checked: false };
+        }
+        if (radio.checked) {
+            radioGroups[radio.name].checked = true;
+        }
+    });
+
+    for (const group in radioGroups) {
+        if (!radioGroups[group].checked) {
+            allFilled = false;
+            break;
+        }
+    }
+
+    if (allFilled) {
+        document.querySelector(".popup_box").style.display = "flex";
+    }
 }
+
 // เอาไว้เปลี่ยนค่าจ้าง จำนวนวันตามรูปแบบงาน
 document.getElementById('assistantType').addEventListener('change', function() {
     const wageInput = document.getElementById('wage');
@@ -133,7 +146,6 @@ const numberInput = document.getElementById('days');
 numberInput.addEventListener('input', function() {
     if (numberInput.value > 15) {
         numberInput.value = 15;
-        console.log("hehhe");
     }
 });
 
@@ -141,7 +153,6 @@ const wagemin = document.getElementById('wage');
 wagemin.addEventListener('input', function() {
     if (wagemin.value < 0) {
         wagemin.value = 0;
-        console.log("hehhe");
     }
 });
 

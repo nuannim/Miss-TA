@@ -43,26 +43,37 @@ function addRequirements(){
         requirements_column.appendChild(input_box);
 }
 
-function openAddCoursePopup(){
-    console.log("hehe");
-    document.querySelector('.but').addEventListener('click', function() {
+function openAddCoursePopup() {
+    const form = document.querySelector('.form');
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    let allFilled = true;
 
-        console.log("heheee");
-        const form = document.querySelector('.form');
-        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-        let allFilled = true;
-    
-        inputs.forEach(input => {
-            if (!input.value) {
-                allFilled = false; 
-            }
-        });
-    
-        if (allFilled) {
-            console.log("hppphe");
-            document.querySelector(".popup_box").style.display = "flex";
+    inputs.forEach(input => {
+        if (!input.value && !(input.type === 'radio' && input.checked)) {
+            allFilled = false; 
         }
     });
+
+    const radioGroups = {};
+    form.querySelectorAll('input[type="radio"][name]').forEach(radio => {
+        if (!radioGroups[radio.name]) {
+            radioGroups[radio.name] = { checked: false };
+        }
+        if (radio.checked) {
+            radioGroups[radio.name].checked = true;
+        }
+    });
+
+    for (const group in radioGroups) {
+        if (!radioGroups[group].checked) {
+            allFilled = false;
+            break;
+        }
+    }
+
+    if (allFilled) {
+        document.querySelector(".popup_box").style.display = "flex";
+    }
 }
 
 document.querySelector('.close_popup_button').addEventListener('click', function() {
@@ -124,7 +135,6 @@ const numberInput = document.getElementById('days');
 numberInput.addEventListener('input', function() {
     if (numberInput.value > 15) {
         numberInput.value = 15;
-        console.log("hehhe");
     }
 });
 
@@ -132,7 +142,6 @@ const wagemin = document.getElementById('wage');
 wagemin.addEventListener('input', function() {
     if (wagemin.value < 0) {
         wagemin.value = 0;
-        console.log("hehhe");
     }
 });
 
