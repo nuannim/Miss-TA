@@ -273,21 +273,21 @@ class CourseModel:
         # self.db.insert_data(add_course_test, data)
 
         ############* new insert ############
-        
-        #* insert_course (new)
-        #! เดี๋ยวลองแกล้ง ๆ ส่งซ้ำด้วย
-        # add_course = ('insert into course(course_id, name, year)'
-        #               'values (%s %s %s)')
-        # data = (self.getCourseID(), self.getName(), self.getYear())
-        
-        # self.db.insert_data(add_course, data)
+
+        # #* insert_course (new)
+        try:
+            add_course = ('insert into course(course_id, name, year) values (%s, %s, %s)')
+            data = (self.getCourseID(), self.getName(), self.getYear())
+            self.db.insert_data(add_course, data)
+        except Exception as e:
+            print(f"Error inserting course: {e}")
 
         #* insert_course_history (new)
-        # add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image)'
-        #                       'values (%s, %s, %s, %s, %s, %s, %s, %s)')
-        # data_history = (self.getCourseID(), self.getDescription() ,self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact(), self.getImage(),)
+        # Always attempt to insert course history
+        add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image) values (%s, %s, %s, %s, %s, %s, %s, %s)')
+        data_history = (self.getCourseID(), self.getDescription(), self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact(), self.getImage())
+        self.db.insert_data(add_course_history, data_history)
 
-        # self.db.insert_data(add_course_history, data_history)
 
 
         # เหลือ
