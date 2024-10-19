@@ -51,24 +51,3 @@ class ProfCourseAddnEditView:
     ################## & app.post() ##################
         #! ย้าย post ไปไว้ CourseController.py
     ################## & ##################
-
-
-
-###################################
-###################################
-
-# class ProfCourseAddnEditView:
-#     def __init__(self) -> None:
-#         pass
-
-#     def displayPage():
-#         pass
-
-#     def done():
-#         pass
-
-#     def getInfoFromDisplay(self):
-#         pass
-
-#     def setInfoFromDisplay(self):
-#         pass

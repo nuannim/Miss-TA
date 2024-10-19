@@ -35,8 +35,7 @@ class CourseController:
         self.pCourseView = pCourseView
         self.pCourseAddEditView = pCourseAddEditView
 
-    # ! continue
-    #* ต้องถามฟ้อนเรื่อง html
+    #! เหลือ req
     ################## & app.post() ##################
         # @self.app.post("/test/addcourse", response_class=HTMLResponse)
         @self.app.post("/addcourse", response_class=HTMLResponse)
@@ -45,7 +44,7 @@ class CourseController:
                                 course_id:str=Form(...),
                                 description:str=Form(...),
                                 image:str=Form(...),
-                                
+                                req:list[str] = Form(...),
                                 cdate:date=Form(...),
                                 adate:date=Form(...),
                                 wdate:datetime=Form(...),
@@ -58,7 +57,7 @@ class CourseController:
                                 num_regis:str=Form(...)
                                     ):
             print()
-            print('========= CourseController.py ==========')
+            print('========= CourseController.py - /addcourse ==========')
             print('name :', name)
             print('course_id :', course_id)
             print('description :', description)
@@ -76,6 +75,8 @@ class CourseController:
             print('year :', year)
             print('enroll_num :', enroll_num)
             print('num_regis :', num_regis)
+
+            print('req :', req)
 
 
             cModel.setName(name)
@@ -117,16 +118,21 @@ class CourseController:
                                     course_id:str=Form(...),
                                     description:str=Form(...),
                                     image:str=Form(...),
-                                    
+                                    req:list[str] = Form(...),
                                     cdate:date=Form(...),
                                     adate:date=Form(...),
                                     wdate:datetime=Form(...),
                                     qtype:int=Form(...),
-                                    contact:str=Form(...)
+                                    contact:str=Form(...),
+                                    ta_type:str=Form(...),
+                                    an_type:str=Form(...),
+                                    year:str=Form(...),
+                                    enroll_num:str=Form(...),
+                                    num_regis:str=Form(...)
                                     ):
 
             print()
-            print('========= CourseController.py ==========')
+            print('========= CourseController.py - /addcourse ==========')
             print('name :', name)
             print('course_id :', course_id)
             print('description :', description)
@@ -137,6 +143,15 @@ class CourseController:
             print('wdate :', wdate)
             print('qtype :', qtype) # * 1 = อาจารย์ / 0 = ระบบ
             print('contact :', contact)
+
+            print()
+            print('ta_type :', ta_type)
+            print('an_type :', an_type)
+            print('year :', year)
+            print('enroll_num :', enroll_num)
+            print('num_regis :', num_regis)
+
+            print('req :', req)
 
             cModel.setName(name)
             cModel.setCourseID(course_id)
@@ -149,6 +164,13 @@ class CourseController:
             cModel.setQualification_type(qtype)
             cModel.setContact(contact)
 
+            cModel.setTaType(ta_type)
+            cModel.setAnType(an_type)
+            cModel.setYear(year)
+            cModel.setEnrollNum(enroll_num)
+            cModel.setNumRegis(num_regis)
+
+            #! ขา editcourse มีปัญหาเรื่อง sql error ต้องดักเคส primary key วิชาเคยเพิ่มแล้ว
             cModel.setCourseToDB()
             
 
@@ -160,8 +182,8 @@ class CourseController:
                 context={"request" : request}
             )
 
+    
     ################## & ##################
-
         # @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
         @self.app.get('/editcourse/{course_history_id}', response_class=HTMLResponse)
         async def editcourse(request : Request, course_history_id):
@@ -180,6 +202,13 @@ class CourseController:
             qualification_type = cModel.getQualification_type()
             contact = cModel.getContact()
 
+            ta_type = cModel.getTaType()
+            an_type = cModel.getAnType()
+            year = cModel.getYear()
+            enroll_num = cModel.getEnrollNum()
+            num_regis = cModel.getNumRegis()
+
+
             return self.template.TemplateResponse(
                 name="editcourse.html",
                 # context={"request" : request,
@@ -192,37 +221,13 @@ class CourseController:
                          "cdate":cdate,
                          "adate":adate,
                          "wdate":wdate,
-
+                        
                         "qtype" :qualification_type,
-                        "contact" : contact
-                         }
+                        "contact" : contact,
+                        "ta_type": ta_type,
+                        "an_type": an_type,
+                        "year": year,
+                        "enroll_num": enroll_num,
+                        "num_regis": num_regis,
+                        }
             )
-
-
-########################################################
-
-# from StudentModel import *
-# from CourseModel import *
-# from Database import *
-# class CourseController:
-#     def __init__(self,studentId,num):
-#         self.studentId = studentId
-#         self.Course = [CourseModel() for _ in range(num)]
-#         self.Student = StudentModel()
-#         self.db = MySQLDatabase()
-
-    
-#     def setCourseModel(self, Id):
-#         self.Course[Id].setCourseID(self.db.getCourseId(Id))
-#         self.Course[Id].setName(self.db.getCourseName(Id))
-#         self.Course[Id].setImage(Id)
-#         self.Course[Id].setDescription(self.db.getCourseDes(Id))
-#         self.Course[Id].setRequirement(Id)
-#         self.Course[Id].setYear(self.db.getCourseYear(Id))
-
-        
-    # def sendToDatabase():
-
-    # def checkNUll():
-    
-    # def checkCouse():
