@@ -22,7 +22,8 @@ class CourseModel:
                  max_ta=0, 
                  num_of_ta=0, 
                  num_of_stu_enroll=0,
-                 requirement=[]):
+                 requirement=[],
+                 course_history_id=0):
 
         self._course_id = course_id # รหัสวิชา
         self._name = name # ชื่อวิชา
@@ -48,6 +49,8 @@ class CourseModel:
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
         #! รอเชื่อมก่อนค่อยว่ากัน
         self._requirement = [Requirement] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
+
+        self._course_history_id=course_history_id
 
         self.db = MySQLDatabase()
 
@@ -110,6 +113,8 @@ class CourseModel:
     def getRequirement(self):
         return self._requirement
 
+    def getCourseHistoryID(self):
+        return self._course_history_id
 
 
 #^ attribute : setter
@@ -169,58 +174,81 @@ class CourseModel:
         else:
             raise TypeError("ต้องเป็น object ของคลาส Requirement เท่านั้น")
 
+    def setCourseHistoryID(self, course_history_id):
+        self._course_history_id = course_history_id
+
+
 #^ db getter : getDataFromDB
-    def getDataFromDB(self, which_course_id):
+    def getDataFromDB(self, which_course_history_id):
         '''get(import) all data from database then set it into CourseModel.py attribute'''
         # เป็น method สำหรับดึงจาก database โดยตรง
-        # เดี๋ยวมาเขียน
 
         self.db.connect()
         
-        #* query_course
-        query_course = 'select * from course where course_id = %d' %which_course_id
-        message = self.db.fetch_data(query_course)
+        # query_course
+        # query_course = 'select * from course where course_id = %d' %which_course_id
+        # message = self.db.fetch_data(query_course)
 
-        print(message)
+        # print(message)
 
-        self.setCourseID(message[0]['course_id'])
-        self.setName(message[0]['name'])
-        self.setYear(message[0]['YEAR'])
-        self.setDescription(message[0]['description'])
-        self.setImage(message[0]['image'])
-        self.setAdate(message[0]['adate'])
-        self.setWdate(message[0]['wdate'])
-        self.setCdate(message[0]['cdate'])
-        self.setQualification_type(message[0]['qtype'])
-        self.setContact(message[0]['contact'])
+        # self.setCourseID(message[0]['course_id'])
+        # self.setName(message[0]['name'])
+        # self.setYear(message[0]['YEAR'])
+        # self.setDescription(message[0]['description'])
+        # self.setImage(message[0]['image'])
+        # self.setAdate(message[0]['adate'])
+        # self.setWdate(message[0]['wdate'])
+        # self.setCdate(message[0]['cdate'])
+        # self.setQualification_type(message[0]['qtype'])
+        # self.setContact(message[0]['contact'])
 
 
-        #* query history
-        # query_history = 'select * from history'
-        query_history = 'select * from history, enroll\
-                        where history.enroll_id = enroll.enroll_id\
-                        and course_id = %d' %which_course_id
-        message_history = self.db.fetch_data(query_history)
-        # print('message_history :', message_history)
-        # print('ta registered stu number :', len(message_history))
-        self.setRegisteredStuNo(len(message_history))
-        # self.setMaxTA(message[0]['']) #! คำนวณยังไง
-        # self.setNumOfTA(message[0]['']) #! อันนี้อะไร
+        # query history
+        # query_history = 'select * from history, enroll\
+        #                 where history.enroll_id = enroll.enroll_id\
+        #                 and course_id = %d' %which_course_id
+        # message_history = self.db.fetch_data(query_history)
 
-        #* query_enroll
-        query_enroll = 'select * from enroll where course_id = %d' %which_course_id
-        message_enroll = self.db.fetch_data(query_enroll)
+        # self.setRegisteredStuNo(len(message_history))
+        # # self.setMaxTA(message[0]['']) #! คำนวณยังไง
+        # # self.setNumOfTA(message[0]['']) #! อันนี้อะไร
 
-        # print(message_enroll)
+        # query_enroll
+        # query_enroll = 'select * from enroll where course_id = %d' %which_course_id
+        # message_enroll = self.db.fetch_data(query_enroll)
 
-        # print(len(message_enroll))
-        self.setNumOfStuEnroll(len(message_enroll))
+        # self.setNumOfStuEnroll(len(message_enroll))
 
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
-        #! ((care ถ้าทำอันอื่นเสร็จแล้วฝากดู)) ไม่ คือมันต้องแหละแต่ทำไงวะ ยังคิดไม่ออก
-        #* ไตเติ้ลเพิ่งเขียน class ใหม่ ลองเอาไปใช้ได้
+        # ไตเติ้ลเพิ่งเขียน class ใหม่ ลองเอาไปใช้ได้
         # self.setRequirement(message[0][''])
         # self.setReqToFill(message[0][''])
+
+        ############* new insert ############
+
+        #* query_course_equijoin_course_history
+        query_course_equijoin_course_history = ('SELECT * FROM course ' 
+                                                'JOIN course_history ' 
+                                                'ON course.course_id = course_history.course_id '
+                                                'WHERE course_history_id = %s' %which_course_history_id)
+        fetch_courseNcoursehistory = self.db.fetch_data(query_course_equijoin_course_history)
+
+        print()
+        print('query_course_equijoin_course_history :: CourseModel.py :', fetch_courseNcoursehistory)
+        print()
+
+        self.setCourseID(fetch_courseNcoursehistory[0]['course_id'])
+        self.setName(fetch_courseNcoursehistory[0]['name'])
+        self.setYear(fetch_courseNcoursehistory[0]['YEAR'])
+        self.setDescription(fetch_courseNcoursehistory[0]['description'])
+        self.setImage(fetch_courseNcoursehistory[0]['image'])
+        self.setAdate(fetch_courseNcoursehistory[0]['adate'])
+        self.setWdate(fetch_courseNcoursehistory[0]['wdate'])
+        self.setCdate(fetch_courseNcoursehistory[0]['cdate'])
+        self.setQualification_type(fetch_courseNcoursehistory[0]['qtype'])
+        self.setContact(fetch_courseNcoursehistory[0]['contact'])
+
+        self.setCourseHistoryID(fetch_courseNcoursehistory[0]['course_history_id'])
 
         self.db.close()
 
@@ -232,7 +260,7 @@ class CourseModel:
         # เดี๋ยวมาเขียน
         self.db.connect()
 
-        #* insert_course
+        # insert_course
         # add_course_test = 'insert into course( \
         #     course_id, name, year, description, image, \
         #     adate, wdate, cdate, qtype, contact)\
@@ -244,21 +272,32 @@ class CourseModel:
 
         # self.db.insert_data(add_course_test, data)
 
-        ############* new insert
+        ############* new insert ############
         
         #* insert_course (new)
         #! เดี๋ยวลองแกล้ง ๆ ส่งซ้ำด้วย
-        add_course = ('insert into course(course_id, name, year)'
-                      'values (%s %s %s)')
-        data = (self.getCourseID(), self.getName(), self.getYear())
+        # add_course = ('insert into course(course_id, name, year)'
+        #               'values (%s %s %s)')
+        # data = (self.getCourseID(), self.getName(), self.getYear())
         
-        self.db.insert_data(add_course, data)
+        # self.db.insert_data(add_course, data)
 
         #* insert_course_history (new)
-        # add_course_history = ('insert into course_history'
-        #                       'values ()')
+        # add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image)'
+        #                       'values (%s, %s, %s, %s, %s, %s, %s, %s)')
+        # data_history = (self.getCourseID(), self.getDescription() ,self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact(), self.getImage(),)
+
+        # self.db.insert_data(add_course_history, data_history)
 
 
+        # เหลือ
+        # - announce_list_status
+        # - waiting_list_status
+        # - registered_stu_no
+        # - max_ta
+        # - num_of_ta
+        # - num_of_student_enroll
+        # - requirement
 
 
 
@@ -268,6 +307,7 @@ class CourseModel:
 
         #* insert_enroll ==> คือจริง ๆ เราไม่ได้ใส่ลิสคน enroll ด้วยอันนี้ เราดึงจากคณะเอา
 
+        self.db.close()
 
     def setHistoryToDB(self):
         '''set history everytime we make transaction'''

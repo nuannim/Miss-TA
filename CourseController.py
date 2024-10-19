@@ -141,8 +141,7 @@ class CourseController:
 
     ################## & ##################
 
-
-        # @self.app.get('/test/editcourse', response_class=HTMLResponse)
+        # @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
         @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
         async def editcourse(request : Request, course_id):
             print(f"CourseController.py - Received course_id: {course_id}")
