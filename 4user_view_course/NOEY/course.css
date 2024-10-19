@@ -1,125 +1,153 @@
-.header{
-    width: 100%;
-    text-align: center;
-    align-items: center; /* จัดให้ตรงกลางตามแนวแกน y */
-    padding-bottom: 20px;
-}
-
-.box {
-    width: 1600px;
-    height: auto;
-    background-color: rgb(255, 255, 255);
-    border-radius: 35px;
-    margin: auto;
-    margin-top: 50px;
-    padding-bottom: 10px;
-    text-align: center;
-    display: block;
-    justify-content: center;
-    padding-bottom: 40px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
 }
 
 body {
     background-color: #87b5ff;
-}
-
-.subject-topic{
-    color: #58a3ff;
-    padding-left: 10px;
-    padding-top: 30px;
-    font-family: "Prompt", sans-serif;
-    font-weight: 400;
-    font-size: 35px;
-    margin-right: auto;
-    padding-top: 40px;
-    padding-bottom: 10px;
-}
-
-/*status*/
-.status-text{
-    width: 100px;
-    color: black;
-    font-family: 'Prompt', sans-serif;
-    font-size: 18px;
-    position: absolute;
-    text-align: center;
-    right: 20px;
-    bottom: 10px;
-}
-
-.subject-description{
-    width: 1460px;
-    height: auto;
-    border: 1px solid red;
-    font-family: 'Prompt', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    padding-left: 70px;
-    padding-right: 70px;
-    text-align: left;
-}
-
-.subject-requirements{
+    /* min-height: 100vh; */
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 1600px;
     height: auto;
-    width: 1400px;
-    font-family: 'Prompt', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    padding-top: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
-    border: 1px solid blue;
-    text-align: left;
-    justify-content: left;
+    padding: 40px;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 25px;
+    background-color: #fff;
+    padding-bottom: 40px;
+}
+
+.container header {
+    font-size: 30px;
+    color: #f68c12;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+}
+
+.subject-details {
+    margin-top: 20px; /* เพิ่มระยะห่างจากส่วนหัว */
+}
+
+.subject-details p:first-of-type {
+    color: red; /* กำหนดสีข้อความให้เป็นสีแดง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    font-weight: bold; /* ทำให้ตัวหนาเพื่อเน้น */
+}
+
+.teachar-details p:first-of-type {
+    color: rgb(0, 0, 0); /* กำหนดสีข้อความให้เป็นสีแดง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    font-weight: bold; /* ทำให้ตัวหนาเพื่อเน้น */
 }
 
 .form {
-    margin-top: 5px;
+    margin-top: 30px;
+}
+
+.form p:first-of-type {
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-block-start: 1px;
+    margin-block-end: 1px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
 }
 
 .input-box {
     display: flex;
     align-items: center;
-    width: 1400px;
-    margin-bottom: 20px;
-    border: solid 2px black;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .input-box label {
     color: #333;
-    margin-right: 10px;
-    font-family: 'Prompt', sans-serif;
+    margin-right: 20px;
 }
 
 .input-box input {
-    height: 25px;
-    width: 200px;
+    height: 30px;
+    width: 800px;
     outline: none;
-    color: #707070;
+    font-size: 16px;
+    color: #000000;
+    margin-top: 8px;
     border: 1px solid #ddd;
     border-radius: 6px;
+    padding: 0 15px;
 }
 
 .input-box input:focus {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-option{
-    font-family: 'Prompt', sans-serif;
-    font-size: 16px;
+.select-box3 {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* ลดระยะห่างระหว่างกลุ่มนี้กับกลุ่มอื่น */
 }
 
-select{
-    font-family: 'Prompt', sans-serif;
-    font-size: 16px;
+.select-box3 label {
+    color: #333;
+    margin-right: 20px; /* ระยะห่างระหว่างป้ายกับ dropdown ให้ชิดกันที่สุด */
 }
 
-label{
-    font-family: 'Prompt', sans-serif;
+.select-box3 select {
+    height: 40px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 10px;
     font-size: 16px;
+    color: white; /* สีข้อความเป็นสีขาว */
+    background-color: #ffb157; /* สีพื้นหลังของ dropdown */
+    cursor: pointer;
+    margin: 0; /* ไม่มี margin ระหว่าง select และ label */
 }
 
+.select-box3 select:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* เพิ่มเงาเมื่อเลือก */
+}
+
+
+.but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.but button {
+    height: 45px;
+    width: 10%;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #ffb157;
+    transition: all 0.2s ease;
+}
+
+.but button:hover {
+    background-color: #FFD3A1;
+}
 
 /*navigation bar*/
 .wrapper{
@@ -187,7 +215,6 @@ label{
     transition: 0.2s;
     border-radius: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
-    
 }
 
 .list-item a:hover span{
@@ -200,50 +227,10 @@ label{
     background: white;
 }
 
-/*@media (max-width: 1024px) {
-    .wrapper{
-        top: 35%;
-        height: 30%;
-    }
-}
-
-@media (max-width: 768px) {
-    .wrapper {
-        height: 7vh;
-        width: 80vw;
-        top: 92.5%;
-        left: 9%;
-        align-items: start;
-        justify-content: center;
-        padding-left: 15px;
-    }
-    .list-item a {
-        width: 35px;
-        height: 35px;
-        background-size: 15px 15px;
-    }
-    .list-item {
-        height: 50px;
-        width: 40px;
-        padding-top: 0;
-    }
-}
-
-@media (max-height: 594px) and (max-width: 768px){
-    .wrapper {
-        padding-left: 5px;
-    }
-    .list-item a {
-        width: 25px;
-        height: 25px;
-        background-size: 13px 13px;
-    }
-}*/
-
 /*Iphone*/
 @media (max-width: 600px){
     .box{
-        width: 90%;
+        width: 100%;
     }
     .topic{
         font-size: 40px;
@@ -320,24 +307,18 @@ label{
         border: 3px solid #C0DFFF;     
     }
 
-    .subject-description{
+    .container{
         width: 90%;
-        padding-left: 5%;
-        padding-right: 5%;
-        height: auto;
+        margin-left: 0;
+        padding: 30px;
+        margin-bottom: 50px;
     }
-    .subject-requirements{
-        width: 35%;
-        height: auto;
+    .input-box input{
+        width: 40%;
     }
-    .input-box{
-        width: 90%;
-
+    .but button{
+        width: 120px;
     }
-    .form{
-        width: 100%;
-    }
-    
 }
 
 /*iPad+iPadPro*/
@@ -386,6 +367,17 @@ label{
     .wrapper{
         width: 80px;
     }
+
+    .container{
+        width: 80%;
+        margin-left: 0;
+    }
+    .input-box input{
+        width: 50%;
+    }
+    .but button{
+        width: 150px;
+    }
 }
 /*Macbook+Notebook*/
 @media (min-width: 1025px) and (max-width: 1440px){
@@ -433,52 +425,16 @@ label{
     .wrapper{
         left: 10px;
     }
-}
 
-@media (min-width: 1025px) and (max-width: 1440px){
-    .box{
-        width: 85%;
-    }
-    .topic{
-        width: 70%;
-    }
-    .add-button{
-        margin-left: -15%;
-    }
-    .allsubject{
-        width: 75%;
-        margin-left: 5%;
-    }
-    .subjectBox{
-        width: 90%;
-    }
-    .subjectBox-cantregis{
-        width: 90%;
-    }
-    .subject-information{
-        width: 65%;
-        margin-left: -2%;
-    }
-    .subject-description{
-        width: 100%;
-        height: 80px
-        max-height: 4em;
-    }
-    .subjectImage img{
-        height: 80%;
+    .container{
         width: 80%;
+        margin-left: 0;
     }
-    .subjectImage{
-        margin-left: 2%;
+    .input-box input{
+        width: 50%;
     }
-    .edit-button{
-        right: 2%;
-    }
-    .view-button{
-        margin-top: 10px;
-    }
-    .wrapper{
-        left: 10px;
+    .but button{
+        width: 150px;
     }
 }
 
@@ -524,5 +480,14 @@ label{
     .view-button{
         margin-top: 10px;
     }
+
+    .container{
+        width: 85%;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 }
 
+.popup_box {
+    display: none; /* สามารถใช้ JS แสดง popup นี้ */
+}
