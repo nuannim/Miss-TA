@@ -78,7 +78,7 @@ body{
 .form .input-box input{
     position: relative;
     height: 40px;
-    width: 50%;
+    width: 30%;
     outline: none;
     font-size: 16px;
     color: #000000;
@@ -270,14 +270,15 @@ body{
 .daymon {
     display: flex;
     align-items: center;
-    width: 800px;
+    width: 900px;
     margin-top: 20px;
     margin-left: -60px;
 }
 
 .daymon input {
-    width: 600px;
+    width: 60px;
     margin-left: 25px;
+    width: 20;
     outline: none;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -286,6 +287,7 @@ body{
 
 .daymon label {
     margin-left: 60px;
+    /* margin-right: 100px; */
     color: #333;
 }
 
@@ -332,7 +334,7 @@ body{
 .form .input-box3 input{
     position: relative;
     height: 40px;
-    width: 400px;
+    width: 30%;
     outline: none;
     font-size: 16px;
     color: #000000;
