@@ -4,10 +4,19 @@ from mysql.connector import Error
 
 class MySQLDatabase:
     def __init__(self):
-        self.host = "sql12.freesqldatabase.com"
-        self.user = "sql12737141"
-        self.password = "J4SDu1KBvf"
-        self.database = "sql12737141"
+        #*freesql
+        # self.host = "sql12.freesqldatabase.com"
+        # self.user = "sql12738833"
+        # self.password = "mmeNGlF5xv"
+        # self.database = "sql12738833"
+        # self.port = "3306"
+        # self.connection = None
+
+        # * localhost title
+        self.host = "26.64.54.150"
+        self.user = "any"
+        self.password = "iloveisad"
+        self.database = "sql12738833"
         self.port = "3306"
         self.connection = None
 

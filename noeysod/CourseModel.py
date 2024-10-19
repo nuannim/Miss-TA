@@ -233,22 +233,34 @@ class CourseModel:
         self.db.connect()
 
         #* insert_course
-        add_course_test = 'insert into course( \
-            course_id, name, year, description, image, \
-            adate, wdate, cdate, qtype, contact)\
-                values (%s, %s, %s, %s, %s,\
-                    %s, %s, %s, %s, %s)'
+        # add_course_test = 'insert into course( \
+        #     course_id, name, year, description, image, \
+        #     adate, wdate, cdate, qtype, contact)\
+        #         values (%s, %s, %s, %s, %s,\
+        #             %s, %s, %s, %s, %s)'
 
-        data = (self.getCourseID(), self.getName(), self.getYear(), self.getDescription(), self.getImage(),
-                self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact())
+        # data = (self.getCourseID(), self.getName(), self.getYear(), self.getDescription(), self.getImage(),
+        #         self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact())
 
-        # add_course_test = ('insert into course(name, course_id, adate)'
-                        #    'values (%s, %s, %s)')
+        # self.db.insert_data(add_course_test, data)
+
+        ############* new insert
         
-        # data = (self.getName(), self.getCourseID(), self.getDescription())
-        # data = ('test', 848485, date(2024, 9, 9))
+        #* insert_course (new)
+        #! เดี๋ยวลองแกล้ง ๆ ส่งซ้ำด้วย
+        add_course = ('insert into course(course_id, name, year)'
+                      'values (%s %s %s)')
+        data = (self.getCourseID(), self.getName(), self.getYear())
+        
+        self.db.insert_data(add_course, data)
 
-        self.db.insert_data(add_course_test, data)
+        #* insert_course_history (new)
+        # add_course_history = ('insert into course_history'
+        #                       'values ()')
+
+
+
+
 
         #* insert_history ==> ไม่ใช่ตรงนี้ละ เพิ่งฉุกคิดได้ว่า history จะเกิดขึ้นเมื่ออจเลือกนศแล้วกด submit
         #*                      sooo ต้องแยก method
