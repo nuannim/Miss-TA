@@ -93,11 +93,12 @@ class ProfessorModel:
         # prof_course_message = self.db.fetch_data(query_prof_course)
         prof_course_message = self.db.fetch_data(query_all_prof_course)
 
+        # print('prof_course_message :', prof_course_message)
 
         print()
-        print("====================")
-        print('ProfessorModel.py :', prof_course_message)
-        print("====================")
+        # print("====================")
+        print('prof_course_message :', prof_course_message)
+        # print("====================")
         print()
 
         self.setProfCourse(prof_course_message)

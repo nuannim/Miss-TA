@@ -317,11 +317,14 @@ class CourseModel:
 
         ############* new insert ############
 
+        print('++++++++++++ CourseModel.py - setCourseToDB() ++++++++++++')
         #* insert_course (new)
         try:
             add_course = ('insert into course(course_id, name, year, enroll_num) values (%s, %s, %s, %s)')
             data = (self.getCourseID(), self.getName(), self.getYear(), self.getEnrollNum())
             self.db.insert_data(add_course, data)
+
+            print('insert_course successfully')
         except Exception as e:
             print(f"Error inserting course: {e}")
 
@@ -333,17 +336,9 @@ class CourseModel:
                         self.getQualification_type(), self.getContact(), self.getImage(), self.getTaType(), self.getAnType(), self.getNumRegis())
         self.db.insert_data(add_course_history, data_history)
 
+        print('insert_course_history successfully')
 
-
-        # เหลือ
-        # - announce_list_status
-        # - waiting_list_status
-        # - registered_stu_no
-        # - max_ta
-        # - num_of_ta
-        # - num_of_student_enroll
-        # - requirement
-
+        print('++++++++++++ ++++++++++++')
 
 
         #* insert_history ==> ไม่ใช่ตรงนี้ละ เพิ่งฉุกคิดได้ว่า history จะเกิดขึ้นเมื่ออจเลือกนศแล้วกด submit
@@ -360,4 +355,7 @@ class CourseModel:
 
     def setProfCourseToDB(self, which_prof_id):
         # add_prof_course =
+        pass
+
+    def updateCourseToDB(self, which_course_history_id):
         pass

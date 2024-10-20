@@ -57,7 +57,7 @@ class CourseController:
                                 num_regis:str=Form(...)
                                     ):
             print()
-            print('========= CourseController.py - /addcourse ==========')
+            print('========= CourseController.py - @app.post("/addcourse") ==========')
             print('name :', name)
             print('course_id :', course_id)
             print('description :', description)
@@ -133,7 +133,7 @@ class CourseController:
                                     ):
 
             print()
-            print('========= CourseController.py - /addcourse ==========')
+            print('========= CourseController.py - @app.post("/editcourse") ==========')
             print('name :', name)
             print('course_id :', course_id)
             print('description :', description)
@@ -172,7 +172,10 @@ class CourseController:
             cModel.setNumRegis(num_regis)
 
             #! ขา editcourse มีปัญหาเรื่อง sql error ต้องดักเคส primary key วิชาเคยเพิ่มแล้ว
+            
+            print('----- call CourseModel.py -----')
             cModel.setCourseToDB()
+            print('----- ----- ----- ----- -----')
             
 
             print('===================')
