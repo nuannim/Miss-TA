@@ -11,7 +11,7 @@ from CourseModel import CourseModel
 
 from ProfCourseView import ProfCourseView
 from ProfCourseAddnEditView import ProfCourseAddnEditView
-from PIL import Image
+# from PIL import Image
 import io
 
 class CourseController:
@@ -131,7 +131,7 @@ class CourseController:
                                     enroll_num:str=Form(...),
                                     num_regis:str=Form(...)
                                     ):
-            u
+            
             print()
             print('========= CourseController.py - @app.post("/editcourse") ==========')
             print('name :', name)
