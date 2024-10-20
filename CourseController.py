@@ -1,18 +1,18 @@
 from datetime import date, datetime
 
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Request, Form, UploadFile, File
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-
 from Database import *
-
+from upload import UploadRoute
 from ProfessorModel import ProfessorModel
 from CourseModel import CourseModel
 
 from ProfCourseView import ProfCourseView
 from ProfCourseAddnEditView import ProfCourseAddnEditView
-
+from PIL import Image
+import io
 
 class CourseController:
     def __init__(self,
@@ -22,11 +22,12 @@ class CourseController:
                  pModel:ProfessorModel,
                  cModel:CourseModel,
                  pCourseView:ProfCourseView,
-                 pCourseAddEditView:ProfCourseAddnEditView):
-
+                 pCourseAddEditView:ProfCourseAddnEditView,):
+        self.Upload = UploadRoute()
         self.db = db
 
         self.app = app
+        
         self.app.mount("/static", StaticFiles(directory='static'), name="static")
         self.template = template
 
@@ -43,7 +44,7 @@ class CourseController:
                                 name:str=Form(...),
                                 course_id:str=Form(...),
                                 description:str=Form(...),
-                                image:str=Form(...),
+                                image: UploadFile = File(...),
                                 req:list[str] = Form(...),
                                 cdate:date=Form(...),
                                 adate:date=Form(...),
@@ -55,7 +56,9 @@ class CourseController:
                                 year:str=Form(...),
                                 enroll_num:str=Form(...),
                                 num_regis:str=Form(...)
+
                                     ):
+            await self.Upload.upload_file(image)
             print()
             print('========= CourseController.py - @app.post("/addcourse") ==========')
             print('name :', name)
@@ -77,18 +80,15 @@ class CourseController:
             print('num_regis :', num_regis)
 
             print('req :', req)
-
-
             cModel.setName(name)
             cModel.setCourseID(course_id)
             cModel.setDescription(description)
-            cModel.setImage(image)
-
             cModel.setCdate(cdate)
             cModel.setAdate(adate)
             cModel.setWdate(wdate)
             cModel.setQualification_type(qtype)
             cModel.setContact(contact)
+            cModel.setImage(image.filename)
 
             cModel.setTaType(ta_type)
             cModel.setAnType(an_type)
@@ -131,7 +131,7 @@ class CourseController:
                                     enroll_num:str=Form(...),
                                     num_regis:str=Form(...)
                                     ):
-
+            u
             print()
             print('========= CourseController.py - @app.post("/editcourse") ==========')
             print('name :', name)
@@ -157,7 +157,7 @@ class CourseController:
             cModel.setName(name)
             cModel.setCourseID(course_id)
             cModel.setDescription(description)
-            cModel.setImage(image)
+            # cModel.setImage(image)
 
             cModel.setCdate(cdate)
             cModel.setAdate(adate)

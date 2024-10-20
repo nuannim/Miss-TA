@@ -19,20 +19,20 @@
         <div class="allsubject">
         {% for course in courses %}
         <div class="subjectBox">
-          <div class="subjectImage"><img src="../static/images/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
+          <div class="subjectImage"><img src="{{ url_for('img', path=course.image) }}" alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
             <div class="subject-name">{{ course.name }}</div>
             <div class="subject-description">
               {{ course.description }}
             </div>
-            <a style="text-decoration: none;" href="/course/{{111}}" class="view-button">VIEW</a>
+            <a style="text-decoration: none;" href="/user/course/{{course.coursehistoryid}}" class="view-button">VIEW</a>
           </div>
           <div class="status-text">สมัครได้</div>
         </div>
         {% endfor %}
         {% for course in coursef %}
         <div class="subjectBox-cantregis">
-          <div class="subjectImage"><img src="../static/images/subject_image.png" alt="SubjectImage" width="170px" height="170px"></div>
+          <div class="subjectImage"><img src="{{ url_for('img', path=course.image)}}"alt="SubjectImage" width="170px" height="170px"></div>
           <div class="subject-information">
             <div class="subject-name">{{ course.name }}</div>
             <div class="subject-description">

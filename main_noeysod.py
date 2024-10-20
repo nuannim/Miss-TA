@@ -16,7 +16,7 @@ import uvicorn
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory='static'), name="static")
-
+app.mount("/img", StaticFiles(directory="app/image"), name="img") 
 template = Jinja2Templates(directory='page')
 
 
@@ -49,6 +49,10 @@ from CourseController import CourseController
 controller = CourseController(db, app, template, 
                               chotipat, chotipatCourse, view, viewAddEdit)
 
+from maintitle import *
+
+userview = userCourseView(db,app,template)
+userview.userview()
 
 if __name__ == "__main_noeysod__":
     uvicorn.run("main_noeysod:app")
