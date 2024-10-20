@@ -39,23 +39,25 @@
                 <textarea id="course-description" placeholder="กรอกคำอธิบายรายวิชา" name="description"></textarea>
             </div>
             <div class="input-box">
-                <label for="file">รูปปกรายวิชา :</label>
+                <label for="file">รูปปกรายวิชา :</label>  
 <!-- * image -->
                 <input type="file" name="image">
             </div>
             <!-- <div class="column"> 
                 
             </div> -->
+
+<!-- ! requirement ไม่รู้จะเอาไง -->
             <div class="requirements-column" id="requirements-column">
                 <div class="input-box">
                     <label for="text">Requirements :</label>
-<!-- ! requirement ไม่รู้จะเอาไง -->
-                    <input type="text" placeholder="requirements" name="req" required>
-                    <button class="add-requirement-button" type="button" onclick="addRequirements()">add</button>
-                    <div class="check">
+                    <!-- <input type="text" placeholder="requirements" name="req" required> -->
+                    <textarea placeholder="requirements" name="req" required></textarea>
+                    <!-- <button class="add-requirement-button" type="button" onclick="addRequirements()">add</button> -->
+                    <!-- <div class="check">
                         <label>จำเป็นต้องตอบคำถามนี้</label>
                         <input type="checkbox">
-                    </div>
+                    </div> -->
                 </div>
             </div>
 <!-- * cdate -->
@@ -197,8 +199,8 @@
             <div class="but">
 <!-- * submit -->
  <!-- ! แก้ตรงนี้ไป อย่าลืมเปลี่ยนกลับ -->
-                <button onclick="openAddCoursePopup()">Submit</button>
-                <!-- <button type="submit" onclick="openAddCoursePopup()">Submit</button> -->
+                <!-- <button onclick="openAddCoursePopup()">Submit</button> -->
+                <button type="submit" onclick="openAddCoursePopup()">Submit</button>
             </div>
             <div class="wrapper">
               <ul class="menu">

@@ -27,7 +27,7 @@ from CourseModel import CourseModel
 from Database import *
 db = MySQLDatabase()
 
-prof_id = 1
+prof_id = 2
 chotipat = ProfessorModel()
 chotipatCourse = CourseModel()
 
