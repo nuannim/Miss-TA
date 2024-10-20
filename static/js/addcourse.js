@@ -121,6 +121,11 @@ document.getElementById('assistantType').addEventListener('change', function() {
         wageInput.readOnly = false;
         daysInput.readOnly = false;
         daysInput.required = true;
+        check3.disabled = false;
+        check4.disabled = false;
+        check3.checked = false;
+        check4.checked = false;
+        daysInput.placeholder = "กรอกได้ไม่เกิน 15 วัน";
     }  
     else {
         wageInput.value = ''; 
@@ -128,6 +133,11 @@ document.getElementById('assistantType').addEventListener('change', function() {
         wageInput.readOnly = false;
         daysInput.readOnly = false;
         daysInput.required = true;
+        daysInput.placeholder = "กรอกได้ไม่เกิน 15 วัน";
+        check3.disabled = false;
+        check4.disabled = false;
+        check3.checked = false;
+        check4.checked = false;
     }
 });
 
@@ -155,22 +165,22 @@ function addTaskDetail(){
             document.getElementById('task-detail').insertAdjacentHTML('afterbegin', newHtml);
 }
 
-window.onload = function() {
-    const wageInput = document.getElementById('wage');
-    const daysInput = document.getElementById('days');
-    const check3 = document.getElementById('check3');
-    const check4 = document.getElementById('check4');
-    const taskBox = document.getElementById('task-box');
-    wageInput.value = ''; 
-        daysInput.value = null;
-        daysInput.placeholder = "ไม่ต้องกรอกจำนวนวัน";
-        wageInput.readOnly = true;
-        daysInput.readOnly = true;
-        daysInput.required = false;
-        check3.setAttribute('disabled', true);
-        check4.setAttribute('disabled', true);
-        check3.checked = true;
-};
+// window.onload = function() {
+//     const wageInput = document.getElementById('wage');
+//     const daysInput = document.getElementById('days');
+//     const check3 = document.getElementById('check3');
+//     const check4 = document.getElementById('check4');
+//     const taskBox = document.getElementById('task-box');
+//     wageInput.value = ""; 
+//         daysInput.value = null;
+//         daysInput.placeholder = "ไม่ต้องกรอกจำนวนวัน";
+//         wageInput.readOnly = true;
+//         daysInput.readOnly = true;
+//         daysInput.required = false;
+//         check3.setAttribute('disabled', true);
+//         check4.setAttribute('disabled', true);
+//         check3.checked = true;
+// };
 
 
 // document.querySelector('.but button').addEventListener('click', function(event) {
