@@ -22,7 +22,7 @@ class CourseModel:
                  max_ta=0, 
                  num_of_ta=0, 
                  num_of_stu_enroll=0,
-                 requirement=[],
+                 requirement='',
 
                  course_history_id=0,
                  
@@ -54,14 +54,15 @@ class CourseModel:
         # requirement + required to fill?
         #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
         #! รอเชื่อมก่อนค่อยว่ากัน
-        self._requirement = [Requirement] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
-
+        # self._requirement = [Requirement] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
+        self._requirement = requirement
         self._course_history_id=course_history_id
 
         self._ta_type = ta_type
         self._an_type = an_type
         self._enroll_num = enroll_num
         self._num_regis = num_regis
+
 
         self.db = MySQLDatabase()
 
@@ -192,11 +193,14 @@ class CourseModel:
     def setNumOfStuEnroll(self, num_of_stu_enroll):
         self._num_of_stu_enroll = num_of_stu_enroll
 
-    def add_requirement(self, requirement):
-        if isinstance(requirement, Requirement):
-            self._requirement.append(requirement)
-        else:
-            raise TypeError("ต้องเป็น object ของคลาส Requirement เท่านั้น")
+    # def add_requirement(self, requirement):
+    #     if isinstance(requirement, Requirement):
+    #         self._requirement.append(requirement)
+    #     else:
+    #         raise TypeError("ต้องเป็น object ของคลาส Requirement เท่านั้น")
+
+    def setRequirement(self, requirement):
+        self._requirement = requirement
 
     def setCourseHistoryID(self, course_history_id):
         self._course_history_id = course_history_id
@@ -293,6 +297,8 @@ class CourseModel:
         self.setNumRegis(fetch_courseNcoursehistory[0]['num_regis'])
         self.setEnrollNum(fetch_courseNcoursehistory[0]['enroll_num'])
 
+        self.setRequirement(fetch_courseNcoursehistory[0]['req'])
+
         self.db.close()
 
 
@@ -330,10 +336,10 @@ class CourseModel:
 
         #* insert_course_history (new)
         # Always attempt to insert course history
-        add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image, ta_type, an_type, num_regis) '
-                              'values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s ,%s)')
+        add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image, ta_type, an_type, num_regis, req) '
+                              'values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s ,%s, %s)')
         data_history = (self.getCourseID(), self.getDescription(), self.getAdate(), self.getWdate(), self.getCdate(), 
-                        self.getQualification_type(), self.getContact(), self.getImage(), self.getTaType(), self.getAnType(), self.getNumRegis())
+                        self.getQualification_type(), self.getContact(), self.getImage(), self.getTaType(), self.getAnType(), self.getNumRegis(), self.getRequirement())
         self.db.insert_data(add_course_history, data_history)
 
         print('insert_course_history successfully')

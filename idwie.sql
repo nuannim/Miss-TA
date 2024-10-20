@@ -16,11 +16,10 @@ JOIN prof_course ON course.course_id = prof_course.course_id
 WHERE prof_id = 1;
 
 
-ELECT * FROM course ' 
-'JOIN course_history ' 
-'ON course.course_id = course_history.course_id '
-'WHERE course_history_id = %s
-
+-- ELECT * FROM course ' 
+-- 'JOIN course_history ' 
+-- 'ON course.course_id = course_history.course_id '
+-- 'WHERE course_history_id = %s
 DESCRIBE course_history;
 
 INSERT INTO course VALUES 
@@ -46,3 +45,24 @@ VALUES (111, 'pscp description', '2024-12-01', '2024-12-02 00:00:00', '2024-12-0
 
 insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact)
 VALUES (211, 'mm description', '2024-12-01', '2024-12-02 00:00:00', '2024-12-03', 1, '0123456789');
+
+
+-- insert into prof_req(course_id, req_no, req_question, required_to_fill, course_history_id)
+-- VALUES (, 1, "เหตุผลที่รัก Python สุดหัวใจ", 1, 17)
+
+
+ALTER TABLE prof_req DROP COLUMN course_id;
+
+
+alter table course_history
+modify req TEXT;
+
+
+UPDATE course_history
+SET req = N'ทำไมถึงสนเป็น TA วิชานี้ และ มีความถนัดด้านใดของ Multimedia'
+WHERE course_history_id = 17;
+
+UPDATE course_history
+SET req = NULL
+WHERE course_history_id = 17;
+
