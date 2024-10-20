@@ -12,27 +12,23 @@
 </head>
 <body>
     <section class="container">
-        <header>Physical Computing</header>
+        {% for course in courses %}
+        <header>{{course.name}}</header>
         
         <div class="subject-details">
             <p>*คำอธิบายรายวิชา*</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit esse eius, iure doloribus, mollitia harum soluta cupiditate sint, maxime facilis inventore asperiores consequuntur. Quibusdam aliquid sint vitae possimus pariatur sapiente totam fugiat ratione deserunt voluptate, illum atque esse recusandae, eligendi nihil. Quia est fugit a ipsam non eaque dolores doloremque! Iste aliquid doloremque ullam cupiditate eaque vitae velit quisquam sapiente amet incidunt, laborum adipisci, placeat repellat. Labore nulla consequuntur temporibus quisquam alias sapiente quibusdam at sequi ab hic impedit aliquid, quis possimus! Dignissimos commodi sit mollitia sequi, doloribus nam quis obcaecati quisquam explicabo, vel nulla, impedit animi enim totam vitae.</p>
+            <p>{{course.description}}</p>
         </div>
-
-        <form action="#" class="form">
-            <p>requirements</p>
-            <div class="input-box">
-                <label for="reason">คำถามที่ไม่ต้องตอบ</label>
-            </div>
-            <div class="input-box">
-                <label for="reason">เหตุผลที่อยากเป็น TA วิชานี้ :</label>
-                <input type="text" id="reason" placeholder="" required>
-            </div>
-            <div class="input-box">
-                <label for="food">เลี้ยงข้าวอาจารย์ได้มั้ย :</label>
-                <input type="text" id="food" placeholder="">
-            </div>
-            
+        {% endfor %}
+            <form action="#" class="form">
+            {% if req %}
+                {% for re in req %}
+                    <div class="input-box">
+                        <label for="reason">-{{ re.req1 }}:</label>
+                        <input type="text" id="reason" placeholder="กรอกเหตุผล" required>
+                    </div>
+                {% endfor %}    
+                {% endif %} 
             <!--  -->
             <div class="colunm"></div>
                 <div class="select-box3">
