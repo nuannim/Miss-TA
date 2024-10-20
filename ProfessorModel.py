@@ -1,12 +1,10 @@
 from Database import *
 
 class ProfessorModel:
-    # def __init__(self, first_name="", last_name="", num_of_course=0, course=None, prof_id=""):
     def __init__(self, first_name="", last_name="", num_of_course=0, prof_course=[], prof_id=""):
         self._first_name = first_name
         self._last_name = last_name
         self._num_of_course = num_of_course
-        # self._course = course if course is not None else []
         self._prof_course = prof_course
         self._prof_id = prof_id
 
@@ -23,9 +21,6 @@ class ProfessorModel:
 
     def getNumOfCourse(self):
         return self._num_of_course
-
-    # def getCourse(self):
-    #     return self._course
 
     def getProfCourse(self):
         return self._prof_course
@@ -45,12 +40,6 @@ class ProfessorModel:
     def setNumOfCourse(self, num_of_course):
         self._num_of_course = num_of_course
 
-    # def setCourse(self, course):
-    #     if isinstance(course, list):
-    #         self._course = course
-    #     else:
-    #         self._course = [course]
-
     def setProfCourse(self, pCourse):
         self._prof_course = pCourse
 
@@ -60,8 +49,6 @@ class ProfessorModel:
 
 #######################################################^
 #######################################################^
-
-
 
 
 #^ db getter
