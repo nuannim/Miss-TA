@@ -38,7 +38,6 @@ class CourseController:
 
     #! เหลือ req
     ################## & app.post() ##################
-        # @self.app.post("/test/addcourse", response_class=HTMLResponse)
         @self.app.post("/addcourse", response_class=HTMLResponse)
         async def addcourse_submit(request : Request,
                                 name:str=Form(...),
@@ -112,7 +111,6 @@ class CourseController:
             )
 
         #! continue
-        # @self.app.post("/test/editcourse")
         @self.app.post("/editcourse", response_class=HTMLResponse)
         async def editcourse_submit(request : Request,
                                     name:str=Form(...),
@@ -188,7 +186,6 @@ class CourseController:
 
     
     ################## & ##################
-        # @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
         @self.app.get('/editcourse/{course_history_id}', response_class=HTMLResponse)
         async def editcourse(request : Request, course_history_id):
             print(f"CourseController.py - Received course_history_id: {course_history_id}")
@@ -215,8 +212,6 @@ class CourseController:
 
             return self.template.TemplateResponse(
                 name="editcourse.html",
-                # context={"request" : request,
-                #          "course_id" : course_id}
                 context={"request" : request,
                          "name": name,
                          "course_id":course_id,

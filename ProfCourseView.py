@@ -35,7 +35,6 @@ class ProfCourseView:
 
     ################## & app.get() ##################
         #^ admin_subject()
-        # @self.app.get('/test', response_class=HTMLResponse)
         @self.app.get('/', response_class=HTMLResponse)
         async def admin_subject(request: Request):
         ##* 

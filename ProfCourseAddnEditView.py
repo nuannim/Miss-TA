@@ -26,25 +26,12 @@ class ProfCourseAddnEditView:
 
     def viewAddEdit(self, prof_id):
     ################## & app.get() ##################
-        # @self.app.get('/test/addcourse', response_class=HTMLResponse)
         @self.app.get('/addcourse', response_class=HTMLResponse)
         async def addcourse(request : Request):
             return self.template.TemplateResponse(
                 name="addcourse.html",
                 context={"request" : request}
             )
-        
-        # # @self.app.get('/test/editcourse', response_class=HTMLResponse)
-        # @self.app.get('/editcourse/{course_id}', response_class=HTMLResponse)
-        # async def editcourse(request : Request, course_id):
-        #     print(f"Received course_id: {course_id}")
-
-        #     return self.template.TemplateResponse(
-        #         name="editcourse.html",
-        #         # context={"request" : request,
-        #         #          "course_id" : course_id}
-        #         context={"request" : request}
-        #     )
     ################## & ##################
 
 

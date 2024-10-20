@@ -51,10 +51,6 @@ class CourseModel:
         self._num_of_ta = num_of_ta # จำนวน TA
         self._num_of_stu_enroll = num_of_stu_enroll # นศที่ลงทะเบียนเรียนวิชา
 
-        # requirement + required to fill?
-        #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
-        #! รอเชื่อมก่อนค่อยว่ากัน
-        # self._requirement = [Requirement] # array requirement ที่ add เพิ่มได้ในหน้าวิชา
         self._requirement = requirement
         self._course_history_id=course_history_id
 
@@ -118,10 +114,6 @@ class CourseModel:
     def getNumOfStuEnroll(self):
         return self._num_of_stu_enroll
     
-    # requirement + required to fill?
-    #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
-    #! รอเชื่อมก่อนค่อยว่ากัน
-
     def getRequirement(self):
         return self._requirement
 
@@ -193,12 +185,6 @@ class CourseModel:
     def setNumOfStuEnroll(self, num_of_stu_enroll):
         self._num_of_stu_enroll = num_of_stu_enroll
 
-    # def add_requirement(self, requirement):
-    #     if isinstance(requirement, Requirement):
-    #         self._requirement.append(requirement)
-    #     else:
-    #         raise TypeError("ต้องเป็น object ของคลาส Requirement เท่านั้น")
-
     def setRequirement(self, requirement):
         self._requirement = requirement
 
@@ -227,47 +213,6 @@ class CourseModel:
         # เป็น method สำหรับดึงจาก database โดยตรง
 
         self.db.connect()
-        
-        # query_course
-        # query_course = 'select * from course where course_id = %d' %which_course_id
-        # message = self.db.fetch_data(query_course)
-
-        # print(message)
-
-        # self.setCourseID(message[0]['course_id'])
-        # self.setName(message[0]['name'])
-        # self.setYear(message[0]['YEAR'])
-        # self.setDescription(message[0]['description'])
-        # self.setImage(message[0]['image'])
-        # self.setAdate(message[0]['adate'])
-        # self.setWdate(message[0]['wdate'])
-        # self.setCdate(message[0]['cdate'])
-        # self.setQualification_type(message[0]['qtype'])
-        # self.setContact(message[0]['contact'])
-
-
-        # query history
-        # query_history = 'select * from history, enroll\
-        #                 where history.enroll_id = enroll.enroll_id\
-        #                 and course_id = %d' %which_course_id
-        # message_history = self.db.fetch_data(query_history)
-
-        # self.setRegisteredStuNo(len(message_history))
-        # # self.setMaxTA(message[0]['']) #! คำนวณยังไง
-        # # self.setNumOfTA(message[0]['']) #! อันนี้อะไร
-
-        # query_enroll
-        # query_enroll = 'select * from enroll where course_id = %d' %which_course_id
-        # message_enroll = self.db.fetch_data(query_enroll)
-
-        # self.setNumOfStuEnroll(len(message_enroll))
-
-        #! เดี๋ยวเอาออกด้วย ไม่น่าจะได้ใช้
-        # ไตเติ้ลเพิ่งเขียน class ใหม่ ลองเอาไปใช้ได้
-        # self.setRequirement(message[0][''])
-        # self.setReqToFill(message[0][''])
-
-        ############* new insert ############
 
         #* query_course_equijoin_course_history
         query_course_equijoin_course_history = ('SELECT * FROM course ' 
@@ -306,22 +251,7 @@ class CourseModel:
     def setCourseToDB(self):
         """มีแค่ insert_course อย่างเดียว"""
         # เป็น method สำหรับส่งข้อมูลไป database โดยตรง
-        # เดี๋ยวมาเขียน
         self.db.connect()
-
-        # insert_course
-        # add_course_test = 'insert into course( \
-        #     course_id, name, year, description, image, \
-        #     adate, wdate, cdate, qtype, contact)\
-        #         values (%s, %s, %s, %s, %s,\
-        #             %s, %s, %s, %s, %s)'
-
-        # data = (self.getCourseID(), self.getName(), self.getYear(), self.getDescription(), self.getImage(),
-        #         self.getAdate(), self.getWdate(), self.getCdate(), self.getQualification_type(), self.getContact())
-
-        # self.db.insert_data(add_course_test, data)
-
-        ############* new insert ############
 
         print('++++++++++++ CourseModel.py - setCourseToDB() ++++++++++++')
         #* insert_course (new)
@@ -335,7 +265,6 @@ class CourseModel:
             print(f"Error inserting course: {e}")
 
         #* insert_course_history (new)
-        # Always attempt to insert course history
         add_course_history = ('insert into course_history(course_id, description, adate, wdate, cdate, qtype, contact, image, ta_type, an_type, num_regis, req) '
                               'values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s ,%s, %s)')
         data_history = (self.getCourseID(), self.getDescription(), self.getAdate(), self.getWdate(), self.getCdate(), 
@@ -347,11 +276,9 @@ class CourseModel:
         print('++++++++++++ ++++++++++++')
 
 
-        #* insert_history ==> ไม่ใช่ตรงนี้ละ เพิ่งฉุกคิดได้ว่า history จะเกิดขึ้นเมื่ออจเลือกนศแล้วกด submit
-        #*                      sooo ต้องแยก method
-        #*                ==> อีกเรื่องคือ usecase ที่ทำไม่มีเรื่องนี้ = ไม่ต้องเขียนก็ได้
+        #* insert_history ไม่มี
 
-        #* insert_enroll ==> คือจริง ๆ เราไม่ได้ใส่ลิสคน enroll ด้วยอันนี้ เราดึงจากคณะเอา
+        #* insert_enroll ไม่มี
 
         self.db.close()
 
@@ -360,7 +287,6 @@ class CourseModel:
         pass
 
     def setProfCourseToDB(self, which_prof_id):
-        # add_prof_course =
         pass
 
     def updateCourseToDB(self, which_course_history_id):
