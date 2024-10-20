@@ -105,6 +105,7 @@ class CourseController:
             print()
 
             #* render same page with @app.get() addcourse()
+            #! แก้ให้ไตเติ้ลด้วย
             return self.template.TemplateResponse(
                 name="addcourse.html",
                 context={"request" : request}
