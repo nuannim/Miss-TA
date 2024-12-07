@@ -3,4 +3,4 @@
 
 06066304 Information System Analysis ana Design  
 School of Information Technology, KMITL  
-Year 2/2567  
+Year 2/2024
